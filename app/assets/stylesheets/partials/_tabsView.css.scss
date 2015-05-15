@@ -1,0 +1,63 @@
+//====  Tab Views====
+//Tab Views modified from  http://jsfiddle.net/doktormolle/aAeZw/
+//See also http://techslides.com/angular-js-demos-examples-and-resources/
+
+//tab views partial 4 ====
+.tabs {
+  @include vendor-prefix(transition, all 2s ease);
+  height: 35px;
+  margin: 0;
+  width: 100%;
+  visibility: visible;
+  opacity: 1;
+}
+
+.tab {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  float: left;
+  font-size: 12px;
+  margin-right: 10px;
+  padding: 10px 0 10px;
+  text-align: center;
+  width: 10em; //85px 100px
+  line-height: 15px;
+  border-radius: 10px;
+}
+
+.selected {
+  background-color: $skeptics-blue;
+}
+
+.tab_content {
+  position: relative;
+  background-color: white;
+  height: 400px;
+}
+
+.tab_content8 {
+  margin-top: 10px;
+  border-radius: 10px;
+  position: relative;
+  background-color: $skeptics-background;
+  height: 400px;
+}
+
+.tabscaption {
+  font-family: Arial, sans-serif;
+  font-size: 1em;
+  color: $tabs-caption;
+  margin-top: 0.5em;
+  margin-left: 3em;
+  visibility: visible;
+  opacity: 1;
+  @include vendor-prefix(transition, all 2s ease)
+}
+
+.makeVisible {
+  visibility: visible;
+  opacity: 1;
+  @include vendor-prefix(transition, all 2s ease)
+}

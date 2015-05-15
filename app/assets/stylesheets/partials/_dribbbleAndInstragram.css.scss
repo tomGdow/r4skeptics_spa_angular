@@ -1,0 +1,45 @@
+//dribble and instagram
+.smallIcon {
+  color: gray;
+  font-size: 0.8em;
+}
+
+%base-smallIcon-hover {
+  color: $skeptics-orange;
+}
+
+.fa.fa-dribbble2.smallIcon2:hover {
+  @extend %base-smallIcon-hover
+}
+
+.fa.fa-instagram2.smallIcon2:hover {
+  @extend %base-smallIcon-hover
+}
+
+.dribbleFlex {
+  @include myflex();
+}
+
+.dribbleFlex > span {
+  color: gray;
+  margin-bottom: 1em;
+}
+
+.dribbleFlex > span:nth-child(1) {
+  margin-left: 1em;
+}
+
+.instagramPics > p.igram_info {
+  @include myflex();
+  color: gray;
+  margin-bottom: 1em;
+  padding-left: 1em;
+  font-weight: normal;
+}
+
+.instagramPics > p.igram_full_name {
+  color: $skeptics-blue;
+  font-weight: bold;
+  padding-left: 1em;
+}
+

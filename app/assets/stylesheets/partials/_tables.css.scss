@@ -1,0 +1,58 @@
+td.description {
+  margin-top: 2rem;
+  padding-top: em(16px);
+  line-spacing: em(12px);
+  color: #000;
+  font-size: 0.9rem;
+  font-weight: normal;
+  line-height: 1.4;
+  margin-bottom: 1.25rem;
+  text-rendering: optimizelegibility;
+  &:hover{background: $skeptics-background;
+  }
+}
+
+div.description{
+  @extend td.description;
+  margin: em(10px) 0;
+  padding-top: em(1px);
+  &:hover{
+    background: darken($skeptics-background, 3%);
+  }
+}
+
+span.description {
+  @extend div.description;
+}
+
+.table_flex {
+  @include myflex($justify-content: center);
+}
+.tableColOne {width: em(150px);}
+.tableColTwo {width: em(150px);}
+.tableColThree {width: em(100px);}
+
+.animate-show2 {
+  opacity: 1;
+}
+
+@include addHideRemoveAlt2(opacity linear 1s,animate-show2);
+
+.animate-show2.ng-hide {
+  opacity: 0;
+}
+
+.table_flex_commodities { margin: em(20px) em(100px);
+  @include myflex();
+}
+
+.searchBox {margin-bottom: em(20px);}
+
+.table_lge_wrapper {
+  @include myflex($justify-content: center);
+}
+
+.echo_search_term {
+  font-family: 'The Girl Next Door', cursive;
+  font-size: em(30px);
+}

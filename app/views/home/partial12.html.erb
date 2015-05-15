@@ -1,0 +1,24 @@
+<!-- ng-Controller Twelve-->
+<!-- Detailed Cart-->
+<div ng-show ="showcart">
+	<div class="col-partial4-a col-partial4" >
+		<h3 class="showCartWrapper">{{viewMessageTwelve}}</h3>
+	</div>
+	<div  ng-bind-html="trustedHtml" ></div>
+	{{status}}
+	<div class ="httpStatus5 {{yourCartStatus}}" ng-show="false" >
+	</div>
+</div><!--showcart-->
+<div class="flexbox_center" ng-show="showAjaxLoader3">
+	<div class ="ajax_loader_gif"></div>
+</div><!--flexbox_center-->
+<div ng-show ="showemptycart" ng-cloak>
+	<div class="col-partial4-a col-partial4" >
+		<div class="emptywrapper">
+			<h3>Your Cart is Empty</h3>
+		</div>
+		<div  class="emptywrapper">
+			<div id="emptycart"></div>
+		</div>
+	</div>
+</div><!--showemptycart-->

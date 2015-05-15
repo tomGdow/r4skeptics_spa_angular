@@ -1,0 +1,201 @@
+<!-- Controller Four-->
+<!-- Sixties Dublin-->
+<div class="col-partial4-a col-partial4" >
+	<h2>{{viewFourMessage}}</h2>
+	<span ng-include="'/home/schillachiImage.html'"></span>
+	<ipsum ng-class= "toggleShowPara3 ? 'loremParagraph lorem':'loremParagraph lorem vishidden '"></ipsum>
+	<h3>Cushman Collection</h3>
+</div><!--col-partial4-a col-partial4-->
+<div class ="mapSlideContainer" ng-mouseleave="mapAndSlide()">
+	<div ng-show="toggleslideshow">
+		<span ng-include="'./home/dublinslider.html'" id ="dublinshow"></span>
+	</div>
+	<div class="row" ng-show="togglegmap"
+		ng-init ="updateGoogle($index)"
+		ng-mouseover="mouseOverGoogleMap()">
+		<div class="small-12 columns" >
+			<div class="container googleSlider">
+				<div class="row">
+					<div id="googleMap" class ="googleSlide"></div>
+				</div>
+				<ul class="nav">
+					<li ng-repeat="photo in photos"
+						ng-class="{'active':isActive($index)}">
+						<span ng-click="updateGoogle($index)" >
+							<img src="{{photo.src}}"
+							alt="{{photo.desc}}"
+							title="{{photo.desc}}"
+							ng-click="showPhoto($index);" />
+						</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div ng-class="{vishidden :togglebuttonlist==false}" class = "sliderBtnsContainer">
+		<p class ="googleSlider-button-list" >
+			<span ng-show ="toggleslideshowButton" class ="toggleslideshowButton">
+				<span ng-click = updateGoogle($index)>
+					<button class="button tiny"
+						ng-click="toggleSliderGmap()" >
+						Show Google Map
+					</button>
+				</span>
+			</span>
+			<span ng-show="togglegmapButton" class = "togglegmapButton">
+				<button class="button tiny"
+					ng-click="toggleSliderGmap2()">
+					&nbsp;&nbsp;&nbsp;&nbsp;Show Gallery&nbsp;&nbsp;&nbsp;
+				</button>
+			</span>
+		</p>
+	</div>
+</div><!--mapSlideContainer-->
+<div class="col-partial4" >
+	<h3 class = "makeVisible"
+		ng-class="{vishidden :toggleOnTab==false}">The Man on the Bridge</h3>
+	<p class ="makeVisible"
+		ng-class="{vishidden :toggleOnTab==false}">
+		Lorem ipsome dolor sit amet, consectetur adipisicing elit.
+		Aliquam aperiam assumenda dignissimos
+		eum expedita incidunt molestiae neque nesciunt optio,
+		pariatur perferendis placeat quibusdam quos, ratione rem repellat
+		reprehenderit tempora veniam.
+	</p>
+	<!--Tab Views modified from http://jsfiddle.net/doktormolle/aAeZw/
+	See also http://techslides.com/angular-js-demos-examples-and-resources/ -->
+	<div class="tabs" ng-class="{vishidden :toggleOnTab==false}">
+		<div ng-click="selected = 'first'"
+			ng-class="{'selected': selected == 'first'}"
+			class="tab" id ="tab_one">Arthur Fields
+		</div>
+		<div ng-click="selected = 'second'"
+			ng-class="{'selected': selected == 'second'}" class="tab" id="tab_two">Young Arthur
+		</div>
+		<div ng-click="selected = 'third'"
+			ng-class="{'selected': selected == 'third'}" class="tab" id="tab_three">Miss Marple
+		</div>
+		<div ng-click="selected = 'fourth'"
+			ng-class="{'selected': selected == 'fourth'}" class="tab" id ="tab_four">Taking Photograph
+		</div>
+		<div ng-click="selected = 'fifth'"
+			ng-class="{'selected': selected == 'fifth'}" class="tab" id="tab_five">Brendan Behan
+		</div>
+	</div>
+	<div ng-show="selected == 'first'" class="tab_content">
+		<p class = "tabscaption" id="tabs_caption_one"
+			ng-class="{vishidden :toggleOnTab==false}" >
+			Arthur Fields (1901-1994)</p>
+		<div>
+			<figure class="medium-image-figure"
+				ng-mouseover= tabbedImgMouseover()
+				ng-mouseleave= tabbedImgMouseleave()
+				id ="arthur-fields">
+				<%= image_tag "manOnBridge2.jpg",
+				alt: "Picture of Man on the Bridge (Arthur Fields)"%>
+				<figcaption class = medium-images-caption>
+					&nbsp;Arthur Fields (1901-1994)
+				</figcaption>
+			</figure>
+		</div>
+	</div>
+	<div ng-show="selected == 'second'" class="tab_content">
+		<p class = "tabscaption" id="tabs_caption_two"
+			ng-class="{vishidden :toggleOnTab==false}">A Young Arthur Fields</p>
+		<div>
+			<figure class="medium-image-figure cl2"
+				ng-mouseover= tabbedImgMouseover()
+				ng-mouseleave= tabbedImgMouseleave()
+				id ="arthur-fields-young">
+				<%= image_tag "young_arthur_fields.jpg",
+				alt: "Picture of young Arthur Fields"%>
+				<figcaption class = medium-images-caption>
+					&nbsp;A Young Arthur Fields
+				</figcaption>
+			</figure>
+		</div>
+	</div>
+	<div ng-show="selected == 'third'" class="tab_content">
+		<p class = "tabscaption" id="tabs_caption_three"
+			ng-class="{vishidden :toggleOnTab==false}">
+			Arthur Fields with Margaret Rutherford (Miss Marple)</p>
+		<div>
+			<figure class="medium-image-figure cl2"
+				id ="arthur-fields-marple"
+				ng-mouseover= tabbedImgMouseover()
+				ng-mouseleave= tabbedImgMouseleave()>
+				<%= image_tag "miss_marple2.jpg",
+				alt: "Arthur Fields with Margaret Rutherford"%>
+				<figcaption class = medium-images-caption>
+					&nbsp;Arthur Fields with Margaret Rutherford (Miss Marple)
+				</figcaption>
+			</figure>
+		</div>
+	</div>
+	<div ng-show="selected == 'fourth'" class="tab_content">
+		<p class = "tabscaption" id="tabs_caption_four"
+			ng-class="{vishidden :toggleOnTab==false}">
+			Arthur Fields taking photograph on O' Connell Bridge</p>
+		<div>
+			<figure class="medium-image-figure cl2"
+				id ="arthur-fields-inaction"
+				ng-mouseover= tabbedImgMouseover()
+				ng-mouseleave= tabbedImgMouseleave()>
+				<%= image_tag "arthur-taking-photo90.jpg",
+				alt: "Arthur Fields taking photograph"
+				%>
+				<figcaption class = medium-images-caption>
+					&nbsp;Arthur Fields taking photograph on O' Connell Bridge
+				</figcaption>
+			</figure>
+		</div>
+	</div>
+	<div ng-show="selected == 'fifth'" class="tab_content">
+		<p class = "tabscaption" id="tabs_caption_five"
+			ng-class="{vishidden :toggleOnTab==false}">
+			Brendan Behan on O'Connell Bridge (Arthur Fields Photograph)</p>
+		<div>
+			<figure class="medium-image-figure cl3"
+				id ="arthur-fields-behan"
+				ng-mouseover= tabbedImgMouseover()
+				ng-mouseleave= tabbedImgMouseleave()>
+				<%= image_tag "brendanBehan2.jpg",
+				alt: "Brendan Behan photograph"%>
+				<figcaption class = medium-images-caption>
+					&nbsp;Brendan Behan on O'Connell Bridge (Arthur Fields Photograph)
+				</figcaption>
+			</figure>
+		</div>
+	</div><!--end tabs-->
+	<div class=" col-partial4" ng-class="{vishidden :toggleOnTab==false}">
+		<h2 class ='skTitle' data-first ="Column C"></h2>
+		<ipsumlong></ipsumlong>
+		<ipsum></ipsum>
+		<ipsumlong></ipsumlong>
+		<div id="chartContainer"></div> <!--Live Random Data CanvasJS Chart-->
+		<ipsumlong></ipsumlong>
+	</div>
+	<div>
+		<hr/>
+		mytoggle:  {{mytoggle}}
+		<hr/>
+	</div>
+	<div class ="spider-flex_array">
+		<div spiders ng-mouseover="tgdfn(1)" ng-mouseleave="tgdfn2()">  </div>
+		<spiders ng-mouseover="tgdfn(1)" ng-mouseleave="tgdfn2()">
+		</spiders>
+		<div spiders ng-mouseover="tgdfn(2)" ng-mouseleave="tgdfn2()"></div>
+		</spiders>
+		<spiders ng-mouseover="tgdfn(3)" ng-mouseleave="tgdfn2()"></spiders>
+	</div>
+	<div class ="httpStatus2 {{GoogleMapsStatus}}" ng-show="false" ></div>
+	<!-- <div>{{addressAlt}}</div>
+	<div>{{GoogleMapsStatus}}</div>-->
+	<div class="pickll_flex">
+		<dancinpicklls></dancinpicklls>
+		<dancinpicklls></dancinpicklls>
+		<dancinpicklls></dancinpicklls>
+	</div>
+</div><!--col-partial4-->
+<!-- Controller Four-->
+<!-- Sixties Dublin-->

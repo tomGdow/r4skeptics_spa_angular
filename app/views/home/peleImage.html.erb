@@ -1,0 +1,17 @@
+<div class="small-image-container"><!--flexbox pele-->
+	<div class="small-image-wrap">
+		<figure class="small-image-figure"
+			id ="{{imageId2}}"
+			ng-mouseover =  'mouseOverLeave(false, 2)'
+			ng-mouseleave = 'mouseOverLeave(true,2)'>
+			<img alt="{{imageAltDesc2}}"
+			ng-src="/assets/{{imageSource2}}">
+			<figcaption
+				ng-class= "toggleCaption2 ? 'small-images-caption  vishidden  ': 'small-images-caption '">
+				&nbsp;{{captionText2}}</figcaption>
+		</figure>
+	</div>
+	<p  ng-class= "toggleShowPara2 ? 'loremParagraph ':'loremParagraph vishidden '">
+		Laorem ipsum dolor sit amet, lorem lattinus
+	</p>
+</div> <!-- end flexbox -->

@@ -1,0 +1,45 @@
+//==== Videogular
+
+.vg-container {
+  position: relative;
+}
+
+.vg-video-one {
+  position: absolute;
+  top: 0;
+  left: 25%;
+}
+
+.vg-video-two {
+  position: absolute;
+  top: 0;
+  left: 10%;
+}
+
+.vg-video-three {
+  margin-left: 15%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.vgControlsTwo {
+  visibility: visible;
+  margin-left: 15%;
+  padding-top: 3em;
+  opacity: 1;
+  @include vendor-prefix(transition, opacity 2s, visibility 2s);
+}
+
+.vgControlsTwo.vgControlsHidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.vgOuterContainer {
+  margin-top: 4em;
+}
+
+.vgOuterContainer2 {
+  margin-top: 6em;
+}

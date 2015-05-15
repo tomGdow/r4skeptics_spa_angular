@@ -1,0 +1,63 @@
+<!-- Controller Eight-->
+<!-- Blog-->
+<div class="main-partial8">
+	<h1>{{viewEightMessage}}</h1>
+	<div class="col-partial8-a col-partial8">
+		<span ng-include="'/home/peleImage.html'"></span>
+		<p ng-class= "toggleShowPara2 ? 'loremParagraph ':'loremParagraph vishidden '">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+			Adipisci aliquam assumenda commodi cum, dicta doloremque dolorum esse itaque
+			iure laboriosam libero maiores natus nemo non officiis quae quo recusandae voluptate.
+		</p>
+	</div>
+	<div class="col-partial8-b col-partial8">
+		<h2 class ='skTitle' data-first ="Column B"></h2>
+		<ipsum></ipsum>
+		<ipsumshort></ipsumshort>
+		<div class="blackcat_flex">
+			<div ng-include="'/home/blackcat.html'"></div>
+		</div>
+	</div>
+	<!--Flip Picture -->
+	<div class="wrapLegend">
+		<div class="wrap"  title ="Click Me"
+			ng-class=" pictureFlipper ?  'wrap wrapFlip ': 'wrap'"
+			ng-click ="flipPicture()"
+			ng-catover="flipPictcatover()"
+			ng-catleave="flipPictcatleave()">
+			<div class="side-a"></div>
+			<div class="side-b"></div>
+		</div>
+		<div ng-class= "toggleFlipLegendWrapper ? 'flipLegendWrapper  vishidden  ': 'flipLegendWrapper '">
+			<div
+				ng-bind ="obj.nameone"
+				ng-class= "toggleFlipLegend ? ' legendWatson': 'legendWatson vishidden-alt'">
+			</div>
+			<div
+				ng-bind ="obj.nametwo"
+				ng-class= "toggleFlipLegend ? ' legendCurie vishidden-alt': 'legendCurie '">
+			</div>
+		</div>
+	</div> <!-- EndFlip Picture -->
+	<div class="col-partial8-c col-partial8">
+		<h2 class ='skTitle' data-first ="Column C"></h2>
+		<ipsum></ipsum>
+		<ipsumlong></ipsumlong>
+		<ipsum></ipsum>
+		<ipsum></ipsum>
+	</div>
+	<!--tab viewer-->
+	<div class="tabs">
+		<div ng-click="selected = 'first'" ng-class="{'selected': selected == 'first'}" class="tab" id="football">Football</div>
+		<div ng-click="selected = 'second'" ng-class="{'selected': selected == 'second'}" class="tab" id="hurling">Hurling</div>
+	</div>
+	<div ng-show="selected == 'first'" class="tab_content8">
+		<div id="chartContainer_1"></div>
+	</div>
+	<div ng-show="selected == 'second'" class="tab_content8">
+		<!--<div class="col-partial8-tab">-->
+			<div id="chartContainer_2"></div>
+		</div>
+	</div>
+	<!-- Controller Eight-->
+	<!-- Blog-->

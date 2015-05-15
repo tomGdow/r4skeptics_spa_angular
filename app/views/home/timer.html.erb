@@ -1,0 +1,45 @@
+<div class = "dynamic_timer" ng-cloak ng-show ="showtimer">  <!--Timer-->
+	<div class="row">
+		<div class="timerWrapper">
+			<span>
+				<timer autostart="false" interval="1000">
+				<div class = "timerFlex">
+					<h4 ng-show="hours != 0" >{{hours}} hour<span ng-show="hours !=1 ">s</span></h4>
+					<h4 ng-show="minutes != 0" >{{minutes}} minute<span ng-show="minutes !=1 ">s</span></h4>
+					<h4 ng-show=" seconds!=0 ">{{seconds}} second<span ng-show="seconds !=1 ">s</span></h4>
+					<h4 ng-show=" seconds === 0 && minutes === 0" id = "timer_ready">Ready</h4>
+				</div>
+				</timer>
+			</span>
+			<div class ="animatedTimerImage" ng-click = "hideTheTimer()" title ="Click to Hide Me">
+				<div class ="maus_elefant_gif_wrapper" >
+					<div ng-class ="{true: 'maus_elefant_static zero_opacity',
+						false: 'maus_elefant_static '}[toggleimg]"></div>
+					<div ng-if ="toggleimg" class ='maus_elefant_animation'></div>
+				</div>
+			</div>
+			<span class = "timerFlex">
+				<button class = "button tiny timerBtn"
+					ng-click="startTimer()"
+					ng-disabled="timerRunning">
+					Start Timer</button>
+				<button class = "button tiny timerBtn"
+					ng-click="stopTimer()"
+					ng-disabled="!timerRunning">
+					Stop Timer</button>
+				<button class = "button tiny timerBtn"
+					ng-disabled="timerRunning"
+					type="button"
+					ng-click="clearTimer()">
+					Clear</button>
+				<span ng-class ="toggleButtonResume ? 'full_opacity_timer':' zero_opacity_timer'">
+					<button class = "button tiny timerBtn"
+						ng-disabled="timerRunning"
+						type="button"
+						ng-click="resumeTimer()"
+						>
+						&nbsp;&nbsp;Resume&nbsp;&nbsp;&nbsp;</button> </span>
+			</span>
+		</div>
+	</div><!--row-->
+</div><!--dynamic_timer-->

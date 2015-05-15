@@ -1,0 +1,118 @@
+//====Shopping Carts ====
+
+.cart {
+  @include myflex($justify-content: center);
+  visibility: visible;
+  display: inline-block;
+  background-color: none;
+  z-index: 20;
+}
+
+.cartItem {
+  background: none;
+  width: em(200px);
+  font-weight: normal;
+  color: #000;
+  padding: 2 5px;
+  margin-top: 0;
+  font-size: 0.875rem;
+  font-family: $font-family-helvetica;
+}
+
+.trash_icon {
+  @include vendor-prefix(transition, background ease-in-out 0.5s);
+  &:hover {
+    background: lighten(gray, 30%);
+  }
+}
+
+.icon-remove {
+  @include vendor-prefix(transition, color ease-in-out 0.5s);
+  &:hover {
+    color: $skeptics-orange;
+  }
+}
+
+.cartPartial {
+  @include myflex();
+  background: none;
+  margin: 25px auto;
+  padding: 20px;
+  width: 60%;
+}
+
+.cart_partial_controls {
+  @include myflex($flex-direction: column);
+}
+
+.fa-shopping-cart {
+  @include vendor-prefix(transition, color ease-in-out 0.5s);
+  &:hover {
+    color: $skeptics-orange;
+  }
+}
+
+.headerFlex {
+  @include myflex($justify-content: center);
+  a {
+    padding-left: em(25px);
+  }
+}
+
+.displayNone {
+  display: none;
+}
+
+.displayTrue {
+  display: inline-block;
+}
+
+.class1 {
+  @include vendor-prefix(transition, opacity ease-in-out 1s);
+  opacity: 0
+}
+
+.class2 {
+  @include vendor-prefix(transition, opacity ease-in-out 1s);
+
+  opacity: 1
+}
+
+.showCartWrapper {
+  @include myflex($justify-content: center);
+}
+
+h3.showCartWrapper {
+  margin-bottom: em(10px);
+}
+
+.icon-cart.shopping {
+  color: $skeptics-blue;
+  @include vendor-prefix(transition, color 0.6s);
+  &:hover {
+    color: $skeptics-orange
+  }
+}
+
+.cartIconFlex {
+  background-color: none;
+  @include myflex($justify-content: center);
+}
+
+.icon-stopwatch {
+  @include vendor-prefix(transition, color ease-in-out 0.5s);
+  &:hover {
+    color: $skeptics-orange;
+  }
+}
+
+.emptywrapper{
+  @include myflex($justify-content: center);
+}
+
+#emptycart {
+  height: 266px;
+  width: 400px;
+  background: url('empty-cart.jpg');
+  background-repeat: no-repeat;
+}

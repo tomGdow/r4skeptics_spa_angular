@@ -1,0 +1,124 @@
+//vendor-prefix code modified from:
+//http://www.stefanwienert.de/blog/2012/05/18/easy-css-vendor-prefix-mixin-for-sass/
+@mixin vendor-prefix($prop, $values...) {
+  -webkit-#{$prop}: #{$values};
+  -ms-#{$prop}: #{$values};
+  -moz-#{$prop}: #{$values};
+  -o-#{$prop}: #{$values};
+  #{$prop}: #{$values};
+}
+
+@mixin vendor-prefix-alt($prop, $value) {
+  #{$prop}: -webkit-#{$value};
+  #{$prop}: -ms-#{$value};
+  #{$prop}: -moz-#{$value};
+  #{$prop}: -o-#{$value};
+  #{$prop}: #{$value};
+}
+
+@mixin myflex($display: flex,
+$flex-direction: row,
+$flex-wrap: wrap,
+$flexdirection: roW,
+$justify-content: space-between) {
+  @include vendor-prefix(flex-direction, $flex-direction);
+  @include vendor-prefix(justify-content, $justify-content);
+  @include vendor-prefix(flex-wrap, $flex-wrap);
+  display: $display;
+}
+
+@mixin transition_one() {
+  @include vendor-prefix(transition, 1s ease-in);
+  @include vendor-prefix(transform-style, preserve-3d);
+  -webkit-backface-visibility: hidden;
+}
+
+@mixin skeptics_perspective($value) {
+  @include vendor-prefix(perspective, $value)
+}
+
+@mixin skeptics_transform_style($value: preserve-3d) {
+  @include vendor-prefix(transform-style, $value)
+}
+
+@mixin partials($transition, $members...) {
+  @each $member in $members {
+    .#{$member} {
+      @include vendor-prefix(transition, $transition);
+      border: none;
+      -webkit-flex: 3;
+      flex: 3;
+      visibility: visible;
+      opacity: 1;
+      padding-top: 0px;
+      margin-top: 0px;
+    }
+  }
+}
+
+@mixin addVishidden($members...) {
+  @each $member in $members {
+    .#{unquote($member)}.vishidden {
+      visibility: hidden;
+      opacity: 0;;
+    }
+  }
+}
+
+@mixin addHideRemove($time, $members...) {
+  @each $member in $members {
+    .#{unquote($member)}.ng-hide-add.ng-hide-add-active,
+    .#{unquote($member)}.ng-hide-remove.ng-hide-remove-active {
+      @include vendor-prefix(transition, opacity ease-in-out $time)
+    }
+  }
+}
+
+@mixin addHideRemoveAlt($members...) {
+  @each $member in $members {
+    .#{unquote($member)}.ng-hide-add.ng-hide-add-active,
+    .#{unquote($member)}.ng-hide-remove.ng-hide-remove-active {
+      @include vendor-prefix(transition, all linear 0.5s)
+    }
+  }
+}
+
+@mixin addHideRemoveAlt2($prop, $members...) {
+  @each $member in $members {
+    .#{unquote($member)}.ng-hide-add.ng-hide-add-active,
+    .#{unquote($member)}.ng-hide-remove.ng-hide-remove-active {
+      @include vendor-prefix(transition, $prop)
+    }
+  }
+}
+
+@mixin navGradient($color1, $percent1, $color2, $color3, $percent3, $members...) {
+  $navGrad: linear-gradient(left, $color1 percentage($percent1), $color2, $color3 percentage($percent3));
+  @each $member in $members {
+    nav.#{unquote($member)} .#{unquote($member)} {
+      @include vendor-prefix-alt(background, $navGrad);
+    }
+  }
+}
+
+@mixin addNavFocus($members...) {
+  @each $member in $members {
+    nav.#{unquote($member)} a:focus {
+      color: white;
+    }
+  }
+}
+
+@mixin addNavHover($members...) {
+  @each $member in $members {
+    nav.#{unquote($member)} a:hover {
+      color: $skeptics-orange;
+    }
+  }
+}
+
+@mixin heightWidth($height, $width) {
+
+  height: $height;
+  width: $width;
+}

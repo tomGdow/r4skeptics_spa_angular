@@ -1,0 +1,50 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require foundation_and_overrides.scss
+ *= require_self
+
+
+/*------------------------q-
+	The menu
+--------------------------*/
+@import 'normalize';
+@import 'variables/variables';
+@import 'functions/functions';
+@import 'mixins/mixins';
+@import 'main';
+@import 'partials/nav_main';
+@import 'partials/navWithTime';
+@import 'partials/chart';
+@import 'partials/fahrenheitCelcius';
+@import 'partials/angularSlider';
+@import 'partials/googleMap';
+@import 'partials/tabsView';
+@import 'partials/videogular';
+@import 'partials/gridSwitcher';
+@import 'partials/dynamicSearch';
+@import 'partials/dribbbleAndInstragram';
+@import 'partials/rotatingSnakes';
+@import 'partials/shoppingCart';
+@import 'partials/pageLayouts';
+@import 'partials/footer';
+@import 'fontstyles/fonts';
+@import 'partials/images';
+@import 'partials/tables';
+@import 'partials/timer';
+@import "partials/buttons";
+@import "partials/forms";
+@import 'jquery-ui';
+@import 'flexslider';
+@import 'videogular';
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700";
+@import "//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css";

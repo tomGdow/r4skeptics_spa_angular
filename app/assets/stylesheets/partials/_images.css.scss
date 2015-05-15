@@ -1,0 +1,484 @@
+//==== Images ====
+
+.small-image-container {
+  @include myflex($flex-wrap: nowrap);
+}
+
+.small-image-figure, .small-image-figure-alt {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 0;
+  padding: 0;
+  padding-right: 1px;
+  background: white;
+  @include transition_one();
+}
+
+.small-image-wrap {
+  position: relative;
+  width: 8em;
+  height: 4em;
+  margin: 0;
+  margin-right: 1em;
+  padding: 0;
+}
+
+.small-image-wrap-alt {
+  position: relative;
+  width: 4em;
+  height: 4em;
+}
+
+#schillachi-italy {
+  display: block;
+  margin: 1.5em 0;
+  min-width: 100%;
+}
+
+.small-images-caption {
+  visibility: visible;
+  margin: 0;
+  padding: 0;
+  font-size: 0.5em;
+  opacity: 1;
+  @include vendor-prefix(transition, ease-in-out 2s);
+}
+
+.medium-image-figure {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0;
+  margin-left: -138px;
+  margin-top: 69px;
+  padding: 0;
+  background: white;
+  @include transition_one;
+}
+
+.medium-image-figure.cl2 {
+  margin: 0;
+  margin-left: -288px;
+  margin-top: 69px;
+}
+
+.medium-image-figure.cl3 {
+  margin: 0;
+  margin-left: -200px;
+  margin-top: 90px;
+}
+
+.medium-images-caption {
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+  font-size: 0.5em;
+}
+
+.medium-image-figure {
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+}
+
+#gordon-banks,
+#arthur-fields,
+#pele-image,
+#arthur-fields-young,
+#arthur-fields-marple,
+#arthur-fields-inaction,
+#arthur-fields-behan,
+#schillachi-italy {
+
+  &:hover {
+    @include vendor-prefix(transform, scale(2) translate3d(10px, 10px, 10px));
+
+  }
+}
+
+.small-image-figure:hover > .small-images-caption {
+  visibility: visible;
+}
+
+.medium-image-figure:hover > .medium-images-caption {
+  visibility: visible;
+  -webkit-backface-visibility: hidden;
+}
+
+#watsonImage {
+  display: block;
+  margin: 1.5em 0;
+  max-width: 100%;
+}
+
+.image_transition {
+
+  position: relative;
+  @include vendor-prefix(transition, box-shadow 0.5s ease);
+
+  &:hover {
+    text-decoration: none;
+    opacity: 1.0;
+    box-shadow: 10px 10px 5px $box-shadow;
+  }
+}
+
+//===  Image Flipper====
+//3D-transition CSS modified from Team Treehouse
+//See here;http://teamtreehouse.com/library/css-foundations
+
+.wrap {
+  @include vendor-prefix-alt(transition, transform 1s ease-in);
+  @include skeptics_transform_style();
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 301px;
+  height: 425px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.wrap div {
+  @include vendor-prefix(backface-visibility, hidden);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-size: 301px 425px;
+  background-repeat: no-repeat;
+  text-align: center;
+  text-shadow: 0 1px rgba(0, 0, 0, .3);
+  font: bold 3em sans-serif;
+  line-height: 425px;
+}
+
+.wrapFlip {
+  @include vendor-prefix(transform, rotateY(-180deg));
+}
+
+.side-a {
+  background: $skeptics-blue url('watson_golden_ratio.jpg');
+  z-index: 100;
+}
+
+.side-b {
+  @include vendor-prefix(transform, rotateY(-180deg));
+  background: $skeptics-orange url('marie_curie.jpg');
+}
+
+.wrapLegend {
+  display: inline-block;
+}
+
+.flipLegendWrapper {
+  background: none;
+  visibility: visible;
+  opacity: 1;
+  @include vendor-prefix(transition, all ease-in-out 2s);
+}
+
+%base-legend {
+  display: inline-block;
+  visibility: visible;
+  opacity: 1;
+  @include vendor-prefix(transition, all ease-in-out 2s);
+}
+
+.legendWatson {
+  @extend %base-legend;
+}
+
+.legendCurie {
+  @extend %base-legend;
+}
+
+.vishidden-alt {
+  position: absolute;
+  top: 0;
+  left: -5000px;
+  visibility: visible;
+  opacity: 0;
+}
+
+//==== Animated Gifs
+
+%gif_static {
+  @include vendor-prefix(transition, opacity ease 0.5s);
+  opacity: 1;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-color: white;
+}
+
+%gif_animation {
+  @include vendor-prefix(transition, opacity ease 0.5s);
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  left: 0;
+  background-repeat: no-repeat;
+
+}
+
+//  maus-elephant
+%maus_elefant_hw {
+  @include heightWidth(100px, 114px);
+}
+
+.maus_elefant_static {
+  @extend %gif_static;
+  @extend %maus_elefant_hw;
+  background-image: url('maus_elefant_static.gif');
+}
+
+.maus_elefant_animation {
+  @extend %gif_animation;
+  @extend %maus_elefant_hw;
+  background-image: url('maus_elefant.gif');
+}
+
+.maus_elefant_gif_wrapper {
+  @include heightWidth(100px, 120px);
+  position: relative;
+  display: inline-block;
+}
+
+//horrors (man walking)
+%horrors_hw {
+  @include heightWidth(120px, 100px);
+}
+
+.horrors_static {
+  @extend %gif_static;
+  @extend %horrors_hw;
+  background-image: url('horror511_static.gif');
+}
+
+.horrors_animation {
+  @extend %gif_animation;
+  @extend %horrors_hw;
+  background-image: url('horror511.gif');
+}
+
+.horrors_gif_wrapper {
+  @include heightWidth(130px, 110px);
+  position: relative;
+  display: inline-block;
+}
+
+//witch
+
+%witch_hw {
+  @include heightWidth(100px, 143px);
+}
+
+.witch_static {
+  @extend %gif_static;
+  @extend %witch_hw;
+  background-image: url('witch_static.gif');
+}
+
+.witch_animation {
+  @extend %gif_animation;
+  @extend %witch_hw;
+  background-image: url('witch.gif');
+}
+
+.witch_gif_wrapper {
+  @extend %witch_hw;
+  position: relative;
+  display: inline-block;
+}
+
+// pickll
+%pickll_hw {
+  @include heightWidth(128px, 128px);
+}
+
+.pickll_static {
+  @extend %gif_static;
+  @extend %pickll_hw;
+  background-image: url('pickll_static.gif');
+}
+
+.pickll_animation {
+  @extend %gif_animation;
+  @extend %pickll_hw;
+  background-image: url('pickll.gif');
+}
+
+.pickll_gif_wrapper {
+  @extend %pickll_hw;
+  position: relative;
+  display: inline-block;
+
+}
+
+.pickll_flex {
+  @include myflex($justify-content: center);
+}
+
+//blackcat
+
+%blackcat_hw {
+  @include heightWidth(41px, 85px);
+}
+
+.blackcat_static {
+  @extend %gif_static;
+  @extend %blackcat_hw;
+  background-image: url('black_cat_static.gif');
+}
+
+.blackcat_animation {
+  @extend %gif_animation;
+  @extend %blackcat_hw;
+  background-image: url('black_cat_runs.gif');
+}
+
+.blackcat_gif_wrapper {
+  @extend %blackcat_hw;
+  position: relative;
+  display: inline-block;
+}
+
+.blackcat_flex {
+  @include myflex($justify-content: flex-left);
+  margin-left: em(0px);
+  margin-top: em(20px);
+}
+
+//animated gifs general
+.zero_opacity {
+  @include vendor-prefix(transition, opacity ease 0.5s);
+  opacity: 0;
+}
+
+.animated-gifs {
+  @include myflex();
+}
+
+.animated-gifs > div:nth-child(3) {
+  background: white;
+}
+
+.ajax_loader_gif {
+  height: 31px;
+  width: 39px;
+  background: url('ajax-loader.gif');
+  background-repeat: no-repeat;
+}
+
+.spider-flex_array {
+  margin-top: em(32px);
+  margin-bottom: em(32px);
+  @include myflex($justify-content: space-around);
+
+}
+
+.image_ontop {
+  //spider
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 1;
+  height: 300px;
+  width: 244px;
+  background-image: url('spider_oneMod.jpg');
+  background-repeat: no-repeat;
+  @include vendor-prefix(transition, opacity ease 5.5s);
+
+}
+
+.image_behind_1, .image_behind_2, .image_behind_3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 1;
+  height: 300px;
+  width: 244px;
+  background-image: url('spider_web.jpg');
+  background-repeat: no-repeat;
+  @include vendor-prefix(transition, all ease 2.5s);
+}
+
+.image_behind_2 {
+  background-image: url('web_developer_50.jpg');
+}
+
+.image_behind_3 {
+  background-image: url('mobile_tail.jpg');
+}
+
+.opacity_zero {
+  @include vendor-prefix(transition, opacity ease 2.5s);
+  opacity: 0;
+}
+
+.spider_inner_wrapper {
+  position: relative;
+  display: inline;
+}
+
+.zero_search_wrapper {
+
+  @include myflex($justify-content: center);
+}
+
+.zero_search_items {
+  background-image: url('cartoon-man.jpg');
+  background-repeat: no-repeat;
+  width: 308px;
+  height: 422px;
+}
+
+//-----------------------
+
+.flex_center {
+  @include myflex($justify-content: center);
+}
+
+.flex_end {
+  @include myflex($justify-content: flex-end);}
+
+.flex_start{
+  @include myflex($justify-content: flex-start);
+}
+
+.flex_column_centered{
+  @include myflex($justify-content: center);
+  flex-direction: column
+}
+
+.biblio_btn_array {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.biblio_status_array {
+
+  margin-top: 0;
+  margin-bottom: em(30px);
+  font-family: $font-family-helvetica;
+  color: #999999;
+  font-size: 0.875rem;
+}
+
+
+
+.angry_cat {
+
+  padding-top: em(100px);
+  height: 300px;
+  width: 227px;
+  background-image: url('angry_cat4.jpg');
+  background-repeat: no-repeat;
+}
+
+

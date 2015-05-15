@@ -1,0 +1,54 @@
+//==== navbar (main) ====
+
+nav.mainNav {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 20px auto 5px;
+  background-color: #000;
+  border-radius: 11px;
+  box-shadow: 0 1px 1px #ccc;
+}
+
+nav.mainNav a {
+  display: inline-block;
+  padding: em(12px) em(6px);
+  color: #fff;
+  font-weight: bold;
+  font-size: em(16px);
+  text-decoration: none !important;
+  line-height: 1;
+  text-transform: uppercase;
+  background-color: transparent;
+  @include vendor-prefix(transition, background-color 0.25s);
+  border-radius: 10px;
+}
+
+@include navGradient($skeptics-blue, 0.4,
+        green,
+        $skeptics-blue, 0.6,
+        home, viewtwo, viewthree, viewfour, viewfive, vieweight,viewsixteen);
+
+@include addNavHover(home, viewtwo, viewthree, viewfour, viewfive,viewsixteen);
+@include addNavFocus(home, viewtwo, viewthree, viewfour, viewfive,viewsixteen);
+
+.navList {
+  @include myflex();
+  margin: 25px auto;
+  padding: 10px 20px;
+  width: 100%;
+  @include vendor-prefix-alt(background,
+          my_radial_gradient());
+  border-radius: 15px;
+}
+
+nav li {
+  display: inline-block;
+  list-style-type: none;
+  margin-left: 10px;
+}
+
+.navList li {
+  -webkit-flex-grow: 1;
+}
+
+

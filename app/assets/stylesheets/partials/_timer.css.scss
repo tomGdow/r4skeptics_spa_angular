@@ -1,0 +1,30 @@
+// dynamic timer
+.animatedTimerImage{
+  @include myflex($justify-content:center);
+  margin-bottom: em(20px);
+}
+
+.timerWrapper {
+  @include myflex($justify-content:center);
+  padding-bottom: em(20px);
+}
+
+.timerFlex {
+  @include myflex();
+  flex-direction: column;
+  padding-left:em(50px);
+  padding-right:em(50px);
+}
+
+.timerBtn {
+  margin: em(3px);
+}
+
+.full_opacity_timer {
+  opacity:1;
+}
+
+.zero_opacity_timer {
+  @include vendor-prefix(transition, opacity ease 0.5s);
+  opacity:0;
+}

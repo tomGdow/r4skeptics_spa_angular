@@ -1,0 +1,119 @@
+<!-- Controller 5-->
+<!-- Routes 5 and 15-->
+<!-- Dynamic Search-->
+<div class="col-partial4-a col-partial4" >
+	<h2>{{viewFiveMessage}}</h2>
+</div><!--col-partial4-a col-partial4-->
+<div>
+	<div class="bar2"><!-- Begin Flexbox -->
+		<span><!--flexitem 1 -->
+			<a class="list-icon"
+				ng-class="{active: layout == 'list2'}" ng-click="layout = 'list2'"></a>
+			<a class="grid-icon"
+				ng-class="{active: layout == 'grid2'}" ng-click="layout = 'grid2'"></a>
+		</span>
+		<dl class="sub-nav">  <!--flexitem 2-->
+			<dd>
+				<span ng-show="query.length>=2" class = "echo_search_term"><span class = "icon-search"></span> {{query}}</span>
+			</dd>
+			<dd>
+				<input ng-model = "query"
+				placeholder = "Search"
+				id = "ngsearch"
+				type = "text"
+				focus-on = "focusMe">
+			</dd>
+			<dd>
+				<select ng-model = "orderProp" id = "sortBy"
+					class ="dropdown">
+					<option value = "name"     ng-bind-html = "alpha"></option>
+					<option value = "price"    ng-bind-html = "lowestPrice"></option>
+					<option value = "-price"   ng-bind-html = "highestPrice"></option>
+					<option value = "category" ng-bind-html = "productCategory"></option>
+					<option value = "-created_at" ng-bind-html = "productCreated_at"></option>
+					<option value = "-updated_at" ng-bind-html = "productUpdatedAt"></option>
+					<option value = "id"       ng-bind-html = "productid"></option>
+					<option value = "-id"      ng-bind-html = "productid2"></option>
+				</select>
+				Sort By
+			</dd>
+		</dl>
+	</div><!-- end Flexbox -->
+	<div class ="clearfix"><!--grid vs column layout -->
+		<!--grid-->
+		<ul ng-show="layout == 'grid2'" class="grid2">
+			<li ng-repeat="product in filteredProducts = (productList | filter:query | orderBy:orderProp)">
+				<span class ="myspan2">
+					<a href="/commodities/{{product.id}}"
+						data-remote ="true"
+						ng-click ="switchViews([15,5])">
+						<img ng-src="./assets/{{product.image_url}} "
+						title = "{{myFirstName(product.name)}}&nbsp;{{myLastName(product.name)}} (detailed view)"
+						class="image_transition">
+					</a>
+				</span>
+			</li>
+			<li class ="zero_search_items"  ng-if ="filteredProducts.length==0"></li>
+		</ul>
+		<!--column-->
+		<ul ng-show="layout == 'list2'" class="list2 clearfix" >
+			<li ng-repeat="product in filteredProducts = (productList | filter:query | orderBy:orderProp)">
+				<span class="flex_alt" ng-class=" addCartClass ?  'cartClass' : ''">
+					<span class ="flex-span-checkbox">
+						<input  type="checkbox" ng-model="checked" title = "More&hellip;">
+					</span>
+					<span>
+						<span class ="flex-span" >
+							<a href="/commodities/{{product.id}}"
+								title ="Show"
+								ng-click ="switchViews([15,5])"
+								data-remote="true">
+								<img ng-src="./assets/{{product.image_url}}" class="image_transition">
+							</a>
+						</span>
+						<span class ="flex-span-title" id = {{myFirstName(product.name)}}_{{myLastName(product.name)}} >
+							{{product.name}}
+						</span>
+				</span>  </span>
+				<div class="check-element animate-show" ng-show="checked">
+					<div class="description">{{product.description}}</div>
+					<div class="moreProductInfo"> <!--flexbox-more-one-->
+						<span class="description"> {{product.price | nfcurrency:"&euro;" }}</span><!--flexitem 1-->
+						<span class="description">  {{product.category}} </span><!--flexitem 2-->
+						<span class="description"> Played in the FIFA World Cup in {{product.year}}
+						</span> <!--flexitem 3-->
+					</div> <!--end flexbox-more-one-->
+					<div class="moreProductInfo"> <!--flexbox-more-two-->
+						<addtocart ng-href="/line_items?commodity_id={{product.id}}"></addtocart><!--flexitem 1-->
+						<a href="/commodities/{{product.id}}"
+							class="button  tiny 5 radius"
+							ng-click ="switchViews([15,5])"
+							data-remote="true">
+							Show
+						</a><!--flexitem 2-->
+						<a href="/commodities//{{product.id}}/edit"
+							data-remote="true"
+							class="button tiny 5 radius">
+							Edit
+						</a><!--flexitem 3-->
+						<div ng-click="moreAboutProductOnClick()">
+							<a class = "fa  fa-times-circle producthide">
+							</a>
+						</div><!--flexitem 4-->
+					</div> <!--end flexbox-more-two-->
+				</div>
+			</li>
+			<li>
+				<div class="zero_search_wrapper">
+					<div class ="zero_search_items"
+						ng-if ="filteredProducts.length==0">
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class ="httpStatus {{CommoditiesStatus}}" ng-show="false" ></div>
+	<div class ="httpStatus {{CommoditiesStatus}}" ng-show="false" ></div>
+</div>
+<!-- Controller Five-->
+<!-- Dynamic Search-->

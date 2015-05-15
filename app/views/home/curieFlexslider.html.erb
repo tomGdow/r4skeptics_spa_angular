@@ -1,0 +1,34 @@
+<!--modified from https://github.com/thenikso/angular-flexslider-->
+<div class="row">
+	<div class="small-10 columns">
+		<flex-slider id = "curie-slider"
+			slideshow= "{{slideShowQ}}"
+			slide= "s in slides"
+			animation="slide"
+			pause-on-hover ="{{pauseOnHover}}"
+			pause-on-action ="{{pauseOnAction}}"
+			my-draggable="{{mydraggable}}"
+			direction-nav ="{{directionNav}}"
+			slideshow-speed="{{slideShowSpeed}}"
+			animation-speed="{{animationSpeed}}"
+			control-nav="{{controlNav}}"
+			pause-text = "{{pauseText}}"
+			play-text  = "{{playText}}"
+			pause-play="{{pausePlay}}"
+			before="before()"
+			start="start()"
+			after="after()"
+			animation-loop="{{animationLoop}}"
+			prev-text = "{{prevText}}"
+			next-text  = "{{nextText}}" >
+			<li>
+				<figure>
+					<img ng-src="{{s[0]}}" >
+					<figcaption class ="{{myVar}} flexFigCaption">{{s[1]}}</figcaption>
+				</figure>
+			</li>
+		</flex-slider>
+	</div>  <!--small x-colums-->
+</div>  <!--row-->
+
+

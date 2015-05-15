@@ -1,0 +1,42 @@
+//====Google Map ====
+
+#googleMap {
+  height: 300px;
+  width: 467px;
+}
+
+.googleSlider {
+  @include skeptics_perspective(1000px);
+  @include skeptics_transform_style();
+  background: none;
+  border: 15px solid #FFFFFF;
+  border-radius: 5px;
+  height: 400px;
+  margin: 35px auto;
+  margin-bottom: 20px;
+  position: relative;
+  width: 800px;
+
+}
+
+.googleSlide {
+  position: absolute;
+  top: 5%;
+  left: 20%;
+}
+
+.googleSlider-button-list {
+  @include myflex($justify-content: center);
+  margin: 25px auto;
+  margin-top: 0;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.sliderBtnsContainer {
+  @include vendor-prefix(transition, all 1s ease);
+  visibility:visible;
+  opacity: 1;
+}
+
+

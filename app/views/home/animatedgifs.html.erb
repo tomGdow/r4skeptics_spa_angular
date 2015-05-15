@@ -1,0 +1,20 @@
+<div class="animated-gifs">
+	<div>
+		<animate-gif class ="{{animgifs.mouse}}_gif_wrapper" ng-transclude >
+			<div ng-class ="{true: '{{animgifs.mouse}}_static zero_opacity', false: '{{animgifs.mouse}}_static '}[toggleGif=='{{animgifs.mouse}}_gif_wrapper']"></div>
+			<div ng-if ="toggleGif" class ='{{animgifs.mouse}}_animation'></div>
+		</animate-gif>
+	</div>
+	<div>
+		<animate-gif  class ="{{animgifs.witch}}_gif_wrapper" ng-transclude >
+			<div ng-class ="{true: '{{animgifs.witch}}_static zero_opacity', false: '{{animgifs.witch}}_static '}[toggleGif=='{{animgifs.witch}}_gif_wrapper']"></div>
+			<div ng-if ="toggleGif" class ='{{animgifs.witch}}_animation'></div>
+		</animate-gif>
+	</div>
+	<div>
+		<animate-gif class ="{{animgifs.man}}_gif_wrapper" ng-transclude >
+			<div ng-class ="{true: '{{animgifs.man}}_static zero_opacity', false: '{{animgifs.man}}_static'}[toggleGif=='{{animgifs.man}}_gif_wrapper']"></div>
+			<div ng-if ="toggleGif" class ='{{animgifs.man}}_animation'></div>
+		</animate-gif>
+	</div>
+</div>

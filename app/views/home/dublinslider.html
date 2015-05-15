@@ -1,0 +1,56 @@
+<!-- slider container -->
+<div class="row">
+	<div class="small-12 columns" >
+		<div ng-show="showHideCaptions" class = "dublinCaption">
+			<div  ng-repeat="photo in photos"
+				class="slide"
+				ng-show="isActive($index)">
+				<h5>{{_Index +1}}. &nbsp;<span ng-bind="photo.longdesc"></span></h5>
+			</div>
+		</div>
+		<div>&nbsp;</div>
+		<div class="container slider"
+			ng-mouseleave="mouseLeaveDubSlider()">
+			<!-- enumerate all photos -->
+			<ul class = "dubList">
+				<li>
+					<a class="arrow prev"
+						ng-show="showHideArrows"
+						ng-click="showPrev()">
+					</a>
+				</li>
+				<li>
+					<figure
+						ng-repeat="photo in photos"
+						class="slide"
+						ng-swipe-right="showPrev()"
+						ng-swipe-left="showNext()"
+						ng-show="isActive($index)"
+						ng-mouseover="mouseOverDubImg()">
+						<img  ng-src="{{photo.src}}" />
+						<figcaption class = "dubfigcaption"
+							ng-show="showHideCaptions"
+							ng-bind="photo.copyright">
+						</figcaption>
+					</figure>
+				</li>
+				<li> <a class="arrow next"
+						ng-show="showHideArrows"
+						ng-click="showNext()">
+					</a>
+				</li>
+			</ul>
+			<!--navigation controls slideshow-->
+			<ul class="nav" ng-mouseover="mouseOverSliderNav()">
+				<li ng-repeat="photo in photos" ng-class="{'active':isActive($index)}">
+					<span>
+						<!--<span ng-click="jourz($index)">-->
+							<img src="{{photo.src}}" alt="{{photo.desc}}"
+							title="{{photo.desc}}"
+							ng-click="showPhoto($index);" />
+						</span>
+					</li>
+				</ul>
+			</div><!--container slider-->
+		</div><!--small-12 columns-->
+	</div><!--row-->

@@ -1,0 +1,157 @@
+//==== PageLouts ====
+
+//== partial1
+h1 {
+  -webkit-column-span: all;
+  -moz-column-span: all;
+  column-span: all;
+}
+
+%cols-debug-base {
+  margin: 10px;
+  padding: 25px;
+  border: 2px solid rgba(45, 74, 95, .9);
+  border-radius: inherit;
+  background: rgba(255, 255, 255, .8);
+}
+
+
+.col-partial8-tab {
+  margin: 10px;
+  padding: 25px;
+}
+
+//Keep this for debugging
+
+.main-partial1 {
+  @include vendor-prefix(columns, 15em 2);
+  @include vendor-prefix(column-gap, 2em);
+
+}
+
+.col-partial1 {
+  @include vendor-prefix(flex, 3);
+  border: none;
+}
+
+.col-partial1-b {
+  @include vendor-prefix(flex, 3);
+  @include vendor-prefix(order, 1);
+}
+
+.col-partial1-c {
+  @include vendor-prefix(flex, 1);
+  @include vendor-prefix(order, 1);
+}
+
+.loremParagraph {
+  visibility: visible;
+  opacity: 1;
+  @include vendor-prefix(transition, all 2s ease);
+}
+
+.lorem {
+  margin-left: 15px;
+}
+
+//====partial 4
+.main-partial4 {
+  @include vendor-prefix(columns, 15em 1);
+  @include vendor-prefix(column-gap, 2em);
+}
+
+%cols-base {
+  @include vendor-prefix(flex, 3);
+  @include vendor-prefix(transition, all 2s ease);
+  border: none;
+  visibility: visible;
+  opacity: 1;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.col-partial2,
+.col-partial3,
+.col-partial4,
+.col-partial13,
+.col-partial10-alt {
+  @extend %cols-base;
+}
+
+@include partials(all 2s ease,
+        col-partial2,
+        col-partial3,
+        col-partial4,
+        col-partial13);
+
+.col-partial10-alt {
+  margin-left: em(50px);
+  margin-right: em(100px);
+  background: $skeptics-background;
+  width: 90%;
+  h1 {
+    padding-top: em(16px);
+    margin-left: em(16px);
+  }
+  input {
+    margin-left: em(50px);
+    width: 60%;
+  }
+  textarea {
+    margin-bottom: em(16px);
+    margin-left: em(50px);
+    width: 60%;
+    line-spacing: em(12px);
+    font-size: 0.9rem;
+    font-weight: normal;
+    line-height: 1.4;
+  }
+
+  label {
+    margin-top: em(8px);
+    margin-left: em(50px);
+  }
+}
+
+//edit
+.col-partial7 {
+  @extend .col-partial10-alt;
+}
+
+.rails_show {
+  @extend .col-partial10-alt;
+  background: white;
+}
+
+
+.col-partial4-b {
+  @include vendor-prefix(flex, 3);
+  @include vendor-prefix(order, 1);
+}
+
+//partial 8
+.main-partial8 {
+  @include vendor-prefix(columns, 250px 3);
+  @include vendor-prefix(column-gap, 3em);
+}
+
+.col-partial8 {
+  border: none;
+  @include vendor-prefix(flex, 1);
+}
+
+.col-partial8-c {
+  @include vendor-prefix(flex, 2);
+  @include vendor-prefix(order, -1);
+}
+
+//ipsum directives
+.ipsum, .ipsumLong, .ipsumShort {
+  font-family: 'DroidSerifBold';
+  color: darken($nav-bar-gray, 20%);
+  @include vendor-prefix(transition, all 0.5s ease);
+  &:hover {
+    color: $skeptics-blue;
+    @include vendor-prefix(transition, all 0.5s ease);
+  }
+}

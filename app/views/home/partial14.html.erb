@@ -1,0 +1,123 @@
+<!-- Controller Fourteen-->
+<!-- Newsletter and Users-->
+<div class=" col-partial4">
+	<h4 id = "newsletterMessage">{{viewMessageFourteen}}</h4>
+	<div>
+		<div class="main" ng-switch = "step">
+			<div ng-switch-when="1">
+				<form ng-submit = submitOne()
+					name ="frm" >
+					<div class="row" ng-cloak>
+						<div class="small-12 columns">
+							<dl class="sub-nav">
+								<dd>
+									<input class ="button tiny"
+									ng-disabled = "frm.$invalid"
+									id = "btnNewsletter"
+									type ="submit"
+									value ="Next"/>
+								</dd>
+								<dd>
+									<label for="email">Email</label>
+								</dd>
+								<dd>
+									<input type = "email" 
+									name = "email"
+									placeholder = "valid email required"
+									required
+									ng-model = "user.email"
+									ng-focus = "onFocus()"
+									ng-blur = "onBlur()"/>
+								</dd>
+								<dd>
+									<span id = "valid_email_echo" class = "nav_bar_gray" ng-show="echoEmail">
+										<span class = "echo_search_term">{{user.email}}</span>
+									</span>
+									<span ng-class = " errorMessage ?  'opacityZero': ''"
+										class = "newsLetterErr"
+										ng-show = "frm.email.$dirty && frm.email.$error.email">
+										Not a valid email
+									</span>
+								</dd>
+								<dd></dd>
+								<dd ng-show = "thankYouMessage" >
+									Thank you, &nbsp;{{user.realname() | uppercase}},
+									&nbsp;you have subscribed to our news letter
+									<br/>
+									It will be send to you in
+									<span ng-show="showsubstring" >both&nbsp; </span>
+									{{user.format | uppercase }} format<span ng-show="showsubstring" >s</span>
+									<br/>email address: {{user.email}}
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div ng-switch-when="2">
+				<form ng-submit = submitTwo() name ="frm" >
+					<div class="row" ng-cloak>
+						<div class="small-12 columns">
+							<dl class="sub-nav">
+								<dd>
+									<input class ="button tiny"
+									ng-disabled = "frm.$invalid"
+									id = "btnNewsletter"
+									type ="submit"
+									value ="Subscribe"/>
+								</dd>
+								<dd>
+									<input type="radio" ng-model="user.format" value="Pdf">  Pdf <br/>
+									<input type="radio" ng-model="user.format" value="Html"> Html <br/>
+									<input type="radio" ng-model="user.format" value="Html and Pdf"> Both Html and Pdf<br/>
+									<p ng-class="myCssVar">Please select your preferred Newsletter format</p>
+								</dd>
+								<dd>
+									<p>
+										Hello  {{user.realname() | uppercase}},<br/>
+										You have selected
+										<span ng-show = "showsubstring" >both&nbsp;</span>
+										{{user.format | uppercase}} format<span ng-show="showsubstring" >s</span>
+									</p>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div><!--end swith-->
+	</div>
+	<hr/>
+	<h3>Search</h3>
+	<div class="searchBox">
+		<input ng-model = "search" focus-on = "focusMe" id = "userSearchInput"/>
+		<span class = "nav_bar_gray" ng-show = "search.length>=2">
+			<span class = "icon-search">&nbsp;</span>
+			<span class = "echo_search_term">{{search}}</span>
+		</span>
+	</div>
+	<div>
+		<div class = "zero_search_wrapper" ng-if = "!showAjaxLoader">
+			<div class = "zero_search_items"
+				ng-if = "filteredUsers.length==0">
+			</div>
+		</div>
+		<div class = "table_lge_wrapper" ng-show = "showAjaxLoader">
+			<div class ="ajax_loader_gif"></div>
+		</div>
+		<div class = "table_lge_wrapper">
+			<table>
+				<tr ng-repeat = "user in filteredUsers = (users | orderBy: 'lname'| filter: search)">
+					<td>{{user.lname | uppercase}}</td>
+					<td>{{user.fname | lowercase}}</td>
+					<td>{{user.tel}}</td>
+					<td>{{user.id}}</td>
+					<td>{{user.ip}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div ng-show = "false" id = "fillTextStatus">fillTextStatus: {{fillTextLength}}</div>
+</div><!-- col-partial4-->
+<!-- Controller Fourteen-->
+<!-- Newsletter and Users-->

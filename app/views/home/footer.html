@@ -1,0 +1,46 @@
+<!--footer-->
+<!--<div class=" footer" ng-cloak-->
+	<div class="footer" ng-cloak
+		ng-mouseover="footerMouseOver()"
+		ng-mouseleave="footerMouseAway()"
+		ng-class=" toggleClassModel ?  ' toggleOn ': 'toggleOff'">
+		<footer
+			ng-class= "footerModel ?  ' footerDisplay': 'footerHide'">
+			<ul class="footerList">
+				<li>
+					<a class = "icon-github"
+						href="https://github.com/tomGdow/skeptics_SPA_angular"
+						target ="_blank">
+						<span>&nbsp;Github</span>
+					</a>
+				</li>
+				<li>
+					<a class = "icon-facebook"
+						href="https://www.facebook.com/"
+						target ="_blank">
+						<span class ="facebook">&nbsp;Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a class = "icon-twitter"
+						href="https://twitter.com/"
+						target ="_blank">
+						<span>&nbsp;Twitter</span>
+					</a>
+				</li>
+				<li >
+					<a class = "icon-googleplus"
+						href="https://plus.google.com/up/search"
+						target ="_blank">
+						<span>&nbsp;Google+</span>
+					</a>
+				</li>
+				<li ng-click="footerOnClick()">
+					<a class = "fa  fa-times-circle"
+						>
+						<span>&nbsp;Hide</span>
+					</a>
+				</li>
+			</ul>
+		</footer>
+	</div><!--footer-->

@@ -1,0 +1,78 @@
+<!-- Controller Fourteen-->
+<!-- Newsletter and Users-->
+<div class=" col-partial4">
+	<h4 id = "newsletterMessage">{{viewMessageFourteen}}</h4>
+	<form ng-submit = submit() name ="frm" >
+		<div class="row" ng-cloak>
+			<div class="small-12 columns">
+				<dl class="sub-nav">
+					<dd>
+						<input class ="button tiny"
+						ng-disabled = "frm.$invalid"
+						id = "btnNewsletter"
+						type ="submit"
+						value ="Subscribe"/>
+					</dd>
+					<dd>
+						<label for="email">Email</label>
+					</dd>
+					<dd>
+						<input type = "email" name = "email" required
+						ng-model = "email"
+						ng-focus = "onFocus()"
+						ng-blur = "onBlur()"/>
+					</dd>
+					<dd>
+						<span id = "valid_email_echo" class = "nav_bar_gray" ng-show="true">
+							<span class = "echo_search_term">{{email}}</span>
+						</span>
+						<span ng-class = " errorMessage ?  'opacityZero': ''"
+							class = "newsLetterErr"
+							ng-show = "frm.email.$dirty && frm.email.$error.email">
+							Not a valid email
+						</span>
+					</dd>
+					<dd></dd>
+					<dd ng-show = "thankYouMessage" >
+						Thank you, &nbsp;{{userName | uppercase}},&nbsp;you have subscribed to our news letter
+						<br/>(email address: {{userEmail}})
+					</dd>
+					<dd ng-show ="thankYouMessage" >{{message}}</dd>
+				</dl>
+			</div>
+		</div>
+	</form>
+	<hr/>
+	<h3>Search</h3>
+	<div class="searchBox">
+		<input ng-model = "search" focus-on = "focusMe" id = "userSearchInput"/>
+		<span class = "nav_bar_gray" ng-show = "search.length>=2">
+			<span class = "icon-search">&nbsp;</span>
+			<span class = "echo_search_term">{{search}}</span>
+		</span>
+	</div>
+	<div>
+		<div class = "zero_search_wrapper" ng-if = "!showAjaxLoader">
+			<div class = "zero_search_items"
+				ng-if = "filteredUsers.length==0">
+			</div>
+		</div>
+		<div class = "table_lge_wrapper" ng-show = "showAjaxLoader">
+			<div class ="ajax_loader_gif"></div>
+		</div>
+		<div class = "table_lge_wrapper">
+			<table>
+				<tr ng-repeat = "user in filteredUsers = (users | orderBy: 'lname'| filter: search)">
+					<td>{{user.lname | uppercase}}</td>
+					<td>{{user.fname | lowercase}}</td>
+					<td>{{user.tel}}</td>
+					<td>{{user.id}}</td>
+					<td>{{user.ip}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div ng-show = "false" id = "fillTextStatus">fillTextStatus: {{fillTextLength}}</div>
+</div><!-- col-partial4-->
+<!-- Controller Fourteen-->
+<!-- Newsletter and Users-->

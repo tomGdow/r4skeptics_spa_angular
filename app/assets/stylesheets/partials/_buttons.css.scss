@@ -1,0 +1,46 @@
+.button.tiny.skeptics-btn-one {
+  color: #fff;
+  font-weight: bold;
+  font-size: em(12px);
+
+  line-height: 1;
+  text-transform: uppercase;
+  background-color: #000;
+
+}
+
+.button.tiny.skeptics-btn-two {
+
+  @extend .button.tiny.skeptics-btn-one;
+  text-transform: capitalize;
+
+}
+
+.button.tiny.skeptics-btn-three {
+
+  @extend .button.tiny.skeptics-btn-two;
+  background-color: $skeptics-background;
+color:#000;
+}
+
+.button.tiny.skeptics-btn-one:hover {
+
+  color:$skeptics-orange;
+
+  @include vendor-prefix(transition, background-color 0.25s);
+}
+
+.button.tiny.skeptics-btn-two:hover{
+
+  @extend .button.tiny.skeptics-btn-one:hover
+}
+
+.button.tiny.skeptics-btn-three:hover{
+
+  @extend .button.tiny.skeptics-btn-one:hover;
+
+  color:#fff;
+  background-color: #000;
+
+}
+

@@ -1,0 +1,11 @@
+//Rotating snakes
+
+#rotating_snake {
+  width: 600px;
+  height: 600px;
+  margin-bottom: 50px;
+}
+
+.rotating_snake {
+  @include myflex($justify-content: center);
+}

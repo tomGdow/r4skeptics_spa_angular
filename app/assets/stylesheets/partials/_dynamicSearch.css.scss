@@ -1,0 +1,72 @@
+//==== Dynamic Searching
+
+//@include addHideRemoveAlt(animate-show);
+@include addHideRemoveAlt2(all linear 0.5s,animate-show);
+
+.animate-show.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  padding: 0 10px;
+}
+
+.check-element {
+  margin: 1em 2em;
+  width: 95%;
+ padding: 1em;
+  background: $skeptics-background;
+  border-radius: 5px;
+}
+
+.check-element2{
+  @extend .check-element;
+  padding-bottom: 0;
+
+}
+
+.moreProductInfo {
+  @include myflex($justify-content: space-around);
+  background: none;
+  width: auto;
+  padding: 0px;
+  margin-top: em(20px);
+  margin-bottom: em(20px);
+  position: relative;
+  text-align: left;
+  line-height: 1;
+}
+
+.fa.fa-times-circle.producthide {
+  background: $skeptics-background;
+  color: #B9B9B9;
+}
+
+.fa.fa-times-circle.producthide:hover {
+  color: #000;
+}
+
+.flex_alt {
+  background: none;
+  @include vendor-prefix-alt(display, flex);
+  @include vendor-prefix(flex-direction, row);
+  @include vendor-prefix(justify-content, flex-start);
+  @include vendor-prefix(flex-wrap, wrap);
+}
+
+.flex-span {
+  padding-left: em(100px);
+}
+
+.flex-span-title {
+  @extend .flex-span;
+  padding-top: em(16px);
+  font-family: $font-family-helvetica;
+  font-size: 1.2rem;
+  margin-right: em(40px);
+}
+
+.flex-span-checkbox {
+  @extend .flex-span;
+  padding-top: em(16px);
+  padding-right:em(10px);
+}
+

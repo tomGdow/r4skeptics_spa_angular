@@ -1,0 +1,37 @@
+<!-- Controller One-->
+<!-- Home Page-->
+<div class="main-partial1">
+	<h1>{{viewOneMessage}}</h1>
+	<div class="col-partial1-c col-partial1">
+		<h2  ng-class= "toggleShowPara ? 'loremParagraph ':'loremParagraph vishidden '">Welcome</h2>
+		<span ng-include = "'/home/banksImage.html'"></span>
+		<p ng-class= "toggleShowPara ? 'loremParagraph ':'loremParagraph vishidden'">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+			Adipisci aliquam assumenda commodi cum, dicta doloremque dolorum esse itaque
+			iure laboriosam libero maiores natus nemo non officiis quae quo recusandae voluptate.</p>
+		<span ng-include="'/home/animatedgifs.html'"></span>
+		<ipsum></ipsum>
+	</div>
+	<span ng-include="'/home/curieFlexslider.html'" class = "curie-flex-render"></span>
+	<div class="col-partial1-b col-partial1">
+		<h2 class ='skTitle' data-first ="Column B"></h2>
+		<ipsum></ipsum>
+		<ipsum></ipsum>
+	</div>
+	<div></div>
+	<!--charts-->
+	<div class="col-partial1-c col-partial1">
+		<h2 class ='skTitle' data-first ="Charts"></h2>
+		<ipsumlong></ipsumlong>
+		<ipsum></ipsum>
+		<p class ="chart-dynamic-header">
+			Data for {{renderYear}}
+		</p>
+		<span ng-include="'/home/charts.html'"></span>
+		<ipsum></ipsum>
+		<ipsum></ipsum>
+		<p>Faker<%= Faker::Lorem.paragraph %></p>
+	</div>
+</div><!--main-partial1-->
+<!-- Controller One-->
+<!-- Home Page-->
