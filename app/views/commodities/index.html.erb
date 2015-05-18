@@ -1,0 +1,113 @@
+<!-- controller 6 -->
+<!-- routes 6 and 9 -->
+<!-- commodities/index.html -->
+<p id="notice"><%= notice %></p>
+<h1>{{viewSixMessage}}</h1>
+<div class=" col-partial4"> <!--search and sortby-->
+	<div class="row">
+		<div class="small-12 columns">
+			<dl class="sub-nav">
+				<dd>
+					<div class="searchBox">
+						<input id ="prodSearchInput"
+						focus-on="focusMe"
+						ng-model="search"/>
+					</div>
+				</dd>
+				<dd>
+					<select
+						ng-model="orderProp"
+						id = "sortBy"
+						class = "dropdown">
+						<option value = "name" ng-bind-html = "alpha"></option>
+						<option value = "price" ng-bind-html = "lowestPrice"></option>
+						<option value = "-price" ng-bind-html = "highestPrice"></option>
+						<option value = "category" ng-bind-html = "productCategory"></option>
+						<option value = "-created_at" ng-bind-html = "productCreated_at"></option>
+						<option value = "-updated_at" ng-bind-html = "productUpdatedAt"></option>
+						<option value = "id" ng-bind-html = "productid"></option>
+						<option value = "-id" ng-bind-html = "productid2"></option>
+					</select>
+				</dd>
+				<dd>
+					<span ng-show = "search.length>=2"
+						class = "echo_search_term">
+						<span class = "icon-search"></span>
+						<span >{{search}}</span></span>
+				</dd>
+			</dl>
+		</div><!--small-12 columns-->
+	</div><!--row-->
+</div><!-- col-partial4-->
+<div class="zero_search_wrapper">
+	<div class ="zero_search_items"
+		ng-if ="filteredCommodities.length==0">
+	</div>
+</div><!--zero_search_wrapper-->
+<div class="table_lge_wrapper">
+	<table ng-show ="filteredCommodities.length>0">
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+				<th class = "tableColTwo">&nbsp;</th>
+				<th class = "tableColTwo">&nbsp;</th>
+				<th class = "tableColTwo">&nbsp; </th>
+				<th class = "tableColTwo">&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody  ng-repeat="commodity in filteredCommodities = (commodities  | filter:search|orderBy:orderProp | limitTo:60)">
+			<tr ng-class=" addCartClass ?  'cartClass' : ''">
+				<td class = "tableColThree">
+					<span>
+						<pictcart ng-href="/line_items?commodity_id={{commodity.id}}"></pictcart>
+					</span>
+				</td>
+				<td id = {{myFirstName(commodity.name)}}_{{myLastName(commodity.name)}}>
+					<span id ="product_{{commodity.id}}">{{commodity.name | uppercase}}</span>
+				</td>
+				<td>{{commodity.price | nfcurrency:"&euro;"}}</td>
+				<td><input type="checkbox" ng-model ="checked">&nbsp;&nbsp;More&hellip;</td>
+				<td>
+					<addtocart ng-href="/line_items?commodity_id={{commodity.id}}"></addtocart>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5">
+					<div class= "check-element2 animate-show" ng-show="checked">
+						<div class ="description" >
+							({{commodity.category}})&nbsp;&nbsp;{{commodity.description}}({{commodity.id}})
+						</div>
+						<div class = "table_flex_commodities">
+							<span>
+								<a href="/commodities/{{commodity.id}}"
+									class="button tiny 5 radius"
+									data-remote="true"
+									ng-click ="switchViews([6,9])">Show
+								</a>
+							</span>
+							<span>
+								<a href="/commodities//{{commodity.id}}/edit"
+									data-remote="true"
+									class="button tiny 5 radius">
+									Edit
+								</a>
+							</span>
+							<span>
+								<a class="button secondary tiny 5 radius"
+									rel="nofollow" data-remote="true"
+									data-method="delete"
+									data-confirm="Are you sure?"
+									href="/commodities/{{commodity.id}}">
+									Destroy
+								</a>
+							</span>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div><!--table_lge_wrapper-->
+<!--commodities listing-->
+<!--controller six-->
+<!-- routes 6 and 9 -->

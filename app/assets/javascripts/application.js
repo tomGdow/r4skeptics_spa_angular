@@ -10,10 +10,10 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
 //
+//= require jquery.turbolinks
+//= require jquery_ujs
+//= require jquery-ui
 //= require jquery.flexslider
 //= require foundation
 //= require angular-flexslider
@@ -25,7 +25,6 @@
 //= require controls
 //= require demo.js
 //= require googlemap
-//= require jquery-ui
 //= require main
 //= require ng-FitText
 //= require ng_controllers
@@ -45,3 +44,5 @@
 //= require ui-utils.js
 //= require ui-utils-ieshiv.js
 //= require angular-youtube-embed.js
+//= require turbolinks
+

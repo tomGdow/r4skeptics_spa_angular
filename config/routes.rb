@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :commodities
+
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -8,8 +10,6 @@ Rails.application.routes.draw do
    root 'home#index'
 
   get "home/partial1"
-  :q
-  :qq
   get "home/partial2"
   get "home/partial3"
   get "home/partial4"

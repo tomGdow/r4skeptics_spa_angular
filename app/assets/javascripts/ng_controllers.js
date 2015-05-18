@@ -857,6 +857,7 @@ viewFivePattern = new RegExp("view5");
 				function (data, status) {
 					$scope.productList = data;
 					$scope.CommoditiesStatus = status;
+					alert(data);
 				}
 				);
 			$scope.orderProp = 'name';
