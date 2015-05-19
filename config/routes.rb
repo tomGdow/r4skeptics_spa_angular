@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :line_items
+
+  resources :carts
+
   resources :commodities
 
   get 'home/index'
@@ -41,7 +45,7 @@ Rails.application.routes.draw do
   get "home/partialx"
   get "home/partialy"
 
-
+get  '/your_cart' => "carts#your_cart", :as => "your_cart"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

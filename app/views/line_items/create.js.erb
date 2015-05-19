@@ -1,0 +1,22 @@
+$("#notice").hide();
+$('.cart').html("<%=j render @cart %>");
+$('#current_item')
+.css({'background-color': '#ffe4b3'})
+.animate({'background-color': '#F9F9F9'}, 1000);
+$('#current_item2')
+.css({'background-color': '#ffe4b3'})
+.animate({'background-color': '#F9F9F9'}, 1000);
+
+$('#fa-shopping-cart')
+.css({'background-color': '#ffe4b3'})
+.animate({'background-color': '#F9F9F9'}, 1000);
+
+$('.cartClass')
+.css({'background-color': '#ffe4b3'})
+.animate({'background-color': '#F9F9F9'}, 1000);
+
+(function changeStyle ()  {
+	document.getElementById("cartPartial_title").style.color = "#0078A0";
+	document.getElementById("totalPrice_cartPartial").style.color = "#0078A0";
+})();
+

@@ -12,8 +12,8 @@
 //
 //
 //= require jquery.turbolinks
+//= require jquery-ui/effect-blind
 //= require jquery_ujs
-//= require jquery-ui
 //= require jquery.flexslider
 //= require foundation
 //= require angular-flexslider

@@ -8,5 +8,62 @@
 			<th width="150"></th>
 		</tr>
 	</thead>
-	<tbody><h1>hello</h1> </tbody>
+	<tbody>
+		<% if @line_item == @current_item %>
+			<tr id="current_item2">
+			<% else %>
+				<tr class ="cartItem">
+				<% end %>
+				<td class ="table_flex" >
+					<%= link_to image_tag(@commodity.image_url, title: 'Add to Cart', class: 'image_transition'),
+						line_items_path(:commodity_id => @commodity),
+						remote: true,
+						method: :post %>
+				</td>
+				<td colspan="2" class ="description"><%= @commodity.description %></td>
+				<td><%= @commodity.category %></td>
+			</tr>
+			<tr>
+				<td>
+					<span class="cartIconFlex">
+						<%= link_to '',
+							line_items_path(:commodity_id => @commodity),
+							remote: true,
+							method: :post,
+							title: "Add to Cart",
+							:class => "icon-cart shopping" %>
+					</span>
+				</td>
+				<td class ="description">
+					Played in the FIFA World Cup in <%= @commodity.year %>
+			</td> <!--two-->
+			<td>
+				<%= link_to 'Edit', edit_commodity_path(@commodity),
+					remote: true,
+					id: "editBtn",
+					class:  "button secondary tiny 5 radius"%>
+			</td>
+			<td>
+				<%= link_to 'Destroy',
+					@commodity,
+					method: :delete,
+					remote: true,
+					data: {confirm: 'Are you sure?'},
+					class:  "button secondary tiny 5 radius" %>
+			</td>
+		</tr>
+		<tr>
+			<td class ="description table_flex">
+				<%= link_to number_to_currency(@commodity.price,precision: 0, :unit => '&euro;'),
+					line_items_path(:commodity_id => @commodity),
+					title: "Add to Cart",
+					remote: true,
+					method: :post %>
+			</td>
+			<td>
+			</td>
+			<td class ="description price-description"></td>
+			<td></td>
+		</tr>
+	</tbody>
 </table>

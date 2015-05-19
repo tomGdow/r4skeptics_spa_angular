@@ -23,7 +23,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #gem 'protected_attributes'
 gem 'jquery-turbolinks'
-gem 'jquery-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -45,6 +44,8 @@ gem "nokogiri", "~> 1.6.1"
 gem 'faker'
 gem "gravatar_image_tag"
 gem 'ngannotate-rails'
+#Gems created by tomDowling
+gem "priceMarkup", "~> 0.0.4"
 group :development, :test do
 # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
