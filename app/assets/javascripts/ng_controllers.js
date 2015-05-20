@@ -857,7 +857,6 @@ viewFivePattern = new RegExp("view5");
 				function (data, status) {
 					$scope.productList = data;
 					$scope.CommoditiesStatus = status;
-					alert(data);
 				}
 				);
 			$scope.orderProp = 'name';
@@ -1044,7 +1043,7 @@ viewFivePattern = new RegExp("view5");
 				$scope.yourCart = data2;
 				$scope.yourCartStatus = status;
 				$scope.trustedHtml = $sce.trustAsHtml($scope.yourCart);
-				$scope.myindex = data2.indexOf("&euro;0");
+				$scope.myindex = data2.indexOf("€0");
 				$scope.anon = function () {
 					if($scope.myindex === -1) {
 						$scope.showcart = true;

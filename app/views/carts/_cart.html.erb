@@ -29,7 +29,7 @@
 	</div>
 	<div class = cart_partial_controls> <!--flexbox-->
 		<span id="totalPrice_cartPartial"> Total Price&nbsp;
-			<span id ="wiw"><%= number_to_currency(cart.total_price, unit:  '&euro;', precision: 0) %></span>
+			<span id ="wiw"><%=ActionController::Base.helpers.number_to_currency(cart.total_price, unit:  '€', precision: 0) %></span>
 		</span><!--flexitem one-->
 	</div>
 </div><!--myPartialCart-->

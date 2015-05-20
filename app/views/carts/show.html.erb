@@ -23,36 +23,35 @@
 				<td class ="centerText"><%= item.commodity.name %></td>
 				<td class ="centerText"><%= item.commodity.category %></td>
 				<td class = "centerText"><%= item.quantity %></td>
-				<td><%= number_to_currency(item.commodity.price, unit: '&euro;', precision: 0 ) %></td>
-				<td><%= number_to_currency(item.total_price_lineItem, unit: '&euro;', precision: 0) %>
+				<td><%= number_to_currency(item.commodity.price, unit: "€", precision: 0 ) %></td>
+				<td><%= number_to_currency(item.total_price_lineItem, unit: "€", precision: 0) %></td>
+				<td>
+					<a data-remote="true" href="/carts/remove/<%= item.id %> ">
+						<%= image_tag('trash-icon-614x460.png', title: 'Remove item', class: "trash_icon") %>
+					</a>
+				</td>
+			</tr>
+		<% end %>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td colspan="3">
+				<h5>
+					Total Price&nbsp;&nbsp;
+					<%= number_to_currency(@cart.total_price, precision: 0, unit: '€') %>
+				</h5>
 			</td>
 			<td>
-				<a data-remote="true" href="/carts/remove/<%= item.id %> ">
-					<%= image_tag('trash-icon-614x460.png', title: 'Remove item', class: "trash_icon") %>
-				</a>
-			</td>
-		</tr>
-	<% end %>
-	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td colspan="3">
-			<h5>
-				Total Price&nbsp;&nbsp;
-				<%= number_to_currency(@cart.total_price, precision: 0, unit: '&euro;') %>
-			</h5>
+				<span> <%= link_to '', @cart,
+					:method => :delete,
+					:confirm => 'Are you sure?',
+					:remote => true,
+					:title => "Empty Cart",
+					:class => 'icon-remove' %>
+			</span>
 		</td>
-		<td>
-			<span> <%= link_to '', @cart,
-				:method => :delete,
-				:confirm => 'Are you sure?',
-				:remote => true,
-				:title => "Empty Cart",
-				:class => 'icon-remove' %>
-		</span>
-	</td>
-</tr>
+	</tr>
 </table>
 </div><!--showCartWrapper-->
 

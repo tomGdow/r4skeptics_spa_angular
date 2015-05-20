@@ -1,29 +1,27 @@
 class Commodity < ActiveRecord::Base
+
 	has_many :line_items
 	before_destroy :ensure_not_referenced_by_any_line_item
-	#
+
 	CATEGORY_TYPES = ['Midfielder', 'Defender', 'Goalkeeper', 'Forward']
-	#
+
 	scope :defender, -> {where("category = ?","Defender")}
 	scope :midfielder, -> {where("category = ?","Midfielder")}
 	scope :forward, -> {where("category = ?","Forward")}
 	scope :newest, -> {order("created_at DESC")}
-	#...
-	#validates :title, :description, :image_url, presence: true
-	#validates :price, numericality: {greater_than_or_equal_to: 0.01}
-	# 
-	#validates :title, uniqueness: true
-	#validates :image_url, allow_blank: true, format: {
-	#with:    %r{\.(gif|jpg|png)\Z}i,
-	#	message: 'must be a URL for GIF, JPG or PNG image.'
-	#}
-	#validates :title, length: {minimum: 10}
-	#def self.latest
-	#	Product.order(:updated_at).last
-	#end
-	#
+
+	validates :name,	:category,	:description, :price,	:image_url,	:presence => true
+	validates :description,	:length => { :minimum => 5}
+	validates :price,	:numericality => {:greater_than_or_equal_to => 1}
+	validates :name, uniqueness: true
+	validates :image_url, allow_blank: true, format: {with: %r{\.(gif|jpg|png)\Z}i, message: 'must be a URL for GIF, JPG or PNG image.'}
+
+	def self.latest
+		Commodity.order(:updated_at).last
+	end
+
 	private
-	# ensure that there are no line items referencing this product
+
 	def ensure_not_referenced_by_any_line_item
 		if line_items.empty?
 			return true
@@ -33,3 +31,18 @@ class Commodity < ActiveRecord::Base
 		end
 	end
 end
+
+#...
+#validates :title, :description, :image_url, presence: true
+#validates :price, numericality: {greater_than_or_equal_to: 0.01}
+# 
+#validates :title, uniqueness: true
+#validates :image_url, allow_blank: true, format: {
+#with:    %r{\.(gif|jpg|png)\Z}i,
+#	message: 'must be a URL for GIF, JPG or PNG image.'
+#}
+#validates :title, length: {minimum: 10}
+#def self.latest
+#	Product.order(:updated_at).last
+#end
+#
