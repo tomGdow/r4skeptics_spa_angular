@@ -1,45 +1,67 @@
 <%= form_for @commodity, :remote => true  do |f| %>
+
 	<% if @commodity.errors.any? %>
 		<div id="error_explanation">
-			<h2><%= pluralize(@commodity.errors.count, "error") %> prohibited this commodity from being saved:</h2>
-			<ul>
-				<% @commodity.errors.full_messages.each do |msg| %>
-					<li><%= msg %></li>
-				<% end %>
-			</ul>
-		</div>
+			<h4 class= "error_header pluralize">
+				<%= pluralize(@commodity.errors.count, "error") %>
+				prohibited this commodity from being saved
+			</h4>
+		</div><!--error_explanation -->
 	<% end %>
+
 	<div class="field">
-		<%= f.label :name %><br />
+		<%= f.label :name %>
+		<% if @commodity.errors.any? %>
+			<div class = "error_item">	<%=  @commodity.errors.full_messages_for(:name).first %></div>
+		<% end %>
 		<%= f.text_field :name %>
 	</div>
+
 	<div class="field">
-		<%= f.label :description %><br />
+		<%= f.label :description %>
+		<% if @commodity.errors.any? %>
+			<div class = "error_item">	<%=  @commodity.errors.full_messages_for(:description).first %></div>
+		<% end %>
 		<%= f.text_area :description %>
 	</div>
+
 	<div class="field">
-		<%= f.label :price %><br />
+		<%= f.label :price %>
+		<% if @commodity.errors.any? %>
+			<div class = "error_item">	<%=  @commodity.errors.full_messages_for(:price).first %></div>
+		<% end %>
 		<%= f.text_field :price %>
 	</div>
+
 	<div class="field">
-		<%= f.label :image_url %><br />
+		<%= f.label :image_url %>
+		<% if @commodity.errors.any? %>
+			<div class = "error_item">	<%=  @commodity.errors.full_messages_for(:image_url).first %></div>
+		<% end %>
 		<%= f.text_field :image_url %>
 	</div>
+
 	<div class="field">
-		<%= f.label :category %><br />
+		<%= f.label :category %>
+		<% if @commodity.errors.any? %>
+			<div class = "error_item">	<%=  @commodity.errors.full_messages_for(:category).first %></div>
+		<% end %>
 		<%= f.select :category,
 			Commodity::CATEGORY_TYPES,
 			prompt: 'Choose ...' %>
 	</div>
+
 	<div class="field">
-		<%= f.label :year %><br />
+		<%= f.label :year %>
 		<%= f.number_field :year %>
 	</div>
 	<div class="field">
-		<%= f.label :winner %><br />
+		<%= f.label :winner %>
 		<%= f.check_box :winner %>
 	</div>
+
 	<div class="actions">
 		<%= f.submit class: "button"%>
 	</div>
+
 <% end %>

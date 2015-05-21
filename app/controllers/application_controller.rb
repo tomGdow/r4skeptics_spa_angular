@@ -3,10 +3,6 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-
 #  Add set_cache_buster?
-#  add current_cart?
-
-
 
 end

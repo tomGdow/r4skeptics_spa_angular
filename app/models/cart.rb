@@ -17,10 +17,3 @@ class Cart < ActiveRecord::Base
 	end
 end
 
-#def total_price
-#  total = 0
-#  line_items.each do |line_item|
-#    total += line_item.commodity.price * line_item.quantity
-#  end
-#  total
-#end

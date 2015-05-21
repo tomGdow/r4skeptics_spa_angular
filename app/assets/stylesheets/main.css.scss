@@ -68,9 +68,9 @@ li {
 	color: $nav-bar-gray
 }
 
-.unordered_one {
-	padding-bottom: 10px;
-}
+//.unordered_one {
+//	padding-bottom: 10px;
+//}
 
 .visuallyhidden {
 	border: 0;
@@ -247,4 +247,35 @@ list-style: square outside none;}
 .button_bar_array {
 	padding-top: 0;
 }
+
+.field_with_errors {
+	padding: 2px;
+}
+
+.field_with_errors > label {
+	color: white;
+	width: 25%;
+	background-color:red;
+	padding: 2px;
+}
+
+.error_item {
+	padding: 10px;
+	margin-left: em(35px);
+	color: green;
+}
+
+.error_header {
+	margin-left: 20px;
+	color: green;
+	padding: 2px;
+}
+
+.error_header.pluralize {
+		@include myflex($justify-content: center);
+		padding-top: 20px;
+}
+
+
+
 
