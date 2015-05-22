@@ -260,9 +260,10 @@ list-style: square outside none;}
 }
 
 .error_item {
+	font: $input-error;
+	color: green;
 	padding: 10px;
 	margin-left: em(35px);
-	color: green;
 }
 
 .error_header {
@@ -272,8 +273,8 @@ list-style: square outside none;}
 }
 
 .error_header.pluralize {
-		@include myflex($justify-content: center);
-		padding-top: 20px;
+	@include myflex($justify-content: center);
+	padding-top: 20px;
 }
 
 
