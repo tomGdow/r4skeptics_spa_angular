@@ -3,8 +3,9 @@
 	<% if @commodity.errors.any? %>
 		<div id="error_explanation">
 			<h4 class= "error_header pluralize">
+				There are 
 				<%= pluralize(@commodity.errors.count, "error") %>
-				prohibited this commodity from being saved
+				errors that need to be corrected
 			</h4>
 		</div><!--error_explanation -->
 	<% end %>
@@ -64,4 +65,12 @@
 		<%= f.submit class: "button"%>
 	</div>
 
+<% end %>
+
+<% if @commodity.errors.any? %>
+	<div class = "error_alt">
+		Your commodity was not saved, as there are
+				<%= pluralize(@commodity.errors.count, "error") %>
+				errors that need to be corrected
+	</div>
 <% end %>

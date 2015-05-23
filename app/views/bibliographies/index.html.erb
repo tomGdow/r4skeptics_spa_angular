@@ -1,0 +1,227 @@
+<h4>{{messageOne}}</h4>
+<!-- Scrollfix -->
+<div ui-scrollfix="+100"
+	class="yourclass flex_column_centered"
+	ng-class= "toggleBiblioPanel ? 'yourclass_alt ': '' " >
+	<div class="biblio_panel_inner ">
+		<div ng-class = " toggleBiblioPanel ? 'flex_end icon-expand' : 'flex-end icon-contract flex_end'"
+			ng-click = "toggleBiblioPanel = !toggleBiblioPanel">
+		</div>
+		<div ng-hide ="toggleBiblioPanel">
+			<div class ="indent">Total selected: {{selectedItems}}</div>
+			<div class ="indent">Selected Current Search: {{selectedCurentSearchItems}}</div>
+			<div class ="indent"
+				ng-show="toggleHarvardFormat==true">View: Harvard Format
+			</div>
+			<div class ="indent"
+				ng-show="toggleViewFormat==false && toggleHarvardFormat==false">View: View Format
+			</div>
+			<div class ="indent"
+				ng-show="toggleViewFormat==true && toggleHarvardFormat==false">View: Full Format
+			</div>
+			<div class ="indent"
+				ng-show = "toggleSelected==true">Showing: Selected
+			</div>
+			<div class ="indent"
+				ng-show = "toggleSelected==false">Showing: All
+			</div>
+			<div class ="indent">
+				<a href="" ng-show = "toggleSelected == false"
+					ng-click="showSelectedRefs()">Show Selected</a>
+			</div>
+			<div class ="indent">
+				<a href= "" ng-show = "toggleSelected == true"
+					ng-click="showAllRefs()">Show All</a>
+			</div>
+			<div class ="indent">
+				<a href=""
+					ng-show="toggleViewFormat==true  || toggleHarvardFormat==true"
+					ng-click="showViewformat()">View Format</a>
+			</div>
+			<div class ="indent">
+				<a href="" ng-show="toggleViewFormat==false"
+					ng-click="showAllformat()">Full Format</a>
+			</div>
+			<div class ="indent">
+				<a href="" ng-show="toggleHarvardFormat==false"
+					ng-click="showHarvardformat()">Harvard Format</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Buttons/navBar-->
+<div class ="flex_center" >
+	<button class="button skeptics-btn-two tiny"
+		ng-click="showSelectedRefs()">Show Selected
+	</button>
+	<button class="button skeptics-btn-two tiny"
+		ng-click="showAllRefs()">Show All
+	</button>
+	<button class="button skeptics-btn-two tiny"
+		type="reset"
+		ng-click="reset()">Clear Selected
+	</button>
+	<button class="button skeptics-btn-two tiny"
+		ng-click="showViewformat()">View Format
+	</button>
+	<button class="button skeptics-btn-two tiny"
+		ng-click="showAllformat()">Full Format
+	</button>
+	<button class="button skeptics-btn-two tiny"
+		ng-click="showHarvardformat()">Harvard Format
+	</button>
+	<a href="#view18" class="button skeptics-btn-two tiny 2 radius">New Biblio Entry</a>
+</div>
+<div class ="flex_center biblio_status_array">
+	<div>
+		<span>Total selected:{{selectedItems}}</span>
+		<span class ="indent">Selected Current Search: {{selectedCurentSearchItems}}</span>
+		<span class ="indent" ng-show="toggleHarvardFormat==true">View: Harvard Format</span>
+		<span class ="indent" ng-show="toggleViewFormat==false && toggleHarvardFormat==false">View: View Format</span>
+		<span class ="indent" ng-show="toggleViewFormat==true && toggleHarvardFormat==false">View: Full Format</span>
+		<span class ="indent" ng-show="toggleSelected==true">Showing: Selected</span>
+		<span class ="indent" ng-show="toggleSelected==false">Showing: All</span>
+	</div>
+</div>
+<div class=" col-partial4"> <!--search and sortby-->
+	<div class="row">
+		<div class="small-12 columns">
+			<dl class="sub-nav">
+				<dd>
+					<div class="searchBox">
+						<input id="prodSearchInput"
+						focus-on="focusMe"
+						ng-model="search"/>
+					</div>
+				</dd>
+				<dd>
+					<select ng-model="orderProp" id="sortBy" class="dropdown">
+						<option value="authors" ng-bind-html="author"></option>
+						<option value="-year" ng-bind-html="year"></option>
+						<option value="year" ng-bind-html="yearalt"></option>
+						<option value="-created_at" ng-bind-html="productCreated_at"></option>
+						<option value="-updated_at" ng-bind-html="productUpdatedAt"></option>
+						<option value="id" ng-bind-html="productid"></option>
+						<option value="-id" ng-bind-html="productid2"></option>
+						<option value="publication " ng-bind-html="publicationtype"></option>
+					</select>
+				</dd>
+				<dd>
+					<span ng-show="search.length>=2"
+						class="echo_search_term">
+						<span class="icon-search"></span>
+						<span>{{search}}</span></span>
+				</dd>
+			</dl>
+		</div>
+	</div>
+</div>
+<div class="zero_search_wrapper">
+	<div class="zero_search_items"
+		ng-if="filteredBibliographies.length==0  || (toggleSelected===true && selectedCurentSearchItems==0)">
+	</div>
+</div>
+<div class="table_lddddddge_wrapper">
+	<ul class="searchlist" ng-hide=" !bibliography.checked && toggleSelected===true"
+		ng-repeat="bibliography in filteredBibliographies = (bibliographies  | filter:search|orderBy:orderProp | limitTo:72)">
+		<li  ng-class="toggleViewFormat ? 'full_biblio_format ':'view_format'">
+			<!-- All refs -->
+			<span>{{bibliography.authors}}</span>
+			<span>({{bibliography.year}})</span>
+			<span>{{bibliography.title}}</span>
+			<!-- Journals -->
+			<div ng-show="bibliography.publication==='Journal' ">
+				<span class="indent" ng-hide="bibliography.journalname== nil">{{bibliography.journalname}},</span>
+				<span ng-hide="bibliography.volume== nil">{{bibliography.volume}},</span>
+				<span ng-hide="bibliography.pages== nil">pp {{bibliography.pages}}.</span>
+				<div class="indent" ng-hide="bibliography.url == nil">
+					Available at:
+					<span class="indent_small"><a href="{{bibliography.url}}" target="_blank">{{bibliography.url}}</a> </span>
+				</div>
+				<span class="indent" ng-hide ="toggleHarvardFormat">
+					<input type="checkbox" ng-model="bibliography.checked">&nbsp;&nbsp;Select
+				</span>
+			</div>
+			<!-- Book -->
+			<div ng-show="bibliography.publication==='Book' ">
+				<div class="indent">
+					<span ng-show=" bibliography.edition != nil">{{bibliography.edition}}</span>
+					<span ng-show=" bibliography.editors != nil">({{bibliography.editors}}, editors).</span>
+					<span ng-show=" bibliography.publisher != nil">{{bibliography.publisher}},</span>
+					<span ng-show=" bibliography.city != nil">{{bibliography.city}}</span>
+					<span class="indent" ng-hide ="toggleHarvardFormat">
+						<input  type="checkbox" ng-model="bibliography.checked">&nbsp;&nbsp;Select
+					</span>
+				</div>
+			</div>
+			<!-- Internet-->
+			<div class="view_format" ng-show="bibliography.publication==='Internet' ">
+				<span class="indent" ng-hide="bibliography.url == nil">
+					Available at:
+					<span class="indent_small"><a href="{{bibliography.url}}" target="_blank">{{bibliography.url}}</a></span>
+				</span>
+				<div class="view_format">
+					<span class="indent" ng-hide="bibliography.accessdate == nil">Accessed:</span>
+					<span class="indent_small">{{bibliography.accessdate}}</span>
+					<span class="indent">[{{bibliography.publication}}]</span>
+					<a ng-hide="bibliography.localpdflink== nil"
+						class="button secondary tiny ng-scope"
+						href="/assets/{{bibliography.localpdflink}}"
+						target="_blank">Local pdf
+					</a>
+					<span class="indent" ng-hide ="toggleHarvardFormat">
+						<input  type="checkbox" ng-model="bibliography.checked">&nbsp;&nbsp;Select
+					</span>
+				</div>
+			</div>
+			<!-- Full View Only  -->
+			<div ng-show="toggleViewFormat">
+				<span class="indent">Id: {{bibliography.id}}</span>
+				<span class="indent">Created At: {{bibliography.created_at | dabbbleDate}}</span>
+				<span class="indent">Updated At: {{bibliography.updated_at | dabbbleDate}}</span>
+				<span ng-hide="bibliography.isbn == nil" class="indent">ISBN: {{bibliography.isbn}}</span>
+				<div class="flex_center">
+					<!--/#view19 ng-click = "tomfn(bibliography.id)"-->
+					<span>
+						<a href="bibliographies/{{bibliography.id}}"
+							class="button tiny skeptics-btn-three"
+							data-remote="true" >Show
+						</a>
+					</span>
+					<span>
+						<a href="/bibliographies/{{bibliography.id}}/edit"
+							data-tom ="{{bibliography.id}}"
+							data-remote="true"
+							ng-click = "tomfn(bibliography.id)"
+							class="button secondary tiny skeptics-btn-three">
+							<span>Edit</span>
+						</a>
+					</span>
+					<span>
+						<a ng-hide="bibliography.localpdflink== nil"
+							class="button skeptics-btn-three tiny ng-scope"
+							href="/assets/{{bibliography.localpdflink}}"
+							target="_blank">
+							Local pdf
+						</a>
+					</span>
+					<span>
+						<a class="button skeptics-btn-three tiny 5 radius"
+							rel="nofollow"
+							data-remote="true"
+							data-method="delete"
+							data-confirm="Are you sure?"
+							href="/bibliographies/{{bibliography.id}}">
+							Destroy
+						</a>
+					</span>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+<div class = "flex_center padded_flex_top" >
+	<span class="angry_cat"
+		ng-if=" selectedCurentSearchItems >= 1  && selectedCurentSearchItems < 4 ">
+		</span >
+	</div><!--flex_center padded_flex_top-->

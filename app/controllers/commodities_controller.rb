@@ -43,11 +43,7 @@ class CommoditiesController < ApplicationController
 				format.json { render json: @commodity, status: :created, location: @commodity }
 
 			else
-			#format.html { render action: "new" }
-        #format.html {render action: "new", redirect_to '#view6', notice: 'Your cart is currently empty' }
 				format.js
-        #format.json { redirect_to '#view7', notice: 'Your cart is currently empty' }
-				#format.json { render json: @commodity.errors, status: :unprocessable_entity }
 			end
 		end
 	end

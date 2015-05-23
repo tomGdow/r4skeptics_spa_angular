@@ -11,7 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150518192039) do
+ActiveRecord::Schema.define(version: 20150522123152) do
+
+  create_table "bibliographies", force: :cascade do |t|
+    t.string   "firstsurname"
+    t.text     "authors"
+    t.integer  "year"
+    t.text     "title"
+    t.string   "journalname"
+    t.string   "publication"
+    t.string   "volume"
+    t.string   "pages"
+    t.string   "url"
+    t.string   "localpdflink"
+    t.string   "accessdate"
+    t.string   "websitetitle"
+    t.string   "conferencetitle"
+    t.string   "publisher"
+    t.string   "city"
+    t.string   "editors"
+    t.string   "edition"
+    t.text     "comment"
+    t.string   "isbn"
+    t.text     "abstract"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false

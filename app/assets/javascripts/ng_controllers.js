@@ -934,7 +934,7 @@ viewFivePattern = new RegExp("view5");
 .controller('MyCtrl7', ['$scope',
 		function ($scope) {
 			//====CONTROLLER FOR Commodities/new ====
-			$scope.viewSevenMessage = 'New Commodity';
+			$scope.viewSevenMessage = 'Create New Commodity';
 		}
 		])
 .controller('MyCtrl8', ['$scope', 'imgService', '$http', 'allIrelandDataService', 'functionsService',
@@ -1238,7 +1238,7 @@ viewFivePattern = new RegExp("view5");
 		function ($scope, $rootScope) {
 			//====CONTROLLER FOR Bibliographies/new ====
 			$rootScope.toggleProductsNav = false;
-			$scope.viewEighteenMessage = 'New Bibliography Entry';
+			$scope.viewEighteenMessage = 'Create  Bibliography Record';
 			angular.element("#bibliography_accessdate").mouseover(function() {
 				angular.element('#bibliography_accessdate').datepicker({
 					dateFormat: 'DD, d  MM, yy'
@@ -1277,6 +1277,7 @@ viewFivePattern = new RegExp("view5");
 						};*/
 /*
 	 .controller('MyCtrl19', ['$scope','$rootScope', '$http', '$sce',
+
 	 function ($scope, $rootScope, $http, $sce) {
 //====CONTROLLER FOR Bibliographies/Show ====
 $scope.viewNinteenMessage = "Show Biblio Ctrl19 message";

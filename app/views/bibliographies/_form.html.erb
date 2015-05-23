@@ -1,0 +1,166 @@
+<%= form_for (@bibliography), :remote => true do |f| %>
+
+	<% if @bibliography.errors.any? %>
+		<div id="error_explanation">
+			<h4 class= "error_header pluralize">
+				There are 
+				<%= pluralize(@bibliography.errors.count, "error") %>
+				errors that need to be corrected  </h2>
+		</div>
+	<% end %>
+
+	<div class="field">
+		<%= f.label :firstsurname, "Surname (First Author)" %><br />
+		<% if @bibliography.errors.any? %>
+			<div class = "error_item">	<%=  @bibliography.errors.full_messages_for(:firstsurname).first %></div>
+		<% end %>
+		<%= f.text_field :firstsurname,
+			:placeholder => "Smith"%>
+	</div>
+
+	<div class="field">
+		<%= f.label :authors, "Authors" %><br />
+		<% if @bibliography.errors.any? %>
+			<div class = "error_item">	<%=  @bibliography.errors.full_messages_for(:authors).first %></div>
+		<% end %>
+		<%= f.text_area :authors,
+			:rows => 5,
+			:placeholder => "Smith, A. D."%>
+	</div>
+
+	<div class="field" >
+		<%= f.label :year %><br />
+		<% if @bibliography.errors.any? %>
+			<div class = "error_item">	<%=  @bibliography.errors.full_messages_for(:year).first %></div>
+		<% end %>
+		<%= f.number_field :year,
+			:placeholder => 2014 %>
+	</div>
+
+	<div class="field">
+		<%= f.label :title %><br />
+		<% if @bibliography.errors.any? %>
+			<div class = "error_item">	<%=  @bibliography.errors.full_messages_for(:title).first %></div>
+		<% end %>
+		<%= f.text_area :title,
+			:rows => 5,
+			:placeholder => "Article Title" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :journalname, "Journal Name" %><br />
+		<%= f.label :title %><br />
+		<%= f.text_field :journalname,
+			:rows => 5,
+			:placeholder => "Journal Name"%>
+	</div>
+
+	<div class="field">
+		<%= f.label :publication %><br />
+		<% if @bibliography.errors.any? %>
+			<div class = "error_item">	<%=  @bibliography.errors.full_messages_for(:publication).first %></div>
+		<% end %>
+		<%= f.select :publication,
+			Bibliography::PUBLICATION_TYPES,
+			prompt: 'Select a Publication Type' %>
+	</div>
+
+	<div class="field">
+		<%= f.label :volume %><br />
+		<%= f.text_field :volume %>
+	</div>
+
+	<div class="field">
+		<%= f.label :pages %><br />
+		<%= f.text_field :pages %>
+	</div>
+	<div class="field">
+		<%= f.label :url %><br />
+		<%= f.text_field :url,
+			:placeholder => "http://www.google.ie" %>
+	</div>
+	<div class="field">
+		<%= f.label :localpdflink,"Pdf link (local)"  %><br />
+		<%= f.text_field :localpdflink,
+			:placeholder => "popek_goldberg_1974.pdf" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :accessdate, "Date Accessed" %><br />
+		<%= f.text_field :accessdate,
+			:placeholder => "Sept 3rd, 2014" %>
+	</div>
+	<div class="field">
+		<%= f.label :websitetitle, "Website Title" %><br />
+		<%= f.text_field :websitetitle,
+			:placeholder => "Rails Guides"%>
+	</div>
+
+	<div class="field">
+		<%= f.label :conferencetitle, "Conference Title" %><br />
+		<%= f.text_field :conferencetitle,
+			:placeholder => "The 5th International Symposium on Rails"%>
+	</div>
+
+	<div class="field">
+		<%= f.label :publisher %><br />
+		<%= f.text_field :publisher,
+			:placeholder => "Publisher"%>
+	</div>
+	<div class="field">
+		<%= f.label :city %><br />                          .
+		<%= f.text_field :city,
+		:placeholder => "Dublin"%>
+</div>
+
+<div class="field">
+	<%= f.label :editors %><br />
+	<%= f.text_field :editors,
+		:placeholder => "Editors "%>
+</div>
+
+<div class="field">
+	<%= f.label :edition %><br />
+	<%= f.text_field :edition,
+		:placeholder => "3rd Edn."%>
+</div>
+
+<div class="field">
+	<%= f.label :comment %><br />
+	<%= f.text_area :comment,
+		:rows => 5,
+		:placeholder => "homepage" %>
+</div>
+
+<div class="field">
+	<%= f.label :isbn %><br />
+	<% if @bibliography.errors.any? %>
+		<div class = "error_item">	<%=  @bibliography.errors.full_messages_for(:isbn).first %></div>
+	<% end %>
+	<%= f.text_field :isbn,
+		:placeholder => "ISBN Number" %>
+</div>
+
+<div class="field">
+	<%= f.label :abstract %><br />
+	<%= f.text_area :abstract, :rows => 10, :placeholder => "I accept markdown", :'ng-model' => "myabstract", 
+		:'ng-focus' => "toggleMarkdownAttrs=true", :'ng-blur' => "toggleMarkdownAttrs=false"%>
+</div>
+
+<div class="actions">
+	<%= f.submit :class => "button" %>
+</div>
+
+<% end %>
+
+<% if @bibliography.errors.none? %>
+	<div><%= render 'partials/markdown' %></div>	
+<% end %>
+
+<% if @bibliography.errors.any? %>
+	<div class = "error_alt">
+		Your reference was not saved, as there are
+		<%= pluralize(@bibliography.errors.count, "error") %>
+		errors that need to be corrected
+	</div>
+<% end %>

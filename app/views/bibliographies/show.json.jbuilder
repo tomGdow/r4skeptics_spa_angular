@@ -1,0 +1,1 @@
+json.extract! @bibliography, :id, :firstsurname, :authors, :year, :title, :journalname, :publication, :volume, :pages, :url, :localpdflink, :accessdate, :websitetitle, :conferencetitle, :publisher, :city, :editors, :edition, :comment, :isbn, :abstract, :created_at, :updated_at

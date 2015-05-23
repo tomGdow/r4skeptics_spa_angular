@@ -258,7 +258,12 @@ list-style: square outside none;}
 	background-color:red;
 	padding: 2px;
 }
-
+.error_alt {
+	padding: 20px;
+	@include myflex($justify-content: center);
+	color: white;
+	background-color: red;
+}
 .error_item {
 	font: $input-error;
 	color: green;
@@ -277,6 +282,10 @@ list-style: square outside none;}
 	padding-top: 20px;
 }
 
+.ng_controller_message {
+	padding-left: em(20px);
+	padding-top: em(10px);
+}
 
 
 

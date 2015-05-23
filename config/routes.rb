@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bibliographies
 	resources :line_items
 	resources :carts
 	resources :commodities

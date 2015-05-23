@@ -31,4 +31,3 @@ class Commodity < ActiveRecord::Base
 		end
 	end
 end
-
