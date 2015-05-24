@@ -56,8 +56,9 @@ class CommoditiesController < ApplicationController
 				format.html { redirect_to @commodity, notice: 'Commodity was successfully updated.' }
 				format.json { head :no_content }
 			else
-				format.html { render action: "edit" }
-				format.json { render json: @commodity.errors, status: :unprocessable_entity }
+				#format.html { render action: "edit" }
+				format.js
+				#format.json { render json: @commodity.errors, status: :unprocessable_entity }
 			end
 		end
 	end

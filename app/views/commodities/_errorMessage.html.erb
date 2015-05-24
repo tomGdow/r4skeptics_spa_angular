@@ -1,0 +1,3 @@
+<%= simple_pluralize("is", @commodity.errors.count) %>&nbsp;	
+<%= pluralize(@commodity.errors.count, "error") %> that 
+<%= irregular_simple_pluralize("need", @commodity.errors.count) %> 

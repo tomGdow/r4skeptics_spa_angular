@@ -3,9 +3,7 @@
 	<% if @commodity.errors.any? %>
 		<div id="error_explanation">
 			<h4 class= "error_header pluralize">
-				There are 
-				<%= pluralize(@commodity.errors.count, "error") %>
-				errors that need to be corrected
+				There <%= render 'errorMessage' %> to be corrected
 			</h4>
 		</div><!--error_explanation -->
 	<% end %>
@@ -62,15 +60,14 @@
 	</div>
 
 	<div class="actions">
-		<%= f.submit class: "button"%>
+		<%= f.submit class: "button", id: "commoditybutton" %>
 	</div>
 
 <% end %>
 
 <% if @commodity.errors.any? %>
 	<div class = "error_alt">
-		Your commodity was not saved, as there are
-				<%= pluralize(@commodity.errors.count, "error") %>
-				errors that need to be corrected
+		Your commodity was not&nbsp;<span id= "buttonText"></span>, as there
+		<%= render 'errorMessage' %> to be corrected
 	</div>
 <% end %>

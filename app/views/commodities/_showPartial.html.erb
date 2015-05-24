@@ -54,7 +54,7 @@
 		</tr>
 		<tr>
 			<td class ="description table_flex">
-				<%= link_to number_to_currency(@commodity.price,precision: 0, :unit => '&euro;'),
+				<%= link_to number_to_currency(@commodity.price,precision: 0, :unit => "€"),
 					line_items_path(:commodity_id => @commodity),
 					title: "Add to Cart",
 					remote: true,

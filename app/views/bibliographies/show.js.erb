@@ -1,21 +1,4 @@
-//window.location.replace('#/view19');
 $('#ngView').html('<%=j render partial: 'bibliographies/showPartial' %>');
-var selector = $('#showAsMarkDown');
-var converter = new Showdown.converter();
-var html = converter.makeHtml(selector.text());
-selector.html(html);
-//
-//var entityMap = {
-//    "&": "&amp;",
-//    "<": "&lt;",
-//    ">": "&gt;",
-//    '"': '&quot;',
-//    "'": '&#39;',
-//    "/": '&#x2F;'
-//};
-//
-//function escapeHtml(string) {
-//    return String(string).replace(/[&<>"'\/]/g, function (s) {
-//        return entityMap[s];
-//    });
-//}
+
+
+

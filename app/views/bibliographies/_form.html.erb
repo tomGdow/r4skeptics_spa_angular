@@ -3,9 +3,8 @@
 	<% if @bibliography.errors.any? %>
 		<div id="error_explanation">
 			<h4 class= "error_header pluralize">
-				There are 
-				<%= pluralize(@bibliography.errors.count, "error") %>
-				errors that need to be corrected  </h2>
+				There <%= render 'errorMessage' %> to be corrected
+			</h4>
 		</div>
 	<% end %>
 
@@ -159,8 +158,7 @@
 
 <% if @bibliography.errors.any? %>
 	<div class = "error_alt">
-		Your reference was not saved, as there are
-		<%= pluralize(@bibliography.errors.count, "error") %>
-		errors that need to be corrected
+		Your bibliography entry was not&nbsp;<span id= "buttonBiblioText"></span>, as there
+		<%= render 'errorMessage' %> to be corrected
 	</div>
 <% end %>

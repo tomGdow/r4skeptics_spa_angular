@@ -13,6 +13,7 @@
 //
 //= require jquery.turbolinks
 //= require jquery-ui/effect-blind
+//= require jquery-ui
 //= require jquery_ujs
 //= require jquery.flexslider
 //= require foundation

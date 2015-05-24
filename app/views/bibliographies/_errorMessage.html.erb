@@ -1,0 +1,3 @@
+<%= simple_pluralize("is", @bibliography.errors.count) %>&nbsp;	
+<%= pluralize(@bibliography.errors.count, "error") %> that 
+<%= irregular_simple_pluralize("need", @bibliography.errors.count) %> 

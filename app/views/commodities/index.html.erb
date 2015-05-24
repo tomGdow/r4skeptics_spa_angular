@@ -65,7 +65,7 @@
 				<td id = {{myFirstName(commodity.name)}}_{{myLastName(commodity.name)}}>
 					<span id ="product_{{commodity.id}}">{{commodity.name | uppercase}}</span>
 				</td>
-				<td>{{commodity.price | nfcurrency:"&euro;"}}</td>
+				<td>{{commodity.price | nfcurrency: "€"}}</td>
 				<td><input type="checkbox" ng-model ="checked">&nbsp;&nbsp;More&hellip;</td>
 				<td>
 					<addtocart ng-href="/line_items?commodity_id={{commodity.id}}"></addtocart>
