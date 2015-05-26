@@ -1,5 +1,44 @@
 <div class="col-partial7">
 	<h2 class = "ng_controller_message">{{viewEighteenMessage}}</h2>
-	<%= render 'form' %>
-</div>
 
+	<%= render 'form' %>
+
+	<script> 
+
+		$('#new_bibliography').submit( function () {
+			var nameCondition =  this.firstsurname.value.length < 1;
+			var authorsCondition = this.bibliography_authors.value.length < 1;
+			var yearCondition  = this.bibliography_year.value.length < 4; 
+			if(nameCondition){ 
+				$('#nameTip').show(1000);
+			}
+			if(authorsCondition){ 
+				$('#authorsTip').show(1000);
+			}
+			if(yearCondition){ 
+				$('#yearTip').show(1000);
+			}
+			if( nameCondition || authorsCondition ||  yearCondition) {
+				$('#errorTip').show(1000);
+				return false;
+			} 
+			return true;
+		});
+
+function hideOnFocus(parent_id, tip_id,time_in_milliseconds) {
+
+	return 	$('#' + parent_id).focus( function () {
+		$('#' + tip_id).hide(time_in_milliseconds);
+	});
+
+}
+
+hideOnFocus('firstsurname', 'nameTip', 1000);
+hideOnFocus('firstsurname', 'errorTip', 100);
+hideOnFocus('bibliography_authors', 'authorsTip', 1000);
+hideOnFocus('bibliography_authors', 'errorTip', 100);
+hideOnFocus('bibliography_year', 'yearTip', 1000);
+hideOnFocus('bibliography_year', 'errorTip', 100);
+
+	</script>
+</div>

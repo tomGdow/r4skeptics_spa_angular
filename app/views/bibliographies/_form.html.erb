@@ -1,57 +1,56 @@
-<%= form_for (@bibliography), :remote => true do |f| %>
+<%= form_for (@bibliography),  :remote => true do |f| %>
 
 	<% if @bibliography.errors.any? %>
 		<div id="error_explanation">
 			<h4 class= "error_header pluralize">
 				There <%= render 'errorMessage' %> to be corrected
 			</h4>
-		</div>
+		</div><!--Server_Side validation-->
 	<% end %>
 
 	<div class="field">
-		<%= f.label :firstsurname, "Surname (First Author)" %><br />
+		<%= f.label :firstsurname, "Surname (First Author)" %>
 		<% if @bibliography.errors.any? %>
-			<div class = "error_item">	<%=  @bibliography.errors.full_messages_for(:firstsurname).first %></div>
+			<div class = "error_item">
+				<%= @bibliography.errors.full_messages_for(:firstsurname).first %>
+		  </div><!--Server_Side validation-->
 		<% end %>
-		<%= f.text_field :firstsurname,
-			:placeholder => "Smith"%>
-	</div>
+		<%= f.text_field :firstsurname , :id =>"firstsurname", :placeholder => "Smith"%>
+	</div><span id="nameTip">Please enter the first author's surname </span><!--Client_Side validation-->
 
 	<div class="field">
 		<%= f.label :authors, "Authors" %><br />
 		<% if @bibliography.errors.any? %>
-			<div class = "error_item">	<%=  @bibliography.errors.full_messages_for(:authors).first %></div>
+			<div class = "error_item">
+				<%=  @bibliography.errors.full_messages_for(:authors).first %>
+			</div><!--Server_Side validation-->
 		<% end %>
-		<%= f.text_area :authors,
-			:rows => 5,
-			:placeholder => "Smith, A. D."%>
-	</div>
+		<%= f.text_area :authors, :rows => 5, :placeholder => "Smith, A. D."%>
+	</div><span id="authorsTip">Please enter a list of authors </span><!--Client_Side validation-->
 
 	<div class="field" >
 		<%= f.label :year %><br />
 		<% if @bibliography.errors.any? %>
-			<div class = "error_item">	<%=  @bibliography.errors.full_messages_for(:year).first %></div>
+			<div class = "error_item">
+				<%=  @bibliography.errors.full_messages_for(:year).first %> 
+			</div><!--Server_Side validation -->
 		<% end %>
-		<%= f.number_field :year,
-			:placeholder => 2014 %>
-	</div>
+		<%= f.number_field :year, :placeholder => 2014 %>
+	</div><span id="yearTip">Year must be a four-digit number </span><!--Client_Side validation-->
 
 	<div class="field">
 		<%= f.label :title %><br />
 		<% if @bibliography.errors.any? %>
-			<div class = "error_item">	<%=  @bibliography.errors.full_messages_for(:title).first %></div>
+			<div class = "error_item">	
+				<%=  @bibliography.errors.full_messages_for(:title).first %>
+			</div><!--Server_Side validation-->
 		<% end %>
-		<%= f.text_area :title,
-			:rows => 5,
-			:placeholder => "Article Title" %>
+		<%= f.text_area :title, :rows => 5,:placeholder => "Article Title" %>
 	</div>
 
 	<div class="field">
-		<%= f.label :journalname, "Journal Name" %><br />
-		<%= f.label :title %><br />
-		<%= f.text_field :journalname,
-			:rows => 5,
-			:placeholder => "Journal Name"%>
+		<%= f.label :journalname, "Journal Name" %>
+		<%= f.text_field :journalname,:rows => 5, :placeholder => "Journal Name" %>
 	</div>
 
 	<div class="field">
@@ -59,9 +58,7 @@
 		<% if @bibliography.errors.any? %>
 			<div class = "error_item">	<%=  @bibliography.errors.full_messages_for(:publication).first %></div>
 		<% end %>
-		<%= f.select :publication,
-			Bibliography::PUBLICATION_TYPES,
-			prompt: 'Select a Publication Type' %>
+		<%= f.select :publication, Bibliography::PUBLICATION_TYPES, prompt: 'Select a Publication Type' %>
 	</div>
 
 	<div class="field">
@@ -73,71 +70,65 @@
 		<%= f.label :pages %><br />
 		<%= f.text_field :pages %>
 	</div>
+
 	<div class="field">
 		<%= f.label :url %><br />
-		<%= f.text_field :url,
-			:placeholder => "http://www.google.ie" %>
+		<%= f.text_field :url, :placeholder => "http://www.google.ie" %>
 	</div>
+
 	<div class="field">
 		<%= f.label :localpdflink,"Pdf link (local)"  %><br />
-		<%= f.text_field :localpdflink,
-			:placeholder => "popek_goldberg_1974.pdf" %>
+		<%= f.text_field :localpdflink, :placeholder => "popek_goldberg_1974.pdf" %>
 	</div>
 
 	<div class="field">
 		<%= f.label :accessdate, "Date Accessed" %><br />
-		<%= f.text_field :accessdate,
-			:placeholder => "Sept 3rd, 2014" %>
+		<%= f.text_field :accessdate, :placeholder => "Sept 3rd, 2014" %>
 	</div>
+
 	<div class="field">
 		<%= f.label :websitetitle, "Website Title" %><br />
-		<%= f.text_field :websitetitle,
-			:placeholder => "Rails Guides"%>
+		<%= f.text_field :websitetitle, :placeholder => "Rails Guides"%>
 	</div>
 
 	<div class="field">
 		<%= f.label :conferencetitle, "Conference Title" %><br />
-		<%= f.text_field :conferencetitle,
-			:placeholder => "The 5th International Symposium on Rails"%>
+		<%= f.text_field :conferencetitle, :placeholder => "The 5th International Symposium on Rails"%>
 	</div>
 
 	<div class="field">
 		<%= f.label :publisher %><br />
-		<%= f.text_field :publisher,
-			:placeholder => "Publisher"%>
+		<%= f.text_field :publisher, :placeholder => "Publisher"%>
 	</div>
+
 	<div class="field">
 		<%= f.label :city %><br />                          .
-		<%= f.text_field :city,
-		:placeholder => "Dublin"%>
+		<%= f.text_field :city, :placeholder => "Dublin"%>
 </div>
 
 <div class="field">
 	<%= f.label :editors %><br />
-	<%= f.text_field :editors,
-		:placeholder => "Editors "%>
+	<%= f.text_field :editors, :placeholder => "Editors "%>
 </div>
 
 <div class="field">
 	<%= f.label :edition %><br />
-	<%= f.text_field :edition,
-		:placeholder => "3rd Edn."%>
+	<%= f.text_field :edition, :placeholder => "3rd Edn."%>
 </div>
 
 <div class="field">
 	<%= f.label :comment %><br />
-	<%= f.text_area :comment,
-		:rows => 5,
-		:placeholder => "homepage" %>
+	<%= f.text_area :comment,:rows => 5, :placeholder => "homepage" %>
 </div>
 
 <div class="field">
 	<%= f.label :isbn %><br />
 	<% if @bibliography.errors.any? %>
-		<div class = "error_item">	<%=  @bibliography.errors.full_messages_for(:isbn).first %></div>
+		<div class = "error_item">
+			<%= @bibliography.errors.full_messages_for(:isbn).first %>
+		</div>
 	<% end %>
-	<%= f.text_field :isbn,
-		:placeholder => "ISBN Number" %>
+	<%= f.text_field :isbn, :placeholder => "ISBN Number" %>
 </div>
 
 <div class="field">
@@ -147,10 +138,15 @@
 </div>
 
 <div class="actions">
-	<%= f.submit :class => "button" %>
+	<%= f.submit :class => "button", :id => "mybibliobutton" %>
 </div>
 
 <% end %>
+<div id ="errorTip">  
+	<div class="error_alt" >
+		There are errors that need to be corrected
+	</div><!--Client Side validation -->
+</div>
 
 <% if @bibliography.errors.none? %>
 	<div><%= render 'partials/markdown' %></div>	
@@ -160,5 +156,5 @@
 	<div class = "error_alt">
 		Your bibliography entry was not&nbsp;<span id= "buttonBiblioText"></span>, as there
 		<%= render 'errorMessage' %> to be corrected
-	</div>
+	</div><!--Server-Side validation -->
 <% end %>

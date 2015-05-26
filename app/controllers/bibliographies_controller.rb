@@ -34,9 +34,9 @@ class BibliographiesController < ApplicationController
 				format.html { redirect_to @bibliography, notice: 'Bibliography was successfully updated.' }
 				format.json { render :show, status: :ok, location: @bibliography }
 			else
-			#	format.html { render :edit }
-			format.js
-			#	format.json { render json: @bibliography.errors, status: :unprocessable_entity }
+				#	format.html { render :edit }
+				format.js
+				#	format.json { render json: @bibliography.errors, status: :unprocessable_entity }
 			end
 		end
 	end

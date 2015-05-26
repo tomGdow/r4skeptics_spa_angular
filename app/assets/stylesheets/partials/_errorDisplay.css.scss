@@ -1,0 +1,52 @@
+
+.field_with_errors {
+	padding: 2px;
+}
+
+.field_with_errors > label {
+	color: white;
+	width: 25%;
+	background-color:red;
+	padding: 2px;
+}
+.error_alt {
+	padding: 20px;
+	@include myflex($justify-content: center);
+	color: white;
+	background-color: red;
+}
+.error_item {
+	font: $input-error;
+	color: green;
+	padding: 10px;
+	margin-left: em(35px);
+}
+
+.error_header {
+	margin-left: 20px;
+	color: green;
+	padding: 2px;
+}
+
+.error_header.pluralize {
+	@include myflex($justify-content: center);
+	padding-top: 20px;
+}
+
+.ng_controller_message {
+	padding-left: em(20px);
+	padding-top: em(10px);
+}
+
+
+#nameTip,#authorsTip,#yearTip{	
+	font: small-caps bold 1em Arial, Helvetica, sans-serif;
+	color: red;
+	display: none;
+	margin-left: em(20px);
+}
+#errorTip{
+	display: none;
+}
+
+
