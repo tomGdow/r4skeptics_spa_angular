@@ -12,7 +12,6 @@ gem 'jquery-turbolinks'
 gem 'angularjs-rails'
 gem 'protractor-rails', '~> 0.0.4'
 gem 'annotate'
-gem 'will_paginate'
 gem 'foundation-rails'
 gem 'jquery-ui-rails'
 gem 'devise'
@@ -23,8 +22,6 @@ gem 'ngannotate-rails'
 gem "priceMarkup", "~> 0.0.4"
 gem 'rack-mini-profiler'
 gem 'flamegraph'
-gem 'devise'
-gem 'stackprof'
 
 group :development, :test do
 	gem 'sqlite3'
