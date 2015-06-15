@@ -1,22 +1,49 @@
 %markdown_base {
-  color: $nav-bar-gray;
-  font-family: $font-family-helvetica;
-  font-size:   0.875rem;
-  font-weight: normal;
+	color: $nav-bar-gray;
+	font-family: $font-family-helvetica;
+	font-size:   0.875rem;
+	font-weight: normal;
 }
 
 .markdown_header {
-  @extend %markdown_base;
-  padding: 0 0 em(10px) em(20px);
+	@extend %markdown_base;
+	padding: 0 0 em(10px) em(20px);
 }
 
 .markdown_abstract  {
-  @extend %markdown_base;
-  padding: 0 0 em(200px) em(20px);
-  color: black;
+	@extend %markdown_base;
+	padding: 0 0 em(200px) em(20px);
+	color: black;
 
 }
 .markdown_text {
-  line-height: 1;
-  padding: em(10px) 0 ;
+	line-height: 1;
+	padding: em(10px) 0 ;
+}
+
+.form_wrapper {
+	display: flex;
+	width: 80%;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.form_box {
+	flex: 1;
+	min-width: 25%;
+	text-align: center;
+}
+
+.form_box1 {
+	flex:  4;
+	min-width: 100%;
+}
+
+.form_box2 {
+	flex: 1;
+	max-width: 35%;
+}
+
+.form_label {
+	text-align: left;
 }

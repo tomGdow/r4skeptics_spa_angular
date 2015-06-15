@@ -1,0 +1,14 @@
+(function () {
+	<% if @admin.errors.any? %>
+		window.location.replace('#view24');
+$('#ngView').html('<%=j render partial: 'admins/registrations/newPartial' %>');
+<% end %>
+	<% if @admin.errors.none? %>
+		window.location.replace('#view1');
+$('#mywidget').html('<%=j render partial:'home/user_widget' %>');
+<% end %>
+})();
+
+
+
+

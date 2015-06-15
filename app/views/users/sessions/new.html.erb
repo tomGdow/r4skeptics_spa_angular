@@ -1,0 +1,42 @@
+<div class="form_wrapper">
+	<div class="form_box form_box1"><h4>Login</h4> </div>
+	<div class="form_box form_box2"></div>
+	<%= form_for(resource, as: resource_name, url: session_path(resource_name), :remote => :true) do |f| %>
+		<div class="field">
+			<%= f.label :email %><br />
+			<%= f.email_field :email, autofocus: true %>
+		</div>
+
+		<div class="field">
+			<%= f.label :password %><br />
+			<%= f.password_field :password, autocomplete: "off" %>
+		</div>
+
+		<% if devise_mapping.rememberable? -%>
+			<div class="field">
+				<%= f.check_box :remember_me %>
+				<%= f.label :remember_me %>
+			</div>
+		<% end -%>
+
+		<div class="actions">
+			<%= f.submit "Log in", :class => "button tiny skeptics-btn-five ", :id => "login_button"  %>
+			<a href ="#view23" class="button skeptics-btn-two tiny">Forgot Password?</a>
+		</div>
+	<% end %>
+
+</div><!--form_wrapper-->
+<div class="form_wrapper ">
+	<div class="form_box form_box2"></div>
+	<div id ="email_or_password_error" >There is a problem with Your email or password.  Try again </div>
+</div>
+<div><a href ="#view25" class="button skeptics-btn-two tiny">Admin Login</a></div>
+
+<script>
+	$('#login_button').on('click', function(){
+		$('#email_or_password_error').animate({opacity: 1.0}, 500);
+	});
+	$('input').on('focus', function(){
+		$('#email_or_password_error').animate({opacity: 0.0}, 1000);
+	});
+</script>

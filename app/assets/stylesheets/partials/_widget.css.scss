@@ -1,0 +1,23 @@
+.widget-wrapper {
+	@include myflex($justify-content: space-between);
+}
+
+.widget-flexitem {
+	margin-left: em(5px);
+	margin-right: em(5px);
+}
+
+.widget-flexFirst{
+	margin-left: em(20px);
+}
+
+.widget-flexLast{
+	margin-right: em(20px);
+}
+
+#widget-welcome-message {
+	color: $nav-bar-gray;
+	font-family: $font-family-helvetica;
+	font-size: 0.875rem;
+}
+

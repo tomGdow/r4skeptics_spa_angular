@@ -1,9 +1,44 @@
- 
-<div>Hello from Widget</div>  
-<% if user_signed_in? %>
-  <p>Welcome <%= current_user.email %></p>
-  <%= link_to 'Logged In [click to logout]', destroy_user_session_path, :method => :delete %>
-<% else %>
-  <p>You are not signed in.</p>
-  <%= link_to 'Login', new_user_session_path %>
-<% end %>
+<div class = "widget-wrapper"><!--begin flexbox--> 
+	<% if user_signed_in? %>
+		<span class ="widget-flexitem widget-flexFirst" >
+			<% if isgravatar? current_user%>
+				<img  src=<%= gravatar(current_user, 50)  %> alt="user gravatar image" title=<%= current_user.email %> >
+			<% end %>&nbsp;
+		</span><!--end outer flexbox item 1-->
+		<span>
+			<span class="widget-flexitem" id ="widget-welcome-message" title=<%= current_user.email %> >
+				Welcome <%= username %>
+		</span><!--end inner flexbox item 1-->
+		<span class ="widget-flexitem">
+			<%= link_to 'logout', destroy_user_session_path,
+				:method => :delete,:remote => true, 
+				:class => "button skeptics-btn-two tiny widget-flexLast",
+				:id => "destroy_button" %>
+		</span><!--end inner flexbox item 2-->
+
+	<% elsif admin_signed_in? %>
+		<span class ="widget-flexitem widget-flexFirst" >
+			<% if isgravatar? current_admin%>
+				<img  src=<%= gravatar(current_admin, 50)  %> alt="user gravatar image" title=<%= current_admin.email %> >
+			<% end %>&nbsp;
+		</span><!--end outer flexbox item 1-->
+		<span>
+			<span class="widget-flexitem" id ="widget-welcome-message" title=<%= current_admin.email %> >
+				<%= username(user: current_admin) %> (administrator)	
+			</span><!--end inner flexbox item 1-->
+			<span class ="widget-flexitem">
+				<%= link_to 'logout', destroy_admin_session_path,
+					:method => :delete,:remote => true, 
+					:class => "button skeptics-btn-two tiny widget-flexLast",
+					:id => "destroy_button" %>
+			</span><!--end inner flexbox item 2-->
+
+		<% else %>
+			<span>&nbsp</span>
+			<span>
+				<a href ="#view22" class="button skeptics-btn-two tiny">Login</a>
+				<a href ="#view21" class="button skeptics-btn-two tiny widget-flexLast">Sign Up</a>
+			</span><!--end inner flexbox item 3-->
+		</span><!--end outer flexbox item 2-->
+	<% end %>
+</div><!--widget-wrapper--><!--end flexbox-->

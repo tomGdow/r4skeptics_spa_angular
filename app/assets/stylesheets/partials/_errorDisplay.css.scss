@@ -1,26 +1,39 @@
-
 .field_with_errors {
 	padding: 2px;
 }
 
 .field_with_errors > label {
 	color: white;
-	width: 25%;
+	width: 75%;
 	background-color:red;
 	padding: 2px;
+	text-align:center;
+	&:hover {
+		color:  $nav-bar-gray
+	}
 }
+
+.form_label.error_label_alt {
+	background-color: #FFF;
+	text-align: left;
+	color: #000;
+}
+
 .error_alt {
 	padding: 20px;
 	@include myflex($justify-content: center);
 	color: white;
 	background-color: red;
 }
+
 .error_item {
 	font: $input-error;
-	color: green;
-	padding: 10px;
+	color: red;
 	margin-left: em(35px);
+	visibility: visible;
+	opacity: 1;
 }
+
 
 .error_header {
 	margin-left: 20px;
@@ -38,15 +51,27 @@
 	padding-top: em(10px);
 }
 
-
 #nameTip,#authorsTip,#yearTip{	
 	font: small-caps bold 1em Arial, Helvetica, sans-serif;
 	color: red;
 	display: none;
 	margin-left: em(20px);
 }
+
 #errorTip{
 	display: none;
 }
 
+#error_explanation {
+	padding-bottom: em(20px);
+	color: green;
+}
 
+#email_or_password_error,#email_or_password_error_admin {
+	@include myflex($justify-content: center);
+	opacity: 0;
+	background-color: red;
+	color:white;
+	padding: 20px;
+	width: 60%;
+}

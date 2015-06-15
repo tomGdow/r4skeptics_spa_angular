@@ -1,0 +1,18 @@
+<div>{{viewTwentyThreeMessage}}</div>
+<div class="form_wrapper">
+	<div class="form_box form_box1"><h4>Forgot Your Password?</h4> </div>
+	<div class="form_box form_box2"></div>
+
+	<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, remote: :true ) do |f| %>
+		<%= devise_error_messages! %>
+
+		<div class="field">
+			<%= f.label :email %><br />
+			<%= f.email_field :email, autofocus: true %>
+		</div>
+
+		<div class="actions">
+			<%= f.submit "Send me reset password instructions", :class => "button tiny skeptics-btn-five" %>
+		</div>
+	<% end %>
+</div><!--form_wrapper-->

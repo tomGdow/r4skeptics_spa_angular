@@ -1,135 +1,135 @@
 //====Angullar Slider====
 
 .arrow {
-  cursor: pointer;
-  display: block;
-  height: 64px;
-  margin-top: 35px;
-  outline: medium none;
-  position: absolute;
-  top: 10%;
-  width: 64px;
-  z-index: 15;
+	cursor: pointer;
+	display: block;
+	height: 64px;
+	margin-top: 35px;
+	outline: medium none;
+	position: absolute;
+	top: 10%;
+	width: 64px;
+	z-index: 15;
 }
 
 .arrow.prev {
-  background: url("prev.png") no-repeat;
-  margin-left: 2em;
-  left: 20px;
-  opacity: 0.2;
-  transition: all 0.2s linear 0s;
+	background: url("prev.png") no-repeat;
+	margin-left: 2em;
+	left: 20px;
+	opacity: 0.2;
+	transition: all 0.2s linear 0s;
 }
 
 .arrow.next {
-  background: url("next.png") no-repeat;
-  opacity: 0.2;
-  right: 20px;
-  transition: all 0.2s linear 0s;
+	background: url("next.png") no-repeat;
+	opacity: 0.2;
+	right: 20px;
+	transition: all 0.2s linear 0s;
 }
 
 .arrow.prev:hover {;
-  opacity: 1;
+	opacity: 1;
 }
 
 .arrow.next:hover {
-  opacity: 1;
+	opacity: 1;
 }
 
 .nav {
-  bottom: -4px;
-  display: block;
-  height: em(48px);
-  left: 0;
-  margin: 0 auto;
-  padding: 1em 0 0.8em;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  width: 100%;
-  z-index: 5;
+	bottom: -4px;
+	display: block;
+	height: em(48px);
+	left: 0;
+	margin: 0 auto;
+	padding: 1em 0 0.8em;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	width: 100%;
+	z-index: 5;
 }
 
 .nav li {
-  border: 5px solid #AAAAAA;
-  border-radius: 5px;
-  cursor: pointer;
-  display: inline-block;
-  height: 30px;
-  margin: 0 8px;
-  position: relative;
-  width: 50px;
+	border: 5px solid #AAAAAA;
+	border-radius: 5px;
+	cursor: pointer;
+	display: inline-block;
+	height: 30px;
+	margin: 0 8px;
+	position: relative;
+	width: 50px;
 }
 
 .nav li.active {
-  border: 5px solid #FFFFFF;
+	border: 5px solid #FFFFFF;
 }
 
 .nav li img {
-  width: 100%;
+	width: 100%;
 }
 
 .slider {
-  @include skeptics_perspective(1000px);
-  @include skeptics_transform_style();
-  background: none;
-  border: 15px solid #FFFFFF;
-  border-radius: 5px;
-  height: 400px;
-  margin: 20px auto;
-  position: relative;
-  width: 800px;
+	@include skeptics_perspective(1000px);
+	@include skeptics_transform_style();
+	background: none;
+	border: 15px solid #FFFFFF;
+	border-radius: 5px;
+	height: 400px;
+	margin: 20px auto;
+	position: relative;
+	width: 800px;
 }
 
 .slide {
-  position: absolute;
-  top: 0;
-  left: 15%;
+	position: absolute;
+	top: 0;
+	left: 15%;
 }
 
 .slide.ng-hide-add, .googleSlide.ng-hide-add {
-  opacity: 1;
-  @include vendor-prefix(transition, 1s, linear, all);
-  @include vendor-prefix(transform, rotateX(50deg) rotateY(30deg));
-  @include vendor-prefix(transform-origin, right top 0);
+	opacity: 1;
+	@include vendor-prefix(transition, 1s, linear, all);
+	@include vendor-prefix(transform, rotateX(50deg) rotateY(30deg));
+	@include vendor-prefix(transform-origin, right top 0);
 }
 
 .slide.ng-hide-add.ng-hide-add-active,
 .googleSlide.ng-hide-add.ng-hide-add-active {
-  opacity: 0;
+	opacity: 0;
 }
 
 .slide.ng-hide-remove,
 .googleSlide.ng-hide-remove {
-  @include vendor-prefix(transition, 1s linear all);
-  display: block !important;
-  opacity: 0;
+	@include vendor-prefix(transition, 1s linear all);
+	display: block !important;
+	opacity: 0;
 }
 
 .slide,
 .slide.ng-hide-remove.ng-hide-remove-active,
 .googleSlide,
 .googleSlide.ng-hide-remove.ng-hide-remove-active {
-  opacity: 1;
+	opacity: 1;
 }
 
 .dubList {
 
-  @include myflex($justify-content: center);
-  margin: 25px auto;
-  padding: 10px 20px;
-  width: 100%;
+	@include myflex($justify-content: center);
+	margin: 25px auto;
+	padding: 10px 20px;
+	width: 100%;
 }
 
 .dubList li {
-  list-style-type: none;
-  -webkit-flex-grow: 1;
+	list-style-type: none;
+	-webkit-flex-grow: 1;
 }
 
 .arrow.prev.ng-hide,
 .arrow.next.ng-hide,
 .dublinCaption.ng-hide,
 .dubfigcaption.ng-hide {
-  opacity: 0;
+	opacity: 0;
 }
 
 @include addHideRemove(2s, 'arrow.prev', 'arrow.next', dublinCaption, dubfigcaption);
@@ -138,24 +138,24 @@
 .arrow.prev.ng-hide,
 .dublinCaption.ng-hide,
 .dubfigcaption.ng-hide {
-  opacity: 0;
+	opacity: 0;
 }
 
 .dubfigcaption,
 .small-images-caption,
 .medium-images-caption {
-  font-family: Arial, sans-serif;
-  font-size: 0.8em;
+	font-family: Arial, sans-serif;
+	font-size: 0.8em;
 }
 
 .small-images-caption {
-  padding-left: 0em;
-  font-size: 0.5em;
+	padding-left: 0em;
+	font-size: 0.5em;
 }
 
 .medium-images-caption {
-  padding-left: 0em;
-  font-size: 0.8em;
+	padding-left: 0em;
+	font-size: 0.8em;
 }
 
 //end Angular Slider

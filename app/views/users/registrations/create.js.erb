@@ -1,0 +1,14 @@
+(function () {
+	<% if @user.errors.any? %>
+		window.location.replace('#view21');
+$('#ngView').html('<%=j render partial: 'users/registrations/newPartial' %>');
+<% end %>
+	<% if @user.errors.none? %>
+		window.location.replace('#view1');
+$('#mywidget').html('<%=j render partial:'home/user_widget' %>');
+<% end %>
+})();
+
+
+
+

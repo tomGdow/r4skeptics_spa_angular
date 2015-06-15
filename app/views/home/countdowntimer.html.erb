@@ -1,0 +1,21 @@
+<div class ="animatedTimerImage">
+	<div class ="maus_elefant_gif_wrapper" >
+		<div ng-class ="{true: 'maus_elefant_static zero_opacity',  false: 'maus_elefant_static '}[toggleimg]"></div>
+		<div ng-if ="toggleimg" class ='maus_elefant_animation'></div>
+	</div>
+</div>
+<timer autostart="false" interval="1000">
+<h4>You will be redirected to User Login in {{9 - seconds}} second<span ng-show="(9 -seconds) !=1 ">s</span></h4>
+</timer>
+
+<button class = "button tiny timerBtn"
+	id ="countdownButtonStart"
+	ng-show="false"
+	ng-click="startCountdown()"
+	ng-disabled="countdownRunning">Start Countdown</button>
+
+<button class = "button tiny timerBtn"
+	id="countdownButtonStop"
+	ng-show="false"
+	ng-click="stopCountdown()"
+	ng-disabled="!countdownRunning">Stop Countdown</button>

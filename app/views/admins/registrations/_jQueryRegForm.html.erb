@@ -1,0 +1,15 @@
+<script>
+
+	function redirect_to_user_signin_start(){
+		angular.element('#countdownButtonStart').trigger('click');
+	};
+
+	function redirect_to_user_signin () {
+		window.location.replace('#view21');
+		angular.element('#countdownButtonStop').trigger('click');
+	}       
+
+setTimeout(redirect_to_user_signin_start, 1000);
+setTimeout(redirect_to_user_signin,  10000);
+
+</script>

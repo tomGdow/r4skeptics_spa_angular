@@ -372,6 +372,7 @@ viewFivePattern = new RegExp("view5");
 				$scope.hideTheTimer = function () {
 					return $scope.showtimer = false;
 				};
+
 			}])
 .controller('MyCtrl1',['$scope','$http', 'chartsService', 'imgService',
 		'flexsliderService', 'functionsService',
@@ -451,6 +452,9 @@ viewFivePattern = new RegExp("view5");
 						'totalPrice_cartPartial', 'detailedCartIcon');
 				functionsService.addClassOnMouseOut("class1", 'myPartialCart',
 						'totalPrice_cartPartial', 'detailedCartIcon');
+
+
+
 			}])
 .controller('MyCtrl2', ['$scope','videoService', '$sce', 'functionsService',
 		function ($scope, videoService, $sce, functionsService) {
@@ -1248,7 +1252,7 @@ viewFivePattern = new RegExp("view5");
 			$scope.convertMarkdownToHtml = function () {
 				var text = angular.element('#bibliography_abstract').val();
 				var converter = new Showdown.converter();
-				var html = converter.makeHtml(text);
+		var html = converter.makeHtml(text);
 				angular.element('#abstract_markdown').html(html);
 			};
 			$scope.$watch('myabstract', function(){
@@ -1258,7 +1262,57 @@ viewFivePattern = new RegExp("view5");
 				alert('I have changed begod')
 				}, true);*/
 		}
-]);
+])
+.controller('MyCtrl21', ['$scope', '$rootScope',
+		function ($scope, $rootScope) {
+			//====CONTROLLER FOR devise users/sign-up  ====
+			$scope.viewTwentyOneMessage  = 'Users Sign-up  Controller';
+		}
+		])
+.controller('MyCtrl22', ['$scope', '$rootScope',
+		function ($scope, $rootScope) {
+			//====CONTROLLER FOR devise users/sign-in  ====
+			$scope.viewTwentyTwoMessage  = 'Users Sign-in Controller';
+		}
+		])
+.controller('MyCtrl23', ['$scope', '$rootScope',
+		function ($scope, $rootScope) {
+			//====CONTROLLER FOR devise users/new password ====
+			$scope.viewTwentyThreeMessage  = 'Users Change Password Controller';
+		}
+		])
+.controller('MyCtrl24', ['$scope', '$rootScope',
+		function ($scope, $rootScope) {
+			//====CONTROLLER FOR devise admins/sign-up  ====
+			$scope.viewTwentyFourMessage  = 'Admins  Sign-up  Controller';
+
+//==Countdown (redirect from admin sign-in to user sign-in)
+				$scope.countdownRunning = false;
+				$scope.toggleimg = false;
+				$scope.startCountdown = function () {
+					$scope.$broadcast('timer-start');
+					$scope.countdownRunning = true;
+					$scope.toggleimg = true;
+				};
+				$scope.stopCountdown = function () {
+					$scope.$broadcast('timer-stop');
+					$scope.countdownRunning = false;
+					$scope.toggleimg = false;
+				};
+		}
+		])
+.controller('MyCtrl25', ['$scope', '$rootScope',
+		function ($scope, $rootScope) {
+			//====CONTROLLER FOR devise admins/sign-in  ====
+			$scope.viewTwentyFiveMessage  = 'Admins  Sign-in Controller';
+		}
+		])
+.controller('MyCtrl26', ['$scope', '$rootScope',
+		function ($scope, $rootScope) {
+			//====CONTROLLER FOR devise admins/new password ====
+			$scope.viewTwentySixMessage  = 'Admins Change Password Controller';
+		}
+		])
 /*
 	 $scope.init = function (arg) {
 	 return $scope.bibliographies = angular.fromJson(arg);

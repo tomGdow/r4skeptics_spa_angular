@@ -109,8 +109,10 @@
 								</dd>
 							</dl>
 						</div>
-					</div>
-					<span ng-include="'/home/timer.html'"></span>
+					</div><!--row-->
+
+							<span ng-include="'/home/timer.html'"></span>
+
 					<div class="row productsNavWrapper" ng-show ="toggleProductsNav"><!--products nav-bar-->
 						<div class="row" id="productsnav">
 							<div class="small-12 columns">
@@ -155,14 +157,17 @@
 							</div>
 						</div>
 					</div>
+
+
+					<div id ="mywidget" > 
+						<%= render 'user_widget' %>
+					</div>
+
 					<div class="row">
 						<div id = "ngView"  class="small-12" ng-view ></div> <!--ng-view-->
 					</div>
 					<div class ="cartPartial" id = "cartP" my-draggable>
 						<div class="cart" id="mycart" ></div><!--cart -->
-					</div>
-					<div>
-						<%= render 'user_widget' %>
 					</div>
 					<div  ng-include="'/home/footer.html'" ng-cloak></div><!--footer-->
 					<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>

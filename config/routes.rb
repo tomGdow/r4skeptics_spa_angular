@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  devise_for :users
 	root 'home#index'
 
 
@@ -9,6 +8,8 @@ Rails.application.routes.draw do
 	resources :carts
 	resources :commodities
 
+devise_for :users, controllers: { sessions: 'users/sessions',  :registrations  => "users/registrations", :passwords => "users/passwords"}
+devise_for :admins, controllers: { sessions: 'admins/sessions',  :registrations  => "admins/registrations", :passwords => "admins/passwords"}
 	get 'home/index'
 	get "home/partial1"
 	get "home/partial2"
@@ -36,6 +37,7 @@ Rails.application.routes.draw do
 	get "home/animatedgifs"
 	get "home/blackcat"
 	get "home/timer"
+	get "home/countdowntimer"
 	get "home/templatepickll"
 	get "home/templatespiders"
 

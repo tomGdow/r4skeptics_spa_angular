@@ -4,44 +4,44 @@
 //see also http://techslides.com/angular-js-demos-examples-and-resources/
 
 .chart, .chart2, .chart3 {
-  background: $skeptics-background;
-  padding: 3px;
+	background: $skeptics-background;
+	padding: 3px;
 }
 
 .chart div, .chart2 div, .chart3 div {
-  width: 0;
-  transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -webkit-transition: all 0.5s ease-out;
+	width: 0;
+	transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-webkit-transition: all 0.5s ease-out;
 }
 
 .chart div, .chart2 div, .chart3 div {
-  font: 10px sans-serif;
-  background-color: steelblue;
-  text-align: right;
-  padding: 3px;
-  margin: 5px;
-  color: white;
-  box-shadow: 2px 2px 2px #666;
+	font: 10px sans-serif;
+	background-color: steelblue;
+	text-align: right;
+	padding: 3px;
+	margin: 5px;
+	color: white;
+	box-shadow: 2px 2px 2px #666;
 }
 
 .chart-button-list {
-  @include myflex();
-  margin: 25px auto;
-  margin-top: 0;
-  padding: 10px 20px;
-  width: 100%;
+	@include myflex();
+	margin: 25px auto;
+	margin-top: 0;
+	padding: 10px 20px;
+	width: 100%;
 }
 
 .chart-dynamic-header {
-  @extend .chart-button-list;
+	@extend .chart-button-list;
 }
 
 //== Live random data
 
 #chartContainer {
-  background:red;
-  margin: 2em 3em;
-  width: 70%;
-  height: 350px;
+	background:red;
+	margin: 2em 3em;
+	width: 70%;
+	height: 350px;
 }

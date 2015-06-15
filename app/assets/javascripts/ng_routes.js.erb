@@ -28,6 +28,12 @@ config(['$routeProvider', function($routeProvider,$rootScope) {
 	$routeProvider.when('/view18', {templateUrl: 'bibliographies/new.html', controller: 'MyCtrl18'}); //Bibliographies/new
 	$routeProvider.when('/view19', {templateUrl: 'bibliographies/', controller: 'MyCtrl16'}); //Bibliographies/show
 	$routeProvider.when('/view20', {templateUrl: 'bibliographies/new.html', controller: 'MyCtrl18'}); //Bibliographies/new
+	$routeProvider.when('/view21', {templateUrl: 'users/sign_up', controller: 'MyCtrl21'}); // Devise sign-up
+	$routeProvider.when('/view22', {templateUrl: 'users/sign_in', controller: 'MyCtrl22'}); // Devise sign-in
+	$routeProvider.when('/view23', {templateUrl: 'users/password/new', controller: 'MyCtrl23'}); // Devise new password 
+	$routeProvider.when('/view24', {templateUrl: 'admins/sign_up', controller: 'MyCtrl24'}); // Devise admin sign-up
+	$routeProvider.when('/view25', {templateUrl: 'admins/sign_in', controller: 'MyCtrl25'}); // Devise admin sign-in
+	$routeProvider.when('/view26', {templateUrl: 'admins/password/new', controller: 'MyCtrl26'}); // Devise admin new password 
 	$routeProvider.otherwise({redirectTo: '/view1'});
 }]);
 /*$routeProvider.when('/view19', {templateUrl: 'home/partialy.html', controller: 'MyCtrl19'});*/ //Bibliographies/new

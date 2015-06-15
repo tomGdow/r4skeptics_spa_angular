@@ -222,10 +222,10 @@ list-style: square outside none;}
 .yourclass.yourclass_alt {
 	background-color:white;
 }
+
 .yourclass>.biblio_panel_inner{visibility: hidden;}
 
 .ui-scrollfix{
-
 	background: $skeptics-background;
 	position: fixed;
 	top:100px;
@@ -240,6 +240,7 @@ list-style: square outside none;}
 .odd {
 	background-color: $skeptics-background;
 }
+
 .even {
 	background-color: white;
 }
@@ -248,3 +249,20 @@ list-style: square outside none;}
 	padding-top: 0;
 }
 
+/* This is a single-line comment 
+.hint_message {
+float: right;
+background-color:red;
+}
+ */
+.message_wrapper {
+	@include myflex($justify-content: center);
+}
+.disabled_admin_message{ 
+	@include myflex($justify-content: center);
+	background: red;
+	color: white;
+	padding: 20px;
+	margin-bottom: em(40px);
+	width: 50%;
+}
