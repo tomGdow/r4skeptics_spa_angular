@@ -1,9 +1,7 @@
 <div class = "widget-wrapper"><!--begin flexbox--> 
 	<% if user_signed_in? %>
 		<span class ="widget-flexitem widget-flexFirst" >
-			<% if isgravatar? current_user %>
 				<img  src=<%= gravatar(current_user, 50)  %> alt="user gravatar image" title=<%= current_user.email %> >
-			<% end %>&nbsp;
 		</span><!--end outer flexbox item 1-->
 		<span>
 			<span class="widget-flexitem" id ="widget-welcome-message" title=<%= current_user.email %> >
@@ -18,9 +16,7 @@
 
 	<% elsif admin_signed_in? %>
 		<span class ="widget-flexitem widget-flexFirst" >
-			<% if isgravatar? current_admin %>
 				<img  src=<%= gravatar(current_admin, 50)  %> alt="user gravatar image" title=<%= current_admin.email %> >
-			<% end %>&nbsp;
 		</span><!--end outer flexbox item 1-->
 		<span>
 			<span class="widget-flexitem" id ="widget-welcome-message" title=<%= current_admin.email %> >
