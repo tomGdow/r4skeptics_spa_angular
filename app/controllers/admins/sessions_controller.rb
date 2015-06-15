@@ -1,6 +1,7 @@
 class Admins::SessionsController < Devise::SessionsController
 # before_filter :configure_sign_in_params, only: [:create]
 
+	before_filter :authenticate_admin!
 	skip_before_filter  :verify_authenticity_token
 	prepend_before_filter :verify_signed_out_user, only: :destroy
 	respond_to :html, :js
