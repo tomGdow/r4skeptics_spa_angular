@@ -2,7 +2,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 	# before_filter :configure_sign_up_params, only: [:create]
 	#before_filter :configure_account_update_params, only: [:update]
 	before_filter :authenticate_user!
-		skip_before_filter  :verify_authenticity_token
+	skip_before_filter  :verify_authenticity_token
 	respond_to :html, :js
 	def new
 		super

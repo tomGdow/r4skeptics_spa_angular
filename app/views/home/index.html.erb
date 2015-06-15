@@ -169,6 +169,11 @@
 					<div class ="cartPartial" id = "cartP" my-draggable>
 						<div class="cart" id="mycart" ></div><!--cart -->
 					</div>
+					<div>
+					
+	<%=  user_signed_in? %>
+	<%= current_user.blank? %>
+					</div>
 					<div  ng-include="'/home/footer.html'" ng-cloak></div><!--footer-->
 					<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 					<script>
