@@ -27,7 +27,6 @@ class Users::SessionsController < Devise::SessionsController
 	protected
 
 	def respond_to_on_destroy
-
 		respond_to do |format|
 			format.js
 		end

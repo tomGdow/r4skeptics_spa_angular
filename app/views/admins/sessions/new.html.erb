@@ -1,5 +1,5 @@
 <div class="form_wrapper">
-	<div class="form_box form_box1"><h4>Admin Login</h4> </div>
+	<div class="form_box form_box1"><h4>Admin Login</h4></div>
 	<div class="form_box form_box2"></div>
 	<%= form_for(resource, as: resource_name, url: session_path(resource_name), :remote => :true) do |f| %>
 		<div class="field">
@@ -26,11 +26,13 @@
 	<% end %>
 
 </div><!--form_wrapper-->
+
 <div class="form_wrapper ">
 	<div class="form_box form_box2"></div>
 	<div id ="email_or_password_error_admin" >There is a problem with Your email or password.  Try again </div>
 </div>
 <div><a href ="#view24" class="button skeptics-btn-two tiny">Admin Sign up</a></div>
+
 <script>
 	$('#login_button_admin').on('click', function(){
 		$('#email_or_password_error_admin').animate({opacity: 1.0}, 500);

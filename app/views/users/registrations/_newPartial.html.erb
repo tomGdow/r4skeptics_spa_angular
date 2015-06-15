@@ -1,8 +1,3 @@
-<div class= "form_wrapper">
-Is user signed in? 
-	<%=  user_signed_in? %>
-	<span> Does blank work?<%=  current_user.blank?  %> </span>
-</div>
 <div class="form_wrapper">
 	<div class="form_box form_box1"><h4>Sign Up Partial</h4> </div>
 	<div class="form_box form_box2"></div>
@@ -33,6 +28,5 @@ Is user signed in?
 		</div>
 	<% end %>
 </div><!--wrapper-->
-
 <div><a href ="#view24" class="button skeptics-btn-two tiny">Admin Sign-up</a></div>
 <%= render 'jQueryRegForm'  %>

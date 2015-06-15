@@ -111,7 +111,7 @@
 						</div>
 					</div><!--row-->
 
-							<span ng-include="'/home/timer.html'"></span>
+					<span ng-include="'/home/timer.html'"></span>
 
 					<div class="row productsNavWrapper" ng-show ="toggleProductsNav"><!--products nav-bar-->
 						<div class="row" id="productsnav">
@@ -170,9 +170,6 @@
 						<div class="cart" id="mycart" ></div><!--cart -->
 					</div>
 					<div>
-					
-	<%=  user_signed_in? %>
-	<%= current_user.blank? %>
 					</div>
 					<div  ng-include="'/home/footer.html'" ng-cloak></div><!--footer-->
 					<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>

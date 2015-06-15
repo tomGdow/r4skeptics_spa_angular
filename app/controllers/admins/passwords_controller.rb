@@ -1,6 +1,7 @@
 class Admins::PasswordsController < Devise::PasswordsController
 	
 	respond_to :html, :js
+	
   # GET /resource/password/new
   # def new
   #   super

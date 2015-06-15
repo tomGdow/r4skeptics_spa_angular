@@ -64,7 +64,7 @@
 2015-06-15T10:30:15.068049+00:00 app[web.1]: Started GET "/home/animatedgifs.html" for 93.107.200.199 at 2015-06-15 10:30:15 +0000
 2015-06-15T10:30:15.061992+00:00 app[web.1]:   Rendered home/banksImage.html.erb within layouts/home (0.1ms)
 2015-06-15T10:30:15.107376+00:00 heroku[router]: at=info method=GET path="/home/curieFlexslider.html" host=sceptics.herokuapp.com request_id=03098c5a-2d6e-47d1-97fc-b026bf6855b5 fwd="93.107.200.199" dyno=web.1 connect=0ms service=56ms status=200 bytes=1776
-2015-06-15T10:30:15.086641+00:00 heroku[router]: at=info method=GET path="/home/animatedgifs.html" host=sceptics.herokuapp.com request_id=2a6534d9-d16c-4e78-9bda-9e617222cdfa fwd="93.107.200.199" dyno=web.1 connect=1ms service=34ms status=200 bytes=1842
+2015-06-15T10:30:15.086641+00:00 heroku[router]: at=info methodt:GET path="/home/animatedgifs.html" host=sceptics.herokuapp.com request_id=2a6534d9-d16c-4e78-9bda-9e617222cdfa fwd="93.107.200.199" dyno=web.1 connect=1ms service=34ms status=200 bytes=1842
 2015-06-15T10:30:15.090334+00:00 heroku[router]: at=info method=GET path="/home/charts.html" host=sceptics.herokuapp.com request_id=ff24debb-7030-4cb8-a1eb-8b7d1c4bdc65 fwd="93.107.200.199" dyno=web.1 connect=1ms service=39ms status=200 bytes=1381
 2015-06-15T10:30:15.065344+00:00 heroku[router]: at=info method=GET path="/home/banksImage.html" host=sceptics.herokuapp.com request_id=204517ec-1fcf-48aa-90ef-810b62932a65 fwd="93.107.200.199" dyno=web.1 connect=0ms service=17ms status=200 bytes=1508
 2015-06-15T10:30:15.080363+00:00 app[web.1]:   Rendered home/animatedgifs.html.erb within layouts/home (0.1ms)
