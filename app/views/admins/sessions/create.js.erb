@@ -1,6 +1,9 @@
 (function () {
-	window.location.replace('#view1');
-	$('#mywidget').html('<%=j render partial:'home/user_widget' %>');
+
+    window.location.replace('#view1');
+    $('#mywidget').html('<%=j render partial:'home/user_widget' %>');
+    widgetFlash("widget_message",  '<%= widget_message(username: username(user: current_admin))[:login_admin] %>');
+
 })();
 
 

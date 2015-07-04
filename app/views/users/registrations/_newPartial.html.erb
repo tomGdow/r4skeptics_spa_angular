@@ -1,32 +1,33 @@
 <div class="form_wrapper">
-	<div class="form_box form_box1"><h4>Sign Up Partial</h4> </div>
-	<div class="form_box form_box2"></div>
-	<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :remote => :true)  do |f| %>
+    <div class="form_box form_box1"><h4>Sign Up Partial</h4> </div>
+    <div class="form_box form_box2"></div>
 
-		<%= devise_error_messages! %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :remote => :true)  do |f| %>
 
-		<div class="field">
-			<%= f.label :email, class: "form_label"  %>
-			<span class = "error_item"><%= errors_for @user, :email, "Email" %></span>
-			<%= f.email_field :email, autofocus: true %>
-		</div><!--field-->
+        <%= devise_error_messages! %>
 
-		<div class="field">
-			<%= f.label :password, "Password (#{password_length_message})", class: "form_label" %>
-			<span class = "error_item"><%= errors_for @user, :password, "Password" %></span>
-			<%= f.password_field :password, autocomplete: "off" %>
-		</div><!--field-->
+        <div class="field">
+            <%= f.label :email, class: "form_label"  %>
+            <span class = "error_item"><%= errors_for @user, :email, "Email" %></span>
+            <%= f.email_field :email, autofocus: true %>
+        </div><!--field-->
 
-		<div class="field">
-			<%= f.label :password_confirmation, class: "form_label" %>
-			<span class = "error_item"><%= errors_for @user, :password_confirmation, "Password confirmation" %></span>
-			<%= f.password_field :password_confirmation, autocomplete: "off" %>
-		</div><!--field-->
+        <div class="field">
+            <%= f.label :password, "Password (#{password_length_message})", class: "form_label" %>
+            <span class = "error_item"><%= errors_for @user, :password, "Password" %></span>
+            <%= f.password_field :password, autocomplete: "off" %>
+        </div><!--field-->
 
-		<div class="actions">
-			<%= f.submit "Sign up",  class: "button tiny skeptics-btn-five" %>
-		</div>
-	<% end %>
+        <div class="field">
+            <%= f.label :password_confirmation, class: "form_label" %>
+            <span class = "error_item"><%= errors_for @user, :password_confirmation, "Password confirmation" %></span>
+            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div><!--field-->
+
+        <div class="actions">
+            <%= f.submit "Sign up",  class: "button tiny skeptics-btn-five" %>
+        </div>
+    <% end %>
 </div><!--wrapper-->
-<div><a href ="#view24" class="button skeptics-btn-two tiny">Admin Sign-up</a></div>
-<%= render 'jQueryRegForm'  %>
+<div><a href ="#view24" class="button skeptics-btn-red tiny">Admin Sign-up</a></div>
+<%= render 'jQueryRegForm' %>

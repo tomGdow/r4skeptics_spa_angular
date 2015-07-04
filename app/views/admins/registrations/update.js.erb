@@ -1,0 +1,21 @@
+(function () {
+
+    <% if @admin.errors.any? %>
+		window.location.replace('#view28');
+        $('#ngView').html('<%=j render partial: 'admins/registrations/editPartial' %>');
+        
+    <% end %>
+
+	<% if @admin.errors.none? %>
+		window.location.replace('#view1');
+        $('#mywidget').html('<%=j render partial:'home/user_widget' %>');
+        widgetFlash("widget_message",  '<%= widget_message(username: username(user: current_admin))[:password_change_admin] %>');
+    <% end %>
+    
+})();
+
+
+
+
+
+

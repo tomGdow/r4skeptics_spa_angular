@@ -1,40 +1,89 @@
 <div class = "widget-wrapper"><!--begin flexbox--> 
-	<% if user_signed_in? %>
-		<span class ="widget-flexitem widget-flexFirst" >
-			<img  src=<%= gravatar(current_user, 50)  %> alt="user gravatar image" title=<%= current_user.email %> >
-		</span><!--end outer flexbox item 1-->
-		<span>
-			<span class="widget-flexitem" id ="widget-welcome-message" title=<%= current_user.email %> >
-				Welcome <%= username %>
-		</span><!--end inner flexbox item 1-->
-		<span class ="widget-flexitem">
-			<%= link_to 'logout', destroy_user_session_path,
-				:method => :delete,:remote => true, 
-				:class => "button skeptics-btn-two tiny widget-flexLast",
-				:id => "destroy_button" %>
-		</span><!--end inner flexbox item 2-->
 
-	<% elsif admin_signed_in? %>
-		<span class ="widget-flexitem widget-flexFirst" >
-			<img  src=<%= gravatar(current_admin, 50)  %> alt="user gravatar image" title=<%= current_admin.email %> >
-		</span><!--end outer flexbox item 1-->
-		<span>
-			<span class="widget-flexitem" id ="widget-welcome-message" title=<%= current_admin.email %> >
-				<%= username(user: current_admin) %> (administrator)	
-			</span><!--end inner flexbox item 1-->
-			<span class ="widget-flexitem">
-				<%= link_to 'logout', destroy_admin_session_path,
-					:method => :delete,:remote => true, 
-					:class => "button skeptics-btn-two tiny widget-flexLast",
-					:id => "destroy_button" %>
-			</span><!--end inner flexbox item 2-->
+    <% if logged_in_user  %>
+        <span class ="widget-flexitem widget-flexFirst" id="widget_gravatar" >
+            <%= link_to '#view27' do %>
+                <%= image_tag gravatar(logged_in_user, 50) %>
+            <% end %>
+            <span id="widget-password-change-message" >
+                <% if current_user  %>
+                    <%= link_to 'Click to Change Password/Delete Account', '#view27'  %>
+                <% else %>
+                    <%= link_to 'Click to Change Password/Delete Account', '#view28'  %>
+                <% end %>
+            </span>
+        </span><!--end outer flexbox item 1-->
+        <span> 
+            <span id = "widget_message" ></span>          
+        </span>
+        <span><!--begin inner flexbox item 2-->
+            <span class="widget-flexitem" >
+                <span class = "widget-welcome-message"  id = "widget_welcome_message">
+                    <span id="abridged_email_message">
+                        <% if current_user %>
+                            Welcome
+                        <% end %>
+                        <%= username(user: logged_in_user) %>
+                        <% if current_admin  %>
+                            (administrator)
+                        <% end %>
+                    </span>
+                    <span id="full_email_message" title ="Click to Change Password/Delete Account">
 
-		<% else %>
-			<span>&nbsp</span>
-			<span>
-				<a href ="#view22" class="button skeptics-btn-two tiny">Login</a>
-				<a href ="#view21" class="button skeptics-btn-two tiny widget-flexLast">Sign Up</a>
-			</span><!--end inner flexbox item 3-->
-		</span><!--end outer flexbox item 2-->
-	<% end %>
+                        <% if current_user  %>
+                            <%=link_to current_user.email, '#view27' %>
+                        <% else %>
+                            <%=link_to current_admin.email, '#view28' %>
+                        <% end %>
+
+                    </span>
+                </span><!-- end widget-welcome-message-->
+                <%= link_to 'logout', destroy_user_session_path,
+                    :method => :delete,
+                    :remote => true, 
+                    :class => "button skeptics-btn-two tiny widget-flexLast",
+                    :id => "destroy_button" %>
+            </span><!--widget flexitem-->
+        </span><!--end inner flexbox item 2-->
+
+    <% else %>
+        <span>&nbsp</span>
+        <span id = "widget_message" ></span>          
+        <span>
+            <a href ="#view22" class="button skeptics-btn-two tiny">Login</a>
+            <a href ="#view21" class="button skeptics-btn-two tiny widget-flexLast">Sign Up</a>
+        </span><!--end inner flexbox item 3-->
+    <% end %>
 </div><!--widget-wrapper--><!--end flexbox-->
+
+<script> 
+
+    (function () {
+
+        $('#widget_gravatar').on('mouseover', function () {
+
+            $('#widget-password-change-message').fadeIn("slow");
+
+        }).on('mouseleave', function () {
+
+            $('#widget-password-change-message').fadeOut("slow");
+
+        });
+
+            $('#widget_welcome_message').on("mouseover", function () {
+
+                $(this).find('#abridged_email_message').stop(true,true).hide();
+
+                    $(this).find('#full_email_message').fadeIn(2000);
+                    $(this).find('#full_email_message > a').css("color", "#FFA500"); 
+
+            }).on("mouseleave", function () {
+
+                $(this).find('#abridged_email_message').fadeIn(2000)
+                $(this).find('#full_email_message').stop(true,true).hide();
+
+            });
+
+    })();
+
+</script>

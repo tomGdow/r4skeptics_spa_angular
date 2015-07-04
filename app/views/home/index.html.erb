@@ -1,186 +1,187 @@
 <!DOCTYPE html>
 <!--[if lt IE 7]>
 <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-	<!--[if IE 7]>
-	<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-		<!--[if IE 8]>
-		<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-			<!--[if gt IE 8]><!-->
-			<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
-				<head>
-					<meta charset="utf-8">
-					<meta http-equiv="X-UA-Compatible" content="IE=edge">
-					<meta name="description" content="">
-					<meta name="viewport" content="width=device-width, initial-scale=1">
-					<meta http-equiv='cache-control' content='no-cache'>
-					<meta http-equiv='expires' content='0'>
-					<meta http-equiv='pragma' content='no-cache'>
-					<title>Skeptics with Angular</title>
-					<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-					<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css"><!--jquery-UI-->
-					<%= javascript_include_tag "vendor/modernizr.js" %>
-					<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-					<script src=" https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script> <!--angular-->
-					<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.15/angular-animate.js"></script> <!--angular-animate-->
-					<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.2/TweenMax.min.js"></script><!--TweenMax-->
-					<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&libraries=places&language=en-US"></script><!--Google Maps-->
-					<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>    <!--D3 Charts-->
-					<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script><!--Angular Resources-->
-					<%= csrf_meta_tags %>
-				</head>
-				<body ng-controller="MyCtrlIndex">
-					<!--[if lt IE 7]>
-					<p class="browsehappy">You are using an <strong>outdated</strong> browser.
-						Please <a href="http://browsehappy.com/">upgrade
-							your browser</a> to improve your experience.</p>
-					<![endif]-->
-					<div class="row">
-						<div class="small-12 columns">
-							<div class="row" my-draggable><!--Main NavBar-->
-								<div class="small-12 columns">
-									<div id="main" ng-include="'/home/mainnav.html'"></div>
-								</div>
-							</div>
-							<div  ng-include="'/home/timenav.html'"></div><!-- Time  Nav-bar-->
-						</div>
-					</div><!--row-->
-					<div class="row" ng-cloak><!--Get Longitude/Latitude (id="temp-nav")-->
-						<div class="small-12 columns dynamic_latlong"
-							id="lat-to-long"
-							ng-show ="longlat">
-							<dl class="sub-nav">
-								<dd></dd>
-								<dd>
-									<button ng-click="doSearch()"
-										class="button  tiny"
-										id="lat_long_search_btn">
-										Search
-									</button>
-								</dd>
-								<dd>
-									<google-places location=location
-										ng-focus="onFocus()"
-										focus-on="focusMe" >
-									</google-places>
-								</dd>
-								<dd ng-show="toggleLatLongCaption"
-									id ="my_latit_caption">
-									Latitude:
-								</dd>
-								<dd ng-bind ="mylatitude"
-									id ="my_latitude" >
-								</dd>
-								<dd ng-show="toggleLatLongCaption"
-									id ="my_longit_caption">
-									Longitude:
-								</dd>
-								<dd ng-bind ="mylongitude"
-									id ="my_longitude">
-								</dd>
-								<dd>
-									<button ng-click="toggleView()"
-										ng-show="showToggleButton"
-										class ="button tiny"
-										id="min_expand_button">
-										<span ng-show="minimizeExpand">Expand</span>
-										<span ng-hide="minimizeExpand">Minimize</span>
-									</button>
-								</dd>
-							</dl>
-						</div>
-					</div>
-					<div class="row" ng-cloak> <!--Fahrenheit to Celcius Converter-->
-						<div class="small-12 columns dynamic_temp"
-							id="celcius-to-fahrenheit"
-							ng-show ="cfConvModel">
-							<dl class="sub-nav" id="temp-nav">
-								<dd></dd>
-								<dd id = "fahren_panel">
-									<input type="number" ng-model="fahrenheit"
-									ng-change="markEdited('F')" id = "fahrenheit"/>
-									Fahrenheit
-								</dd>
-								<dd id ="celsius_panel">
-									<input type="number"
-									ng-model="celsius"
-									ng-change="markEdited('C')"
-									id ="celcius" />
-									Celsius
-								</dd>
-							</dl>
-						</div>
-					</div><!--row-->
+    <!--[if IE 7]>
+    <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+        <!--[if IE 8]>
+        <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+            <!--[if gt IE 8]><!-->
+            <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+                <head>
+                    <meta charset="utf-8">
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                    <meta name="description" content="">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <meta http-equiv='cache-control' content='no-cache'>
+                    <meta http-equiv='expires' content='0'>
+                    <meta http-equiv='pragma' content='no-cache'>
+                    <title>Skeptics with Angular</title>
+                    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+                    <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css"><!--jquery-UI-->
+                    <%= javascript_include_tag "vendor/modernizr.js" %>
+                    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+                    <script src=" https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script> <!--angular-->
+                    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.15/angular-animate.js"></script> <!--angular-animate-->
+                    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.2/TweenMax.min.js"></script><!--TweenMax-->
+                    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&libraries=places&language=en-US"></script><!--Google Maps-->
+                    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>    <!--D3 Charts-->
+                    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script><!--Angular Resources-->
+                    <%= csrf_meta_tags %>
+                </head>
+                <body ng-controller="MyCtrlIndex">
+                    <!--[if lt IE 7]>
+                    <p class="browsehappy">You are using an <strong>outdated</strong> browser.
+                        Please <a href="http://browsehappy.com/">upgrade
+                            your browser</a> to improve your experience.</p>
+                    <![endif]-->
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <div class="row" my-draggable><!--Main NavBar-->
+                                <div class="small-12 columns">
+                                    <div id="main" ng-include="'/home/mainnav.html'"></div>
+                                </div>
+                            </div>
+                            <div  ng-include="'/home/timenav.html'"></div><!-- Time  Nav-bar-->
+                        </div>
+                    </div><!--row-->
+                    <div class="row" ng-cloak><!--Get Longitude/Latitude (id="temp-nav")-->
+                        <div class="small-12 columns dynamic_latlong"
+                            id="lat-to-long"
+                            ng-show ="longlat">
+                            <dl class="sub-nav">
+                                <dd></dd>
+                                <dd>
+                                    <button ng-click="doSearch()"
+                                        class="button  tiny"
+                                        id="lat_long_search_btn">
+                                        Search
+                                    </button>
+                                </dd>
+                                <dd>
+                                    <google-places location=location
+                                        ng-focus="onFocus()"
+                                        focus-on="focusMe" >
+                                    </google-places>
+                                </dd>
+                                <dd ng-show="toggleLatLongCaption"
+                                    id ="my_latit_caption">
+                                    Latitude:
+                                </dd>
+                                <dd ng-bind ="mylatitude"
+                                    id ="my_latitude" >
+                                </dd>
+                                <dd ng-show="toggleLatLongCaption"
+                                    id ="my_longit_caption">
+                                    Longitude:
+                                </dd>
+                                <dd ng-bind ="mylongitude"
+                                    id ="my_longitude">
+                                </dd>
+                                <dd>
+                                    <button ng-click="toggleView()"
+                                        ng-show="showToggleButton"
+                                        class ="button tiny"
+                                        id="min_expand_button">
+                                        <span ng-show="minimizeExpand">Expand</span>
+                                        <span ng-hide="minimizeExpand">Minimize</span>
+                                    </button>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="row" ng-cloak> <!--Fahrenheit to Celcius Converter-->
+                        <div class="small-12 columns dynamic_temp"
+                            id="celcius-to-fahrenheit"
+                            ng-show ="cfConvModel">
+                            <dl class="sub-nav" id="temp-nav">
+                                <dd></dd>
+                                <dd id = "fahren_panel">
+                                    <input type="number" ng-model="fahrenheit"
+                                    ng-change="markEdited('F')" id = "fahrenheit"/>
+                                    Fahrenheit
+                                </dd>
+                                <dd id ="celsius_panel">
+                                    <input type="number"
+                                    ng-model="celsius"
+                                    ng-change="markEdited('C')"
+                                    id ="celcius" />
+                                    Celsius
+                                </dd>
+                            </dl>
+                        </div>
+                    </div><!--row-->
 
-					<span ng-include="'/home/timer.html'"></span>
+                    <span ng-include="'/home/timer.html'"></span>
 
-					<div class="row productsNavWrapper" ng-show ="toggleProductsNav"><!--products nav-bar-->
-						<div class="row" id="productsnav">
-							<div class="small-12 columns">
-								<dl class="sub-nav">
-									<dd>
-										<a href="#view5">
-											<span  ng-show="toggleview5"
-												ng-click = "showLittleCart()">
-												Dynamic Searching
-											</span>
-										</a>
-										<a href="#view15">
-											<span ng-show="toggleview15"
-												ng-click = "showLittleCart()">
-												Dynamic Searching
-											</span>
-										</a>
-									</dd>
-									<dd><a href="#view7"
-											id ="new_product_navBar"
-											ng-click = "showLittleCart()">
-											New Product
-										</a>
-									</dd>
-									<dd>
-										<a href="#view9">
-											<span ng-show="toggleview9"
-												id = "products_search_6"
-												ng-click = "showLittleCart()">
-												Products Search
-											</span>
-										</a>
-										<a href="#view6">
-											<span  ng-show="toggleview6"
-												id = "products_search_9"
-												ng-click = "showLittleCart()">
-												Products Search
-											</span>
-										</a>
-									</dd>
-								</dl>
-							</div>
-						</div>
-					</div>
+                    <div class="row productsNavWrapper" ng-show ="toggleProductsNav"><!--products nav-bar-->
+                        <div class="row" id="productsnav">
+                            <div class="small-12 columns">
+                                <dl class="sub-nav">
+                                    <dd>
+                                        <a href="#view5">
+                                            <span  ng-show="toggleview5"
+                                                ng-click = "showLittleCart()">
+                                                Dynamic Searching
+                                            </span>
+                                        </a>
+                                        <a href="#view15">
+                                            <span ng-show="toggleview15"
+                                                ng-click = "showLittleCart()">
+                                                Dynamic Searching
+                                            </span>
+                                        </a>
+                                    </dd>
+                                    <dd><a href="#view7"
+                                            id ="new_product_navBar"
+                                            ng-click = "showLittleCart()">
+                                            New Product
+                                        </a>
+                                    </dd>
+                                    <dd>
+                                        <a href="#view9">
+                                            <span ng-show="toggleview9"
+                                                id = "products_search_6"
+                                                ng-click = "showLittleCart()">
+                                                Products Search
+                                            </span>
+                                        </a>
+                                        <a href="#view6">
+                                            <span  ng-show="toggleview6"
+                                                id = "products_search_9"
+                                                ng-click = "showLittleCart()">
+                                                Products Search
+                                            </span>
+                                        </a>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                    </div>
 
-
-					<div id ="mywidget" > 
-						<%= render 'user_widget' %>
-					</div>
-
-					<div class="row">
-						<div id = "ngView"  class="small-12" ng-view ></div> <!--ng-view-->
-					</div>
-					<div class ="cartPartial" id = "cartP" my-draggable>
-						<div class="cart" id="mycart" ></div><!--cart -->
-					</div>
-					<div>
-					</div>
-					<div  ng-include="'/home/footer.html'" ng-cloak></div><!--footer-->
-					<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-					<script>
-						(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-							(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-						})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-63458325-1', 'auto');
-	ga('send', 'pageview');
+                    <div id ="mywidget" >
+                        <%= render 'user_widget' %>
+                    </div>
+                    
+                    <div class="row">
+                        <div id = "ngView"  class="small-12" ng-view ></div> <!--ng-view-->
+                    </div>
+                    <div class ="cartPartial" id = "cartP" my-draggable>
+                        <div class="cart" id="mycart" ></div><!--cart -->
+                    </div>
+                    <div>
+                    </div>
+                    <div  ng-include="'/home/footer.html'" ng-cloak></div><!--footer-->
+                    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+                    <script>
+                        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-63458325-1', 'auto');
+    ga('send', 'pageview');
 </script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script><!--Showdown-->
-				</body>
-			</html>
+                </body>
+            </html>

@@ -34,6 +34,7 @@ config(['$routeProvider', function($routeProvider,$rootScope) {
 	$routeProvider.when('/view24', {templateUrl: 'admins/sign_up', controller: 'MyCtrl24'}); // Devise admin sign-up
 	$routeProvider.when('/view25', {templateUrl: 'admins/sign_in', controller: 'MyCtrl25'}); // Devise admin sign-in
 	$routeProvider.when('/view26', {templateUrl: 'admins/password/new', controller: 'MyCtrl26'}); // Devise admin new password 
+	$routeProvider.when('/view27', {templateUrl: 'users/edit', controller: 'MyCtrl27'}); // Devise users  password/edit 
+	$routeProvider.when('/view28', {templateUrl: 'admins/edit', controller: 'MyCtrl28'}); // Devise admins password/edit 
 	$routeProvider.otherwise({redirectTo: '/view1'});
 }]);
-/*$routeProvider.when('/view19', {templateUrl: 'home/partialy.html', controller: 'MyCtrl19'});*/ //Bibliographies/new

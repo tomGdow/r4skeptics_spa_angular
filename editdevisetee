@@ -1,0 +1,890 @@
+
+Started DELETE "/users/sign_out" for 10.0.2.2 at 2015-06-16 12:12:59 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#destroy as JS
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  commit transaction
+  Rendered home/_user_widget.html.erb (0.5ms)
+  Rendered users/sessions/destroy.js.erb (9.2ms)
+Completed 200 OK in 301ms (Views: 40.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 10.0.2.2 at 2015-06-16 12:14:32 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendered home/_user_widget.html.erb (1.0ms)
+  Rendered home/index.html.erb within layouts/home (597.5ms)
+Completed 200 OK in 606ms (Views: 604.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-372f30a883be227598416ce8fdbfeb35e89f67a68379c3c63e02649f3148df2e.css?body=1" for 10.0.2.2 at 2015-06-16 12:14:33 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation_and_overrides.self-8dd2cf068f4dac04ffb9a30c1a06a07a72cd3797ddc217e2858617e1f329a5ff.css?body=1" for 10.0.2.2 at 2015-06-16 12:14:33 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/vendor/modernizr.self-b70ec353dab071c99c30dda130c56e57f8f9ca59f43e15840575fea2cea80e7f.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:33 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:33 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery-ui/effect.self-3acdb29e7da09c8f0195b994d2f04d73bfef50dc539c84fd2c835d964d33e5c1.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:33 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery-ui/effect-blind.self-ed102209d7aa0b7374f3db8478cc7dcff5f9980d3146e8bf9fbfab959c6d5d8a.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:33 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery-ui.self-dd486d9516071d2a8f6325245f74b50de7adf6053ac403fa199aadf6b6613f48.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:34 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.flexslider.self-2de29a5b8ef60ef171cd6cc98c28bc2a6cb77edabd7061892470ddec0f7251fd.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:34 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.self-131d1290b15ee784a7ea04c9f857eb93cb28efd7dff1f2bb05adb1cbfd9c4426.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:34 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:34 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.abide.self-71cde8588eca210a79c8e69ab73ee9a064a9c49c89c5fe0cdc8df04d726acdd3.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:34 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.accordion.self-d00f9a4747afadd7c52082dc409f0b6dd6f64e257cf9ccd46c24b6e19288c610.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:34 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.alert.self-519e73b1d3e545b323e6ab347e730bcbe6d72a04713db16f1e214fe2373ae1c2.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:34 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.clearing.self-a773f3715fcdd82f0b7766306b290e81fd42bdec663e26ca9700177149250393.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:34 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-4d9c987c625ce5cf0bc3e0c207e3737c9b6b0fa9f14e56525918c220550c576a.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:34 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-bb708ad80fd982758228cc70a9fb5dce98bda39dac3a6ad1f3fbbb385e4e854a.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:34 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.interchange.self-fe99ba63df1d57662de23c1e41ce474b577a0b86342744adacf553eb783d380a.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:34 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.joyride.self-074dbdb010b9183197a318b829b3c40fe9be34f8c4a87171510d46eaabd442f4.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:34 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.magellan.self-ade34d2ac513b6d95f4e376f2fd831b0498925167d5168369c18b5ef849fc9fb.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:34 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-82901743f718307bb6e3ccef6849c8c9c9441644bb983738b4e04c53873ce339.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:34 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.orbit.self-74ff4973629e9f230d4b677e2f0de2658d2252bf424955723d9b671934d8a1c8.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:34 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.reveal.self-9449536b10dc28859375ecd8d7fe8d1651e0799baaedcc7055c9ea348e866e4b.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:34 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.slider.self-3cf470b4a8ef90b5c6ec83578414182bd07664376a5eed5d46d30b569a0d1fc7.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:34 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.tab.self-00caf29832a669d2381e31830f471a8b8286dbe827cbe3a3e1a8b8dc4787dbf6.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:34 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-d0554d117aecd24b0a0cf7f7705a6538f9e24b3debe94150be8a302825689e82.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:34 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.topbar.self-156c8edb873d86838bd1f793d061d8912a32867118fa45c14581145358b940f1.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:35 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:35 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/angular-flexslider.self-e320d7c048c1647c08e6ee2f961a3c788fd76a705db66cbae5b60ba7bd4d3700.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:35 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/angular-route.self-693335df324fcbf9205732de807d395faa849ba45df7ebdb35fb92c51149b42f.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:35 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/angular-sanitize.self-ace2356741f6806c274557504484ec6608c1f94bdc133d3ced340394acbbb44b.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:35 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/angular-touch.self-ef76019ca20fd999fb3db2cb36d3b30a7fa12a9c539629c780a22246ad6bb810.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:35 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/angular-underscore-module.self-d5a9e3d83bd40962f0ee4ed3ac823efd0007f02fb64715ef254e10742dc862f2.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:35 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/buffering.self-6e5b955ca3019eb59bab42df5a387b64f7558e2eee093236fa57ab89f518dd74.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:35 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/controls.self-da70fc19228661169c71a8cc8f94a9c74332e0f4bb2c798a5420c57142a4aec2.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:35 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/demo.self-dfe3b187f924290d5fb76c0bda157786633338ff8554fe95e54f1cd12692d8a9.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:35 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/googlemap.self-35135d51f8fb452d4d949b6f6b9fd940187af066610d920eab576d925e6c56b1.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:35 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/main.self-3df246340455d1b8f4129a0f3137f379d6501654cd60dcd449ff57a13690b68b.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:35 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/ng-FitText.self-14c70a3ca826def54d830a2e9d2782ea28906f572dcdbab03b512f78db4b488e.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:36 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/ng_controllers.self-5bbdb3c07f945555223f8733cb5c94ca995ba8b469253201b5b96ac782ae8293.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:36 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/ng_directives.self-626b47234b5c197220314ff4785d367f4bf79e278b87e23cfa0cdf4402d21322.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:36 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/ng_filters.self-ad7a5d19b784af96ed81e351c32808757d236fcd8eb6706ad4dce9e47f2bcdc1.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:36 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/ng_routes.self-9fd7255bc57de4e2ceda3ea5aa1a955041286fb9bd5bc6861e6cd7be1b330ed5.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:36 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/ng_services.self-b5d998d3ce07f2ebb3eac568b40088469902dfe5dc09e907d0d38e2f6411ecbb.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:36 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/overlay-play.self-903da567f6cd3d7addeba12dc6132cbb4284518e28afe9cd80910f53b740657c.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:36 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/plugins.self-267f86b986829cb9a3c46b9fcdbc56783bb923005ba5ef5b27efce504e72ecfa.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:36 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/poster.self-aa4693302a28230a496457d6a2f081669d5c65a26e95f5bf25e02265bc2878b0.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:36 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/underscore.self-ee8ba6b58a9c67d9f7148b31f90851767c45aeaa8c86fbf7e981ba255d39240b.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:37 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/vendor/fastclick.self-3e418527b6d1f2c904cfeb196670c1de985cc1d9ab89fc67205acb8dae0ef83a.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:37 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/vendor/placeholder.self-72e0e59f325faa480d30c43b0b7619c33cd207d296c79f7eea56c433badf0d41.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:37 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/videogular.self-192d11cd120976b3996e89c4953d499f505d8767c20a93da9e5c42318d2ded93.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:37 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/canvasjs.min.self-b7db6c48cf13aec4ca11edb612a41f22ec39d27f2fb46a21a3887ebbc94bc48f.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:37 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/timer.self-d134a834d16396f3ae97a2a1a445dff7bd336c7e2500d041750d11ccb8c8f897.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:37 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/ui-utils.self-e17209cd87fced7f5368d53ab14a57f3a144790b9dec7db07666624d35c82724.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:37 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/ui-utils-ieshiv.self-aea26333f5c5be24eb6a889c72ed9c91dcd4b7c87adff8c102213d5ad0972e36.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:37 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/angular-youtube-embed.self-23e2552c4fc1f0b6eb510575b01fe21a52d28b281d5c49d3d98365d6e7bb5e78.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:37 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:37 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-5081eed9700ce4431fbf0ead09d472c32c40a2250cc7ff31020e3e9bd4fac6eb.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:38 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 10.0.2.2 at 2015-06-16 12:14:49 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendered home/_user_widget.html.erb (1.4ms)
+  Rendered home/index.html.erb within layouts/home (726.4ms)
+Completed 200 OK in 734ms (Views: 732.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/timenav.html" for 10.0.2.2 at 2015-06-16 12:14:51 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#timenav as HTML
+  Rendered home/timenav.html.erb within layouts/home (0.3ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/timer.html" for 10.0.2.2 at 2015-06-16 12:14:51 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#timer as HTML
+  Rendered home/timer.html.erb within layouts/home (0.4ms)
+Completed 200 OK in 13ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/footer.html" for 10.0.2.2 at 2015-06-16 12:14:51 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#footer as HTML
+  Rendered home/footer.html within layouts/home (1.7ms)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/partial1.html" for 10.0.2.2 at 2015-06-16 12:14:51 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#partial1 as HTML
+  Rendered home/partial1.html.erb within layouts/home (0.9ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/mainnav.html" for 10.0.2.2 at 2015-06-16 12:14:51 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#mainnav as HTML
+  Rendered home/mainnav.html within layouts/home (0.8ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/gmtTime.html" for 10.0.2.2 at 2015-06-16 12:14:52 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#gmtTime as HTML
+  Rendered home/gmtTime.html within layouts/home (0.3ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/fonts/icomoon.woff?i9tobp" for 10.0.2.2 at 2015-06-16 12:14:52 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home/animatedgifs.html" for 10.0.2.2 at 2015-06-16 12:14:52 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#animatedgifs as HTML
+  Rendered home/animatedgifs.html.erb within layouts/home (0.6ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/curieFlexslider.html" for 10.0.2.2 at 2015-06-16 12:14:52 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#curieFlexslider as HTML
+  Rendered home/curieFlexslider.html.erb within layouts/home (1.1ms)
+Completed 200 OK in 12ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/banksImage.html" for 10.0.2.2 at 2015-06-16 12:14:52 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#banksImage as HTML
+  Rendered home/banksImage.html.erb within layouts/home (0.3ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/charts.html" for 10.0.2.2 at 2015-06-16 12:14:52 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#charts as HTML
+  Rendered home/charts.html.erb within layouts/home (0.5ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/dorothy_hodgkin_golden_ratio.jpg" for 10.0.2.2 at 2015-06-16 12:14:53 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/marie_curie.jpg" for 10.0.2.2 at 2015-06-16 12:14:53 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/lise_meitner_golden_ratio.jpg" for 10.0.2.2 at 2015-06-16 12:14:53 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/popper_golden_ratio.jpg" for 10.0.2.2 at 2015-06-16 12:14:53 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/watson_golden_ratio.jpg" for 10.0.2.2 at 2015-06-16 12:14:53 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rutherford_golden_ratio.jpg" for 10.0.2.2 at 2015-06-16 12:14:53 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/001_banks.jpg" for 10.0.2.2 at 2015-06-16 12:14:53 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 10.0.2.2 at 2015-06-16 12:14:54 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendered home/_user_widget.html.erb (2.5ms)
+  Rendered home/index.html.erb within layouts/home (737.4ms)
+Completed 200 OK in 745ms (Views: 744.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-372f30a883be227598416ce8fdbfeb35e89f67a68379c3c63e02649f3148df2e.css?body=1" for 10.0.2.2 at 2015-06-16 12:14:55 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation_and_overrides.self-8dd2cf068f4dac04ffb9a30c1a06a07a72cd3797ddc217e2858617e1f329a5ff.css?body=1" for 10.0.2.2 at 2015-06-16 12:14:55 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/vendor/modernizr.self-b70ec353dab071c99c30dda130c56e57f8f9ca59f43e15840575fea2cea80e7f.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:56 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:56 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery-ui/effect-blind.self-ed102209d7aa0b7374f3db8478cc7dcff5f9980d3146e8bf9fbfab959c6d5d8a.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:56 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery-ui/effect.self-3acdb29e7da09c8f0195b994d2f04d73bfef50dc539c84fd2c835d964d33e5c1.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:56 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery-ui.self-dd486d9516071d2a8f6325245f74b50de7adf6053ac403fa199aadf6b6613f48.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:56 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:56 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.flexslider.self-2de29a5b8ef60ef171cd6cc98c28bc2a6cb77edabd7061892470ddec0f7251fd.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:56 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.self-131d1290b15ee784a7ea04c9f857eb93cb28efd7dff1f2bb05adb1cbfd9c4426.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:56 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.abide.self-71cde8588eca210a79c8e69ab73ee9a064a9c49c89c5fe0cdc8df04d726acdd3.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:56 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.accordion.self-d00f9a4747afadd7c52082dc409f0b6dd6f64e257cf9ccd46c24b6e19288c610.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:56 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.alert.self-519e73b1d3e545b323e6ab347e730bcbe6d72a04713db16f1e214fe2373ae1c2.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:57 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.clearing.self-a773f3715fcdd82f0b7766306b290e81fd42bdec663e26ca9700177149250393.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:57 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-4d9c987c625ce5cf0bc3e0c207e3737c9b6b0fa9f14e56525918c220550c576a.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:57 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-bb708ad80fd982758228cc70a9fb5dce98bda39dac3a6ad1f3fbbb385e4e854a.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:57 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.interchange.self-fe99ba63df1d57662de23c1e41ce474b577a0b86342744adacf553eb783d380a.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:57 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-82901743f718307bb6e3ccef6849c8c9c9441644bb983738b4e04c53873ce339.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:57 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.joyride.self-074dbdb010b9183197a318b829b3c40fe9be34f8c4a87171510d46eaabd442f4.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:57 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.magellan.self-ade34d2ac513b6d95f4e376f2fd831b0498925167d5168369c18b5ef849fc9fb.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:57 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.orbit.self-74ff4973629e9f230d4b677e2f0de2658d2252bf424955723d9b671934d8a1c8.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:57 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.reveal.self-9449536b10dc28859375ecd8d7fe8d1651e0799baaedcc7055c9ea348e866e4b.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:57 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.slider.self-3cf470b4a8ef90b5c6ec83578414182bd07664376a5eed5d46d30b569a0d1fc7.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:58 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.tab.self-00caf29832a669d2381e31830f471a8b8286dbe827cbe3a3e1a8b8dc4787dbf6.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:58 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-d0554d117aecd24b0a0cf7f7705a6538f9e24b3debe94150be8a302825689e82.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:58 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation/foundation.topbar.self-156c8edb873d86838bd1f793d061d8912a32867118fa45c14581145358b940f1.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:58 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:58 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/angular-flexslider.self-e320d7c048c1647c08e6ee2f961a3c788fd76a705db66cbae5b60ba7bd4d3700.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:58 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/angular-route.self-693335df324fcbf9205732de807d395faa849ba45df7ebdb35fb92c51149b42f.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:58 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/angular-sanitize.self-ace2356741f6806c274557504484ec6608c1f94bdc133d3ced340394acbbb44b.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:58 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/angular-touch.self-ef76019ca20fd999fb3db2cb36d3b30a7fa12a9c539629c780a22246ad6bb810.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:58 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/angular-underscore-module.self-d5a9e3d83bd40962f0ee4ed3ac823efd0007f02fb64715ef254e10742dc862f2.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:58 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/buffering.self-6e5b955ca3019eb59bab42df5a387b64f7558e2eee093236fa57ab89f518dd74.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:58 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/controls.self-da70fc19228661169c71a8cc8f94a9c74332e0f4bb2c798a5420c57142a4aec2.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:59 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/demo.self-dfe3b187f924290d5fb76c0bda157786633338ff8554fe95e54f1cd12692d8a9.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:59 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/googlemap.self-35135d51f8fb452d4d949b6f6b9fd940187af066610d920eab576d925e6c56b1.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:59 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/main.self-3df246340455d1b8f4129a0f3137f379d6501654cd60dcd449ff57a13690b68b.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:59 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/ng-FitText.self-14c70a3ca826def54d830a2e9d2782ea28906f572dcdbab03b512f78db4b488e.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:59 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/ng_controllers.self-5bbdb3c07f945555223f8733cb5c94ca995ba8b469253201b5b96ac782ae8293.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:59 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/ng_directives.self-626b47234b5c197220314ff4785d367f4bf79e278b87e23cfa0cdf4402d21322.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:59 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/ng_filters.self-ad7a5d19b784af96ed81e351c32808757d236fcd8eb6706ad4dce9e47f2bcdc1.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:59 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/ng_routes.self-9fd7255bc57de4e2ceda3ea5aa1a955041286fb9bd5bc6861e6cd7be1b330ed5.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:59 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/ng_services.self-b5d998d3ce07f2ebb3eac568b40088469902dfe5dc09e907d0d38e2f6411ecbb.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:59 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/overlay-play.self-903da567f6cd3d7addeba12dc6132cbb4284518e28afe9cd80910f53b740657c.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:59 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/plugins.self-267f86b986829cb9a3c46b9fcdbc56783bb923005ba5ef5b27efce504e72ecfa.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:59 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/poster.self-aa4693302a28230a496457d6a2f081669d5c65a26e95f5bf25e02265bc2878b0.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:59 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/underscore.self-ee8ba6b58a9c67d9f7148b31f90851767c45aeaa8c86fbf7e981ba255d39240b.js?body=1" for 10.0.2.2 at 2015-06-16 12:14:59 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/vendor/fastclick.self-3e418527b6d1f2c904cfeb196670c1de985cc1d9ab89fc67205acb8dae0ef83a.js?body=1" for 10.0.2.2 at 2015-06-16 12:15:00 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/videogular.self-192d11cd120976b3996e89c4953d499f505d8767c20a93da9e5c42318d2ded93.js?body=1" for 10.0.2.2 at 2015-06-16 12:15:00 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/vendor/placeholder.self-72e0e59f325faa480d30c43b0b7619c33cd207d296c79f7eea56c433badf0d41.js?body=1" for 10.0.2.2 at 2015-06-16 12:15:00 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/canvasjs.min.self-b7db6c48cf13aec4ca11edb612a41f22ec39d27f2fb46a21a3887ebbc94bc48f.js?body=1" for 10.0.2.2 at 2015-06-16 12:15:00 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/timer.self-d134a834d16396f3ae97a2a1a445dff7bd336c7e2500d041750d11ccb8c8f897.js?body=1" for 10.0.2.2 at 2015-06-16 12:15:00 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/ui-utils.self-e17209cd87fced7f5368d53ab14a57f3a144790b9dec7db07666624d35c82724.js?body=1" for 10.0.2.2 at 2015-06-16 12:15:00 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/ui-utils-ieshiv.self-aea26333f5c5be24eb6a889c72ed9c91dcd4b7c87adff8c102213d5ad0972e36.js?body=1" for 10.0.2.2 at 2015-06-16 12:15:00 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/angular-youtube-embed.self-23e2552c4fc1f0b6eb510575b01fe21a52d28b281d5c49d3d98365d6e7bb5e78.js?body=1" for 10.0.2.2 at 2015-06-16 12:15:00 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 10.0.2.2 at 2015-06-16 12:15:00 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-5081eed9700ce4431fbf0ead09d472c32c40a2250cc7ff31020e3e9bd4fac6eb.js?body=1" for 10.0.2.2 at 2015-06-16 12:15:00 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home/timenav.html" for 10.0.2.2 at 2015-06-16 12:15:01 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#timenav as HTML
+  Rendered home/timenav.html.erb within layouts/home (0.3ms)
+Completed 200 OK in 15ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/timer.html" for 10.0.2.2 at 2015-06-16 12:15:01 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#timer as HTML
+  Rendered home/timer.html.erb within layouts/home (0.3ms)
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/mainnav.html" for 10.0.2.2 at 2015-06-16 12:15:01 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#mainnav as HTML
+  Rendered home/mainnav.html within layouts/home (0.3ms)
+Completed 200 OK in 241ms (Views: 237.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/footer.html" for 10.0.2.2 at 2015-06-16 12:15:01 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#footer as HTML
+  Rendered home/footer.html within layouts/home (0.6ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/partial1.html" for 10.0.2.2 at 2015-06-16 12:15:02 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#partial1 as HTML
+  Rendered home/partial1.html.erb within layouts/home (0.6ms)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/fonts/icomoon.woff?i9tobp" for 10.0.2.2 at 2015-06-16 12:15:02 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/home/gmtTime.html" for 10.0.2.2 at 2015-06-16 12:15:02 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#gmtTime as HTML
+  Rendered home/gmtTime.html within layouts/home (0.3ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/animatedgifs.html" for 10.0.2.2 at 2015-06-16 12:15:03 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#animatedgifs as HTML
+  Rendered home/animatedgifs.html.erb within layouts/home (0.2ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/curieFlexslider.html" for 10.0.2.2 at 2015-06-16 12:15:03 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#curieFlexslider as HTML
+  Rendered home/curieFlexslider.html.erb within layouts/home (1.3ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/banksImage.html" for 10.0.2.2 at 2015-06-16 12:15:03 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#banksImage as HTML
+  Rendered home/banksImage.html.erb within layouts/home (0.4ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/charts.html" for 10.0.2.2 at 2015-06-16 12:15:03 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#charts as HTML
+  Rendered home/charts.html.erb within layouts/home (0.5ms)
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/witch_static.gif" for 10.0.2.2 at 2015-06-16 12:15:03 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/maus_elefant_static.gif" for 10.0.2.2 at 2015-06-16 12:15:03 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/horror511_static.gif" for 10.0.2.2 at 2015-06-16 12:15:04 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/marie_curie.jpg" for 10.0.2.2 at 2015-06-16 12:15:04 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/popper_golden_ratio.jpg" for 10.0.2.2 at 2015-06-16 12:15:04 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/watson_golden_ratio.jpg" for 10.0.2.2 at 2015-06-16 12:15:04 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/rutherford_golden_ratio.jpg" for 10.0.2.2 at 2015-06-16 12:15:04 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/001_banks.jpg" for 10.0.2.2 at 2015-06-16 12:15:04 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/lise_meitner_golden_ratio.jpg" for 10.0.2.2 at 2015-06-16 12:15:04 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/fonts2/flexslider-icon.woff" for 10.0.2.2 at 2015-06-16 12:15:04 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/dorothy_hodgkin_golden_ratio.jpg" for 10.0.2.2 at 2015-06-16 12:15:04 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2015-06-16 12:15:07 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#new as HTML
+  Rendered users/sessions/new.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 36ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2015-06-16 12:15:31 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::SessionsController#create as JS
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"example-2@railstutorial.org", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "example-2@railstutorial.org"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2015-06-16 11:11:04.880226"], ["current_sign_in_at", "2015-06-16 11:15:31.324796"], ["sign_in_count", 15], ["updated_at", "2015-06-16 11:15:31.348255"], ["id", 2]]
+  [1m[35m (74.9ms)[0m  commit transaction
+  Rendered home/_user_widget.html.erb (1.4ms)
+  Rendered users/sessions/create.js.erb (5.7ms)
+Completed 200 OK in 319ms (Views: 18.4ms | ActiveRecord: 76.0ms)
+
+
+Started GET "/users/edit" for 10.0.2.2 at 2015-06-16 12:15:39 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (4.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered users/registrations/edit.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 70ms (Views: 42.2ms | ActiveRecord: 4.3ms)
+
+
+Started PUT "/users" for 10.0.2.2 at 2015-06-16 12:15:47 +0100
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#update as JS
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"example-2@railstutorial.org", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Unpermitted parameter: email
+Completed 500 Internal Server Error in 163ms
+
+ActionView::MissingTemplate (Missing template users/registrations/update, devise/registrations/update, devise/update, application/update with {:locale=>[:en], :formats=>[:js, :html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/thomas/acp/skkeptics_with_angular/r4sketpics_SPA_angular/r4skeptics/app/views"
+  * "/home/thomas/.rvm/gems/ruby-2.1.1/gems/devise-3.5.1/app/views"
+  * "/home/thomas/.rvm/gems/ruby-2.1.1/gems/foundation-rails-5.5.2.1/app/views"
+):
+  actionview (4.2.0) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.0) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.0) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.0) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.0) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.0) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.0) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.0) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.2.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/thomas/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.2.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.2.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  responders (2.1.0) lib/action_controller/responder.rb:236:in `default_render'
+  responders (2.1.0) lib/action_controller/responder.rb:177:in `to_js'
+  responders (2.1.0) lib/action_controller/responder.rb:163:in `respond'
+  responders (2.1.0) lib/action_controller/responder.rb:156:in `call'
+  responders (2.1.0) lib/action_controller/respond_with.rb:203:in `respond_with'
+  devise (3.5.1) app/controllers/devise/registrations_controller.rb:60:in `update'
+  actionpack (4.2.0) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_process_action_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.0) lib/action_view/rendering.rb:30:in `process'
+  rack-mini-profiler (0.9.3) lib/mini_profiler/profiling_methods.rb:106:in `block in profile_method'
+  actionpack (4.2.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal.rb:236:in `block in action'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:42:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/routing/mapper.rb:49:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:802:in `call'
+  meta_request (0.3.4) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  meta_request (0.3.4) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  bullet (4.14.7) lib/bullet/rack.rb:12:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.1) lib/rack/etag.rb:24:in `call'
+  rack (1.6.1) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.1) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.1) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.1) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:647:in `call'
+  activerecord (4.2.0) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  rack-contrib (1.2.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.3.4) lib/meta_request/middlewares/headers.rb:16:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:29:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  rack-mini-profiler (0.9.3) lib/mini_profiler/profiler.rb:276:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/thomas/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/thomas/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/thomas/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/thomas/.rvm/gems/ruby-2.1.1/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/missing_template.text.erb (0.9ms)

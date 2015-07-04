@@ -3,6 +3,7 @@ class Admins::RegistrationsController < Devise::RegistrationsController
 	# before_filter :configure_account_update_params, only: [:update]
 	
 	before_filter :authenticate_admin!
+	skip_before_filter  :verify_authenticity_token
 	respond_to :html, :js
 
 	# GET /resource/sign_up
@@ -11,14 +12,14 @@ class Admins::RegistrationsController < Devise::RegistrationsController
 	end
 
 	# POST /resource
-	# def create
-	#   super
-	# end
+	 def create
+	   super
+	 end
 
 	# GET /resource/edit
-	# def edit
-	#   super
-	# end
+	 def edit
+	   super
+	 end
 
 	# PUT /resource
 	# def update

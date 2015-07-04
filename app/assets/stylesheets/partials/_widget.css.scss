@@ -1,23 +1,48 @@
 .widget-wrapper {
-	@include myflex($justify-content: space-between);
+    @include myflex($justify-content: space-between);
 }
 
 .widget-flexitem {
-	margin-left: em(5px);
-	margin-right: em(5px);
+    margin-left: em(5px);
+    margin-right: em(5px);
 }
 
 .widget-flexFirst{
-	margin-left: em(20px);
+    margin-left: em(20px);
 }
 
 .widget-flexLast{
-	margin-right: em(20px);
+    margin-right: em(20px);
 }
 
-#widget-welcome-message {
-	color: $nav-bar-gray;
-	font-family: $font-family-helvetica;
-	font-size: 0.875rem;
+%widget_message_base{
+    color: $nav-bar-gray;
+    font-family: $font-family-helvetica;
+    font-size: 0.875rem;
 }
 
+.widget-welcome-message {
+    @extend %widget_message_base;
+}
+
+#full_email_message {
+    @extend %widget_message_base;
+    display:none;
+}
+
+#widget-password-change-message  {
+    @extend %widget_message_base;
+    display:none;
+}
+
+#widget-password-change-message a, 
+#widget-password-change-message-alt a{
+    @extend %widget_message_base;
+    &:hover {color: $skeptics-orange;}
+}
+
+#widget_message {
+    @extend %widget_message_base;
+    color: $skeptics-orange;
+    display: none;
+}

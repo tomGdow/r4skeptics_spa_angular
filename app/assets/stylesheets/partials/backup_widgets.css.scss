@@ -1,0 +1,53 @@
+.widget-wrapper {
+	@include myflex($justify-content: space-between);
+}
+
+.widget-flexitem {
+	margin-left: em(5px);
+	margin-right: em(5px);
+}
+
+.widget-flexFirst{
+	margin-left: em(20px);
+}
+
+.widget-flexLast{
+	margin-right: em(20px);
+}
+
+%widget_message_base{
+	color: $nav-bar-gray;
+	font-family: $font-family-helvetica;
+	font-size: 0.875rem;
+}
+
+.boundingBox {position:relative;
+	background-color: blue;
+} 
+.animate-show-widget {
+	opacity: 1;
+	background: white;
+}
+
+.animate-show-widget.ng-hide-add.ng-hide-add-active,
+.animate-show-widget.ng-hide-remove.ng-hide-remove-active {
+	-webkit-transition: all linear 0.5s;
+	transition: all linear 0.5s;
+}
+
+.animate-show-widget.ng-hide {
+	opacity: 0;
+}
+.widget-welcome-message {
+	@extend %widget_message_base;
+	opacity: 1;
+	background-color: red;
+}
+.messageHidden {
+	@extend %widget_message_base;
+	opacity: 0;
+}
+#widget-password-change-message {
+	@extend %widget_message_base;
+	&:hover {color: $skeptics-orange;}
+}

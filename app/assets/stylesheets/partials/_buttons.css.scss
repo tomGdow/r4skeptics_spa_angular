@@ -38,3 +38,8 @@
 	text-transform: capitalize;
 	background-color: $skeptics-blue;
 }
+.button.tiny.skeptics-btn-red{
+	@extend .button.tiny.skeptics-btn-one;
+	text-transform: capitalize;
+	background-color: red;
+}

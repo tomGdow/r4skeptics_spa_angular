@@ -1,0 +1,20 @@
+(function () {
+
+	<% if @user.errors.any? %>
+		window.location.replace('#view27');
+        $('#ngView').html('<%=j render partial: 'users/registrations/editPartial' %>');
+    <% end %>
+    
+	<% if @user.errors.none? %>
+		window.location.replace('#view1');
+        $('#mywidget').html('<%=j render partial:'home/user_widget' %>');
+        widgetFlash("widget_message",  '<%= widget_message(username: username)[:password_change] %>');
+    <% end %>
+    
+})();
+
+
+
+
+
+

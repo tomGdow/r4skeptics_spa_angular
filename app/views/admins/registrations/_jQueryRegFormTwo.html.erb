@@ -1,0 +1,6 @@
+<script>
+	$('input').on('focus', function(){
+		$(this).parent().parent().find('label').addClass('error_label_alt');
+		$(this).parent().parent().find('span').animate({opacity: 0.0}, 2000);
+	});
+</script>
