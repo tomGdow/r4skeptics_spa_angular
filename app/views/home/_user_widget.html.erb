@@ -1,5 +1,4 @@
-<div class = "widget-wrapper"><!--begin flexbox--> 
-
+<div class = "widget-wrapper" ng-init ="initwid()"><!--begin flexbox--> 
     <% if logged_in_user  %>
         <span class ="widget-flexitem widget-flexFirst" id="widget_gravatar" >
             <%= link_to '#view27' do %>
@@ -50,8 +49,10 @@
         <span>&nbsp</span>
         <span id = "widget_message" ></span>          
         <span>
-            <a href ="#view22" class="button skeptics-btn-two tiny">Login</a>
-            <a href ="#view21" class="button skeptics-btn-two tiny widget-flexLast">Sign Up</a>
+            <span id= "trythiss">
+            <a href ="#view22" id ="mybtn" class = "button skeptics-btn-two tiny"  ng-class="showWidgetLogin ? 'widget_hide':''" >Login</a>
+        </span>
+            <a href ="#view21" class = "button skeptics-btn-two tiny widget-flexLast" ng-class="showWidgetSignup ? 'widget_hide' : ''">Sign Up</a>
         </span><!--end inner flexbox item 3-->
     <% end %>
 </div><!--widget-wrapper--><!--end flexbox-->
@@ -83,6 +84,11 @@
                 $(this).find('#full_email_message').stop(true,true).hide();
 
             });
+
+            
+        $('#trythiss').on('click', function(){ 
+            alert('hello'); 
+        });  
 
     })();
 

@@ -1,5 +1,8 @@
+
 /* ANGULAR CONTROLLERS */
+
 'use strict';
+
 angular.module('myApp.controllers', [
         'angular-flexslider',
         'ngFitText',
@@ -17,6 +20,7 @@ angular.module('myApp.controllers', [
         'youtube-embed'
         ])
 .run(function ($rootScope) {
+    //  $rootScope.showWidgetLogin=false;
     $rootScope.toggleShowPara = true;
     $rootScope.toggleCaption = true;
     $rootScope.toggleShowPara2 = true;
@@ -53,7 +57,7 @@ angular.module('myApp.controllers', [
         }
     };
     $rootScope.littleCart = true; //littleCart is the cart-icon on time nav-bar
-    $rootScope.toggleProductsNav = false;
+    // $rootScope.toggleProductsNav = false;
     $rootScope.cartMouseOver = function () {
         this.addCartClass = true;
     }; //fade-in-out bg on add-to-cart
@@ -69,7 +73,7 @@ angular.module('myApp.controllers', [
         'theTimeNowService', '_', 'focus', '$location', '$sce',
         function ($scope, $rootScope, $http, theTimeNowService, _, focus,
             $location, $sce) {
-                //====INDEX PAGE CONTROLLER====
+                //INDEX PAGE CONTROLLER
                 $rootScope.littleCart = true;
                 $scope.format_one = "h:mm:ss a";
                 $scope.format_two = "fullDate";
@@ -82,14 +86,14 @@ angular.module('myApp.controllers', [
                 $scope.longlat = false;
                 $scope.toggleLatLongCaption = false;
                 $scope.textdate = theTimeNowService.url;
-                //====NavBar
+                //NavBar
                 var curremt_location = $location.path(),
-                    viewOnePattern = new RegExp("view1"),
-                    viewEightPattern = new RegExp("view8"),
-                    viewTwoPattern = new RegExp("view2"),
-                    viewThreePattern = new RegExp("view3"),
-                    viewFourPattern = new RegExp("view4"),
-                    viewFivePattern = new RegExp("view5");
+viewOnePattern = new RegExp("view1"),
+viewEightPattern = new RegExp("view8"),
+viewTwoPattern = new RegExp("view2"),
+viewThreePattern = new RegExp("view3"),
+viewFourPattern = new RegExp("view4"),
+viewFivePattern = new RegExp("view5");
 
                 (function activeNav() {
                     function activeHelper(arg) {
@@ -118,16 +122,16 @@ angular.module('myApp.controllers', [
                             $scope.active = 'home';
                     }
                 })();
-                $rootScope.toggleProductsNav = true;
+                // $rootScope.toggleProductsNav = true;
                 $scope.navclick = function (arg) {
                     $rootScope.littleCart = true;
                     $scope.active = arg;
-                    if (arg === 'viewfive') {
-                        return $rootScope.toggleProductsNav = true;
-                    }
-                    $rootScope.toggleProductsNav = false;
+                    // if (arg === 'viewfive') {
+                    //   return $rootScope.toggleProductsNav = true;
+                    //}
+                    // $rootScope.toggleProductsNav = false;
                 };
-                //====Time and Date
+                //Time and Date
                 //clock
                 $scope.clockMouseOver = function () {
                     this.clock_image_model = true;
@@ -250,7 +254,7 @@ angular.module('myApp.controllers', [
                         this.setMyClass2 = 'dynamic-date_three';
                     }
                 };
-                //====Footer
+                //Footer
                 $scope.toggleClassModel = "toggleOn";
                 $scope.footerMouseOver = function () {
                     if (this.toggleClassModel === 'toggleOn') {
@@ -267,9 +271,8 @@ angular.module('myApp.controllers', [
                 $scope.footerMouseAway = function () {
                     this.toggleClassModel = 'toggleOn';
                 };
-                //====Fahrenheit to Celsius
+                //Fahrenheit to Celsius
                 //modified from  OverZealous at StackOverflow
-                // see:
                 // http://plnkr.co/edit/0n0golhEzU7dokMOkHN6?p=preview
                 // http://stackoverflow.com/a/17626761
                 $scope.edited = null;
@@ -293,7 +296,7 @@ angular.module('myApp.controllers', [
                     }
                     return $scope.cfConvModel = true;
                 };
-                //==== Latitude and Longitude
+                // Latitude and Longitude
                 //modified from; http://jsfiddle.net/mrajcok/pEq6X/
                 //see also http://techslides.com/angular-js-demos-examples-and-resources/
                 //(Location Search with Angular JS and Google)
@@ -328,7 +331,7 @@ angular.module('myApp.controllers', [
                         return this.toggleLatLongCaption = true;
                     }
                 };
-                //==== On focus
+                // On focus
                 $scope.onFocus = function () {
                     this.showToggleButton = false;
                     this.toggleLatLongCaption = false;
@@ -377,78 +380,111 @@ angular.module('myApp.controllers', [
                 $scope.widget=true;
                 $scope.passwordChangeMessage=false;
 
+
             }])
-.controller('MyCtrl1',['$scope','$http', 'chartsService', 'imgService',
-        'flexsliderService', 'functionsService',
-        function ($scope, $http, chartsService, imgService,
-            flexsliderService, functionsService) {
-                //====CONTROLLER FOR PARTIAL ONE ====
-                $scope.viewOneMessage = "Natural Skeptics";
-                $scope.mydraggable = "true";
-                //====Flexslider
-                //modified from: https://github.com/thenikso/angular-flexslider
-                $scope.slides = flexsliderService.flexdata;
-                $scope.slideShowQ = false;
-                $scope.slideShowSpeed = 5000;
-                $scope.animationSpeed = 1000;
-                $scope.pauseOnHover = "true";
-                $scope.pauseOnAction = "true";
-                $scope.pauseText = "";
-                $scope.playText = "";
-                $scope.controlNav = "true";
-                $scope.animationLoop = "true";
-                $scope.prevText = "";
-                $scope.nextText = "";
-                $scope.pausePlay = "true";
-                $scope.directionNav = "true";
-                $scope.before = function () {
-                    $scope.myVar = "flexBeforeClass";
+.controller('MyCtrl1',['$scope','$rootScope', '$http', 'chartsService', 'imgService',
+        'flexsliderService', 'functionsService', 'initService','$location','$anchorScroll','github',
+        function ($scope,$rootScope, $http, chartsService, imgService,
+            flexsliderService, functionsService, initService, $location, $anchorScroll, github) {
+
+                // CONTROLLER FOR PARTIAL ONE 
+
+                $scope.gotoBottom = function(x) {
+                    var newHash = 'iamthebottom';
+                    if ($location.hash() !== newHash) {
+                        // set the $location.hash to `newHash` and
+                        // $anchorScroll will automatically scroll to it
+                        $location.hash('iamthebottom');
+                        console.log(newHash);
+                    } else {
+                        // call $anchorScroll() explicitly,
+                        // since $location.hash hasn't changed
+                        $anchorScroll();
+                    }
                 };
-                $scope.after = function () {
-                    $scope.myVar = "flexAfterClass";
-                };
-                //====Chart (d3js)
-                //modified from http://codepen.io/danielemoraschi/pen/qFmol
-                //see also http://techslides.com/angular-js-demos-examples-and-resources/
-                //(Bar Chart Example with Angular.js and D3.js)
-                $scope.renderYear = (chartsService.dataYears)[0];
-                $scope.mydata = (chartsService.dataOne).toString();
-                $scope.mydata2 = (chartsService.dataTwo).toString();
-                $scope.mydata3 = (chartsService.dataThree).toString();
-                $scope.data1model = true;
-                $scope.data2model = false;
-                $scope.toggleDataOne = function () {
-                    this.data1model = true;
-                    this.data2model = false;
-                    this.data3model = false;
-                    $scope.renderYear = (chartsService.dataYears)[0];
-                };
-                $scope.toggleDataTwo = function () {
-                    this.data2model = true;
-                    this.data1model = false;
-                    this.data3model = false;
-                    $scope.renderYear = $scope.renderYear = (chartsService.dataYears)[1];
-                };
-                $scope.toggleDataThree = function () {
-                    this.data3model = true;
-                    this.data1model = false;
-                    this.data2model = false;
-                    //$scope.renderYear= 2014;
-                    $scope.renderYear = $scope.renderYear = (chartsService.dataYears)[2];
-                };
-                //==== Image Transition
-                $scope.imageSource = imgService.imgBanks.imageSource;
-                $scope.imageAltDesc = imgService.imgBanks.imageAltDesc;
-                $scope.captionText = imgService.imgBanks.captionText;
-                $scope.imageId = imgService.imgBanks.imageId;
-                //===== animated gifs
-                $scope.toggleGif = false;
-                $scope.animgifs = {
-                    "man": "horrors",
-                    "mouse": "maus_elefant",
-                    "witch": "witch"
-                };
-                //=== Control Display of Cart (_carts partial)
+                $scope.username= 'tomGdow';
+                $scope.megit = github.getUser($scope.username)
+                    .then(function (response) {
+                        return console.log(response.login);
+                    });
+
+                initService.init(1);
+
+                angular.extend($scope, {
+
+                    viewOneMessage : "Natural Skeptics",
+                    mydraggable : "true", 
+
+                    //Flexslider
+                    //modified from: https://github.com/thenikso/angular-flexslider
+                    slides : flexsliderService.flexdata,
+                    slideShowQ : false,
+                    slideShowSpeed : 5000,
+                    animationSpeed : 1000,
+                    pauseOnHover : "true",
+                    pauseOnAction : "true",
+                    pauseText : "",
+                    playText : "",
+                    controlNav : "true",
+                    animationLoop : "true",
+                    prevText : "",
+                    nextText : "",
+                    pausePlay : "true",
+                    directionNav : "true",
+
+                    // Chart (d3js)
+                    // modified from http://codepen.io/danielemoraschi/pen/qFmol
+                    // also:  http://techslides.com/angular-js-demos-examples-and-resources/
+                    // (Bar Chart Example with Angular.js and D3.js)
+                    renderYear : (chartsService.dataYears)[0],
+                    mydata : (chartsService.dataOne).toString(),
+                    mydata2 : (chartsService.dataTwo).toString(),
+                    mydata3 : (chartsService.dataThree).toString(),
+                    data1model : true,
+                    data2model : false,
+                    // Image Transition
+                    imageSource : imgService.imgBanks.imageSource,
+                    imageAltDesc : imgService.imgBanks.imageAltDesc,
+                    captionText : imgService.imgBanks.captionText,
+                    imageId : imgService.imgBanks.imageId,
+                    // animated gifs
+                    toggleGif : false,
+                    animgifs : {"man": "horrors", "mouse": "maus_elefant", "witch": "witch"}
+
+                });
+
+                angular.extend($scope, {
+
+                    //Flexslider`
+                    before : function () {
+                        $scope.myVar = "flexBeforeClass";
+                    },
+                    after : function () {
+                        $scope.myVar = "flexAfterClass";
+                    },
+                    //Charts
+                    toggleDataOne : function () {
+                        this.data1model = true;
+                        this.data2model = false;
+                        this.data3model = false;
+                        $scope.renderYear = (chartsService.dataYears)[0];
+                    },
+                    toggleDataTwo : function () {
+                        this.data2model = true;
+                        this.data1model = false;
+                        this.data3model = false;
+                        $scope.renderYear = (chartsService.dataYears)[1];
+                    },
+                    toggleDataThree : function () {
+                        this.data3model = true;
+                        this.data1model = false;
+                        this.data2model = false;
+                        //$scope.renderYear= 2014;
+                        $scope.renderYear = (chartsService.dataYears)[2];
+                    }
+                });
+
+                // Control Display of Cart (_carts partial)
                 functionsService.addClassById("displayTrue", 'myPartialCart');
                 functionsService.addClassById("class1", 'totalPrice_cartPartial');
                 functionsService.addClassById("class1", 'detailedCartIcon');
@@ -458,11 +494,15 @@ angular.module('myApp.controllers', [
                         'totalPrice_cartPartial', 'detailedCartIcon');
 
             }])
-.controller('MyCtrl2', ['$scope','videoService', '$sce', 'functionsService',
-        function ($scope, videoService, $sce, functionsService) {
-            //====CONTROLLER FOR PARTIAL TWO====
-            //==== Videogular ====
+.controller('MyCtrl2', ['$scope','$rootScope','videoService', '$sce', 'functionsService','initService',
+        function ($scope, $rootScope, videoService, $sce, functionsService, initService) {
+
+            // CONTROLLER FOR PARTIAL TWO
+
+            initService.init(2);
+            // Videogular 
             //see  http://videogular.com/
+
             $scope.viewTwoMessage = "Videos with Videogular";
             $scope.showLargeSmall = function (arg) {
                 if (arg === 1) {
@@ -511,7 +551,7 @@ angular.module('myApp.controllers', [
                 }
             };
             $scope.style = function (arg) {
-                if (arg === 1) {                              rfv
+                if (arg === 1) {                              
                     return {
                         'height': $scope.config.height + 'px'
                     };
@@ -532,7 +572,7 @@ angular.module('myApp.controllers', [
                 label: "Fill",
                     value: "fill"
             }];
-            //====Ocean View Video
+            //Ocean View Video
             $scope.vgToggle = true;
             $scope.makeVideoSmall = false;
             $scope.makeVideoLarge = true;
@@ -586,7 +626,7 @@ angular.module('myApp.controllers', [
             $scope.vgMouseLeave2 = function () {
                 $scope.setVgControlsTwoClass2 = true;
             };
-            //=== EarthAsDot video
+            // EarthAsDot video
             $scope.vgToggle2 = false;
             $scope.makeVideoSmall2 = true;
             $scope.makeVideoLarge2 = false;
@@ -628,7 +668,7 @@ angular.module('myApp.controllers', [
                     }
                 }
             }; //End Videogular
-            //=== Control Display of Cart (_carts partial)
+            // Control Display of Cart (_carts partial)
             functionsService.addClassById("displayTrue", 'myPartialCart');
             functionsService.addClassById("class1", 'totalPrice_cartPartial');
             functionsService.addClassById("class1", 'detailedCartIcon');
@@ -636,14 +676,17 @@ angular.module('myApp.controllers', [
                     'totalPrice_cartPartial', 'detailedCartIcon');
             functionsService.addClassOnMouseOut("class1", 'myPartialCart',
                     'totalPrice_cartPartial', 'detailedCartIcon');
-            //===== animated gifs
+            // animated gifs
             $scope.toggleGif = false;
             $scope.animgifs = { "pickll": "pickll"};
         }])
-.controller('MyCtrl3', ['$scope', '$http', 'instagram', 'functionsService',
-        function ($scope, $http, instagram, functionsService) {
-            //====CONTROLLER FOR PARTIAL THREE====
-            //===Instagram Feeds
+.controller('MyCtrl3', ['$scope','$rootScope', '$http', 'instagram', 'functionsService','initService',
+        function ($scope, $rootScope, $http, instagram, functionsService, initService) {
+
+            // CONTROLLER FOR PARTIAL THREE
+
+            initService.init(3);
+            //Instagram Feeds
             //Modified from http://tutorialzine.com/2013/08/learn-angularjs-5-examples/
             //See also http://techslides.com/angular-js-demos-examples-and-resources/
             $scope.showAjaxLoader1 = true;
@@ -660,16 +703,19 @@ angular.module('myApp.controllers', [
                 };
                 $scope.showAjaxLoader1 = false;
             });
-            //=== Control Display of Cart (_carts partial)
+            // Control Display of Cart (_carts partial)
             functionsService.addClassById("displayNone", 'myPartialCart');
         }])
-.controller('MyCtrl4', ['$scope', '$http', 'imgService',
-        'dublinSliderService', 'functionsService', 'googleService', '$timeout',
-        function ($scope, $http, imgService, dublinSliderService, functionsService, googleService, $timeout) {
-            //====CONTROLLER FOR PARTIAL FOUR====
+.controller('MyCtrl4', ['$scope','$rootScope',  '$http', 'imgService',
+        'dublinSliderService', 'functionsService', 'googleService', '$timeout','initService',
+        function ($scope, $rootScope, $http, imgService, dublinSliderService, functionsService, googleService, $timeout, initService) {
+
+            // CONTROLLER FOR PARTIAL FOUR
+
+            initService.init(4);
             //(Sixties Dublin)
             $scope.viewFourMessage = "Sixties Dublin";
-            //====Angular Slider ====
+            //Angular Slider 
             // Called here dublinslider
             // Modified from:  http://www.script-tutorials.com/photo-gallery-with-angularjs-and-css3/
             // See also: http://www.script-tutorials.com/demos/366/index.html#
@@ -706,7 +752,7 @@ angular.module('myApp.controllers', [
                 $scope.showHideCaptions = true;
                 $scope.togglebuttonlist = true; //show the button
             };
-            //====Google Maps
+            //Google Maps
             $http.get('googleMaps.json').success(function (data, status) {
                 $scope.googleAddress = data;
                 $scope.GoogleMapsStatus = status;
@@ -776,7 +822,7 @@ angular.module('myApp.controllers', [
             $scope.mapAndSlide = function () {
                 $scope.togglebuttonlist = false;
             };
-            //====tab view
+            //tab view
             //modified from:http://jsfiddle.net/doktormolle/aAeZw/
             //see also: http://techslides.com/angular-js-demos-examples-and-resources/
             //(Tabs with AngularJS)
@@ -788,12 +834,12 @@ angular.module('myApp.controllers', [
             $scope.tabbedImgMouseleave = function () {
                 $scope.toggleOnTab = true;
             };
-            //===Small Images
+            //Small Images
             $scope.imageSource3 = imgService.imgSchillachi.imageSource;
             $scope.imageAltDesc3 = imgService.imgSchillachi.imageAltDesc;
             $scope.captionText3 = imgService.imgSchillachi.captionText;
             $scope.imageId3 = imgService.imgSchillachi.imageId;
-            //====CanvasJS Live Random Data Chart
+            //CanvasJS Live Random Data Chart
             //Modified from:
             // http://canvasjs.com/editor/?id=http://canvasjs.com/example/gallery/dynamic/realtime_line/
             $scope.theme = "theme2";
@@ -838,7 +884,7 @@ angular.module('myApp.controllers', [
             setInterval(function () {
                 updateChart();
             }, updateInterval);
-            //=== Control Display of Cart (_carts partial)
+            // Control Display of Cart (_carts partial)
             functionsService.addClassById("displayTrue", 'myPartialCart');
             functionsService.addClassById("class1", 'totalPrice_cartPartial');
             functionsService.addClassById("class1", 'detailedCartIcon');
@@ -846,16 +892,19 @@ angular.module('myApp.controllers', [
                     'totalPrice_cartPartial', 'detailedCartIcon');
             functionsService.addClassOnMouseOut("class1", 'myPartialCart',
                     'totalPrice_cartPartial', 'detailedCartIcon');
-            //=== animated gifs
+            // animated gifs
             $scope.toggleGif = false;
             $scope.animgifs = {"pickll": "pickll"};
         }])
-.controller('MyCtrl5', ['$scope', '$http', 'functionsService', '$rootScope', 'focus',
-        function ($scope, $http, functionsService, $rootScope, focus) {
-            //====CONTROLLER FOR PARTIAL FIVE ====
+.controller('MyCtrl5', ['$scope','$rootScope', '$http', 'functionsService', 'focus','initService',
+        function ($scope, $rootScope, $http, functionsService, focus, initService) {
+
+            // CONTROLLER FOR PARTIAL FIVE 
+
+            initService.init(5);
+
             //Products Display page
             //Dynamic Searching
-            $rootScope.toggleProductsNav = true;
             $scope.viewFiveMessage = "Dynamic Searching";
             $scope.layout = 'grid2';
             $scope.message = "Dynamic Search";
@@ -887,7 +936,7 @@ angular.module('myApp.controllers', [
             $scope.moreAboutProductOnClick = function () {
                 this.checked = false;
             };
-            //=== Control Display of Cart (_carts partial)
+            // Control Display of Cart (_carts partial)
             functionsService.addClassById("displayTrue", 'myPartialCart');
             $scope.addCartClass = false; //for fade-in-out add to cart
             //Ajax bottleneck-2
@@ -896,12 +945,15 @@ angular.module('myApp.controllers', [
             $scope.switchViews = function ($args) {
                 functionsService.switchMyViews($args);
             };
-            //==Automatic focus on search input box
+            //Automatic focus on search input box
             focus('focusMe');
         }])
-.controller('MyCtrl6', ['$scope', '$rootScope','$http', '$sce','functionsService', 'focus', '$location',
-        function ($scope, $rootScope, $http, $sce, functionsService, focus,  $location) {
-            //====CONTROLLER FOR Commodities ====
+.controller('MyCtrl6', ['$scope', '$rootScope','$http', '$sce','functionsService', 'focus', '$location','initService',
+        function ($scope, $rootScope, $http, $sce, functionsService, focus,  $location, initService) {
+
+            //CONTROLLER FOR Commodities 
+
+            initService.init(6);
             $rootScope.littleCart = true;
             $scope.orderProp = 'name';
             $scope.alpha = "Alphabetical";
@@ -915,13 +967,13 @@ angular.module('myApp.controllers', [
             $scope.viewSixMessage = "Search Commodities";
             $scope.addCartClass = false; //for fade-in-out add to cart
             $scope.trustedHtml = $sce.trustAsHtml($scope.yourCart);
-            //==Ajax bottleneck
+            //Ajax bottleneck
             $rootScope.toggleview6 = false;
             $rootScope.toggleview9 = true;
             $scope.switchViews = function ($args) {
                 functionsService.switchMyViews($args);
             };
-            //==Automatic focus on search input box
+            //Automatic focus on search input box
             focus('focusMe');
             $scope.myFirstName = function (string) {
                 return functionsService.makeFirstName(string);
@@ -937,108 +989,119 @@ angular.module('myApp.controllers', [
                     );
         }
 ])
-.controller('MyCtrl7', ['$scope',
-        function ($scope) {
-            //====CONTROLLER FOR Commodities/new ====
+.controller('MyCtrl7', ['$scope','$rootScope', 'initService',
+        function ($scope, $rootScope, initService) {
+
+            // CONTROLLER FOR Commodities/new 
+            initService.init(7);
             $scope.viewSevenMessage = 'Create New Commodity';
         }
         ])
-.controller('MyCtrl8', ['$scope', 'imgService', '$http', 'allIrelandDataService', 'functionsService',
-        'mychartsService', function ($scope, imgService, $http, allIrelandDataService,
-            functionsService, mychartsService) {
-                //====CONTROLLER FOR PARTIAL EIGHT====
-                //(Blog Menu Item)
-                $scope.viewEightMessage = "Blog Page";
-                //==tab View
-                //modified from:http://jsfiddle.net/doktormolle/aAeZw/
-                //see also: http://techslides.com/angular-js-demos-examples-and-resources/
-                $scope.selected = 'first';
-                //====Flip picture 180 degrees ====
-                $scope.pictureFlipper = false;
-                $scope.toggleFlipLegend = true;
-                $scope.toggleFlipLegendWrapper = "true";
-                $scope.obj = {"nameone": "James Watson","nametwo": "Marie Curie"};
-                $scope.flipPicture = function () {
-                    if (this.pictureFlipper) {
-                        this.toggleFlipLegend = true;
-                        return this.pictureFlipper = false;
-                    }
-                    this.toggleFlipLegend = false;
-                    return this.pictureFlipper = true;
-                };
-                $scope.flipPictMouseover = function () {
-                    this.toggleFlipLegendWrapper = false;
-                };
-                $scope.flipPictMouseleave = function () {
-                    this.toggleFlipLegendWrapper = true;
-                };
-                //====Small Image Transitions ====
-                $scope.imageSource2 = imgService.imgPele.imageSource;
-                $scope.imageAltDesc2 = imgService.imgPele.imageAltDesc;
-                $scope.captionText2 = imgService.imgPele.captionText;
-                $scope.imageId2 = imgService.imgPele.imageId;
-                //====CanvasJS Doughnut Chart
-                //Modified from: http://canvasjs.com/html5-javascript-doughnut-chart/
-                var gaaColor = allIrelandDataService.countycolours;
-                CanvasJS.addColorSet('customColorSet1', [
-                        gaaColor.kerry, gaaColor.dublin, gaaColor.galway, gaaColor.cork,
-                        gaaColor.meath, gaaColor.cavan, gaaColor.wexford, gaaColor.downUlster,
-                        gaaColor.kildare, gaaColor.tipperary, gaaColor.mayo, gaaColor.offaly,
-                        gaaColor.louth, gaaColor.tyrone, gaaColor.others
-                        ]);
-                CanvasJS.addColorSet('customColorSet2', [
-                        gaaColor.kilkenny, gaaColor.cork, gaaColor.tipperary,
-                        gaaColor.limerick, gaaColor.dublin, gaaColor.wexford,
-                        gaaColor.galway, gaaColor.offaly, gaaColor.clare,
-                        gaaColor.waterford, gaaColor.others
-                        ]);
-                mychartsService.doughnutChart(
-                        "chartContainer_1",
-                        allIrelandDataService.footballers,
-                        "Football All Ireland Winners",
-                        "customColorSet1"
-                        );
-                mychartsService.doughnutChart(
-                        "chartContainer_2",
-                        allIrelandDataService.hurlers,
-                        "Hurling All Ireland Winners",
-                        "customColorSet2"
-                        );
-                //===== animated gifs
-                $scope.toggleGif = false;
-                $scope.animgifs = {
-                    "cat": "blackcat"
-                };
-                //=== Control Display of Cart (_carts partial)
-                functionsService.addClassById("displayTrue", 'myPartialCart');
-                functionsService.addClassById("class1", 'totalPrice_cartPartial');
-                functionsService.addClassById("class1", 'detailedCartIcon');
-                functionsService.addClassOnMouseOver("class2", 'myPartialCart',
-                        'totalPrice_cartPartial', 'detailedCartIcon');
-                functionsService.addClassOnMouseOut("class1", 'myPartialCart',
-                        'totalPrice_cartPartial', 'detailedCartIcon');
-            }
+.controller('MyCtrl8', ['$scope','$rootScope', 'imgService', '$http', 'allIrelandDataService', 'functionsService', 'mychartsService', 'initService', function ($scope, $rootScope, imgService, $http, allIrelandDataService, functionsService, mychartsService, initService) {
+
+    // CONTROLLER FOR PARTIAL EIGHT
+
+    initService.init(8);
+    //(Blog Menu Item)
+    $scope.viewEightMessage = "Blog Page";
+    //tab View
+    //modified from:http://jsfiddle.net/doktormolle/aAeZw/
+    //see also: http://techslides.com/angular-js-demos-examples-and-resources/
+    $scope.selected = 'first';
+    //Flip picture 180 degrees 
+    $scope.pictureFlipper = false;
+    $scope.toggleFlipLegend = true;
+    $scope.toggleFlipLegendWrapper = "true";
+    $scope.obj = {"nameone": "James Watson","nametwo": "Marie Curie"};
+    $scope.flipPicture = function () {
+        if (this.pictureFlipper) {
+            this.toggleFlipLegend = true;
+            return this.pictureFlipper = false;
+        }
+        this.toggleFlipLegend = false;
+        return this.pictureFlipper = true;
+    };
+    $scope.flipPictMouseover = function () {
+        this.toggleFlipLegendWrapper = false;
+    };
+    $scope.flipPictMouseleave = function () {
+        this.toggleFlipLegendWrapper = true;
+    };
+    //Small Image Transitions 
+    $scope.imageSource2 = imgService.imgPele.imageSource;
+    $scope.imageAltDesc2 = imgService.imgPele.imageAltDesc;
+    $scope.captionText2 = imgService.imgPele.captionText;
+    $scope.imageId2 = imgService.imgPele.imageId;
+    //CanvasJS Doughnut Chart
+    //Modified from: http://canvasjs.com/html5-javascript-doughnut-chart/
+    var gaaColor = allIrelandDataService.countycolours;
+    CanvasJS.addColorSet('customColorSet1', [
+            gaaColor.kerry, gaaColor.dublin, gaaColor.galway, gaaColor.cork,
+            gaaColor.meath, gaaColor.cavan, gaaColor.wexford, gaaColor.downUlster,
+            gaaColor.kildare, gaaColor.tipperary, gaaColor.mayo, gaaColor.offaly,
+            gaaColor.louth, gaaColor.tyrone, gaaColor.others
+            ]);
+    CanvasJS.addColorSet('customColorSet2', [
+            gaaColor.kilkenny, gaaColor.cork, gaaColor.tipperary,
+            gaaColor.limerick, gaaColor.dublin, gaaColor.wexford,
+            gaaColor.galway, gaaColor.offaly, gaaColor.clare,
+            gaaColor.waterford, gaaColor.others
+            ]);
+    mychartsService.doughnutChart(
+            "chartContainer_1",
+            allIrelandDataService.footballers,
+            "Football All Ireland Winners",
+            "customColorSet1"
+            );
+    mychartsService.doughnutChart(
+            "chartContainer_2",
+            allIrelandDataService.hurlers,
+            "Hurling All Ireland Winners",
+            "customColorSet2"
+            );
+    // animated gifs
+    $scope.toggleGif = false;
+    $scope.animgifs = {
+        "cat": "blackcat"
+    };
+    // Control Display of Cart (_carts partial)
+    functionsService.addClassById("displayTrue", 'myPartialCart');
+    functionsService.addClassById("class1", 'totalPrice_cartPartial');
+    functionsService.addClassById("class1", 'detailedCartIcon');
+    functionsService.addClassOnMouseOver("class2", 'myPartialCart',
+            'totalPrice_cartPartial', 'detailedCartIcon');
+    functionsService.addClassOnMouseOut("class1", 'myPartialCart',
+            'totalPrice_cartPartial', 'detailedCartIcon');
+}
 ])
-.controller('MyCtrl10', ['$scope',
-        function ($scope) {
-            //====CONTROLLER FOR Commodities/Edit ====
+.controller('MyCtrl10', ['$scope','$rootScope', 'initService',
+        function ($scope, $rootScope, initService) {
+
+            // CONTROLLER FOR Commodities/Edit 
+
+            initService.init(10);
             $scope.viewMessgeTen = "Editing commodity";
         }
         ])
-.controller('MyCtrl11', ['$scope',
-        function ($scope) {
-            //====CONTROLLER FOR 'your_cart' ===
+.controller('MyCtrl11', ['$scope','$rootScope', 'initService',
+        function ($scope, $rootScope, initService) {
+
+            // CONTROLLER FOR 'your_cart' 
+
+            initService.init(11);
             // carts/show
             $scope.viewMessageEleven = "yourCart";
         }
         ])
 .controller('MyCtrl12',['$scope', '$http', '$sce',
-        'functionsService', '$location', '$rootScope',
-        function ($scope, $http, $sce, functionsService, $location, $rootScope) {
-            //====CONTROLLER FOR PARTIAL TWELVE====
-            //====Detailed Cart
+        'functionsService', '$location', '$rootScope','initService',
+        function ($scope, $http, $sce, functionsService, $location, $rootScope, initService) {
+
+            // CONTROLLER FOR PARTIAL TWELVE
+
+            initService.init(12);
+            //Detailed Cart
             //!!empty cart button won't render unless SCE method used
-            $rootScope.toggleProductsNav = true;
             $scope.viewMessageTwelve = "Detailed Cart";
             $scope.showAjaxLoader3 = true;
             $rootScope.littleCart = false;
@@ -1056,13 +1119,17 @@ angular.module('myApp.controllers', [
                     return $scope.showemptycart = true;
                 }();
                 $scope.showAjaxLoader3 = false;
-            });
+       nitService.init(1);
+ 412                      });
             functionsService.addClassById("displayNone", 'myPartialCart');
         }])
-.controller('MyCtrl13',['$scope', '$http', 'dribbleService', 'functionsService',
-        function ($scope, $http, dribbleService, functionsService) {
-            //====CONTROLLER FOR PARTIAL THIRTEEN====
-            //====Dribble
+.controller('MyCtrl13',['$scope', '$rootScope', '$http', 'dribbleService', 'functionsService','initService',
+        function ($scope, $rootScope, $http, dribbleService, functionsService, initService) {
+
+            // CONTROLLER FOR PARTIAL THIRTEEN
+
+            initService.init(13);
+            //Dribble
             $scope.viewMessageThirteen = "Dribbble";
             $scope.showAjaxLoader2 = true;
             $scope.layout = 'grid';
@@ -1073,22 +1140,24 @@ angular.module('myApp.controllers', [
             });
             functionsService.addClassById("displayNone", 'myPartialCart');
         }])
-.controller('MyCtrl14',['$scope', '$http', 'focus', '$rootScope', 'User',
-        function ($scope, $http, focus, $rootScope, User) {
-            //====CONTROLLER FOR PARTIAL FOURTEEN====
-            //====User Data
+.controller('MyCtrl14',['$scope', '$http', 'focus', '$rootScope', 'User', 'initService',
+        function ($scope, $http, focus, $rootScope, User, initService) {
+
+            // CONTROLLER FOR PARTIAL FOURTEEN
+
+            initService.init(14);
+            //User Data
             $rootScope.littleCart = true;
-            $rootScope.toggleProductsNav = false;
             $scope.viewMessageFourteen = "Subscribe to Our Newsletter";
             //JSON data obtained from http://filltext.com/
             var config = {
                 params: {'rows': 50,'fname': '{firstName}',
-                        'lname': '{lastName}',
-                        'tel': '{phone|format}',
-                        'id': '{index}',
-                        'email': '{email}',
-                        'ip': '{ip}',
-                        'callback': "JSON_CALLBACK"}
+                    'lname': '{lastName}',
+'tel': '{phone|format}',
+'id': '{index}',
+'email': '{email}',
+'ip': '{ip}',
+'callback': "JSON_CALLBACK"}
             };
             $scope.showAjaxLoader = true;
             $http.jsonp("http://www.filltext.com", config, {}).success(function (data) {
@@ -1096,7 +1165,7 @@ angular.module('myApp.controllers', [
                 $scope.showAjaxLoader = false;
                 $scope.fillTextLength = data.length;
             });
-            //====newsletter
+            //newsletter
             $scope.showsubstring =false;
             $scope.echoEmail = true;
             $scope.errorMessage = true;
@@ -1136,11 +1205,13 @@ angular.module('myApp.controllers', [
             $scope.user = User.get();
             focus('focusMe'); //autofocus on searchbox
         }])
-.controller('MyCtrl16',['$scope','$http','$rootScope',
-        function ($scope, $http, $rootScope) {
-            //====CONTROLLER FOR PARTIAL SIXTEEN ====
-            //====BiblioManager
-            $rootScope.toggleProductsNav = false;
+.controller('MyCtrl16',['$scope','$http','$rootScope','initService',
+        function ($scope, $http, $rootScope, initService) {
+
+            // CONTROLLER FOR PARTIAL SIXTEEN 
+
+            initService.init(16);
+            //BiblioManager
             $scope.viewMessageSixteen = "Biblio Manager";
             $scope.toggleSelected = false;
             $scope.toggleViewFormat = false;
@@ -1211,11 +1282,13 @@ angular.module('myApp.controllers', [
                 $rootScope.workie = arg
             };
         }])
-.controller('MyCtrl17', ['$scope','$rootScope', '$http', '$sce',
-        function ($scope, $rootScope, $http,$sce) {
-            //====CONTROLLER FOR Bibliographies/Edit ====
+.controller('MyCtrl17', ['$scope','$rootScope', '$http', '$sce','initService',
+        function ($scope, $rootScope, $http, $sce, initService) {
+
+            // CONTROLLER FOR Bibliographies/Edit 
+
+            initService.init(17);
             $scope.viewSeventeenMessage = "Editing Bibliography";
-            $rootScope.toggleProductsNav = false;
             var tryme ='bibliographies/' +  $rootScope.workie.toString() + '/edit';
             $http.get(tryme).success(
                 function (data, status) {
@@ -1234,10 +1307,12 @@ angular.module('myApp.controllers', [
             }, true);
         }
 ])
-.controller('MyCtrl18', ['$scope', '$rootScope',
-        function ($scope, $rootScope) {
-            //====CONTROLLER FOR Bibliographies/new ====
-            $rootScope.toggleProductsNav = false;
+.controller('MyCtrl18', ['$scope', '$rootScope', 'initService',
+        function ($scope, $rootScope, initService) {
+
+            // CONTROLLER FOR Bibliographies/new 
+
+            initService.init(18);
             $scope.viewEighteenMessage = 'Create  Bibliography Record';
             angular.element("#bibliography_accessdate").mouseover(function() {
                 angular.element('#bibliography_accessdate').datepicker({
@@ -1259,30 +1334,42 @@ angular.module('myApp.controllers', [
               }, true);*/
         }
 ])
-.controller('MyCtrl21', ['$scope', '$rootScope',
-        function ($scope, $rootScope) {
-            //====CONTROLLER FOR devise users/sign-up  ====
+.controller('MyCtrl21', ['$scope', '$rootScope','initService',
+        function ($scope, $rootScope, initService) {
+
+            // CONTROLLER FOR devise users/sign-up  
+
+            initService.init(21);
             $scope.viewTwentyOneMessage  = 'Users Sign-up  Controller';
         }
         ])
-.controller('MyCtrl22', ['$scope', '$rootScope',
-        function ($scope, $rootScope) {
-            //====CONTROLLER FOR devise users/sign-in  ====
+.controller('MyCtrl22', ['$scope', '$rootScope','initService',
+        function ($scope, $rootScope, initService) {
+
+            // CONTROLLER FOR devise users/sign-in  
+
+            initService.init(22);
             $scope.viewTwentyTwoMessage  = 'Users Sign-in Controller';
         }
         ])
-.controller('MyCtrl23', ['$scope', '$rootScope',
-        function ($scope, $rootScope) {
-            //====CONTROLLER FOR devise users/new password ====
+.controller('MyCtrl23', ['$scope', '$rootScope','initService',
+        function ($scope, $rootScope, initService) {
+
+            // CONTROLLER FOR devise users/new password 
+
+            initService.init(23);
             $scope.viewTwentyThreeMessage  = 'Users Change Password Controller';
         }
         ])
-.controller('MyCtrl24', ['$scope', '$rootScope',
-        function ($scope, $rootScope) {
-            //====CONTROLLER FOR devise admins/sign-up  ====
+.controller('MyCtrl24', ['$scope', '$rootScope','initService',
+        function ($scope, $rootScope, initService) {
+
+            // CONTROLLER FOR devise admins/sign-up  
+
+            initService.init(24);
             $scope.viewTwentyFourMessage  = 'Admins  Sign-up  Controller';
 
-            //==Countdown (redirect from admin sign-in to user sign-in)
+            //Countdown (redirect from admin sign-in to user sign-in)
             $scope.countdownRunning = false;
             $scope.toggleimg = false;
             $scope.startCountdown = function () {
@@ -1296,28 +1383,40 @@ angular.module('myApp.controllers', [
                 $scope.toggleimg = false;
             };
         }
-        ])
-.controller('MyCtrl25', ['$scope', '$rootScope',
-        function ($scope, $rootScope) {
-            //====CONTROLLER FOR devise admins/sign-in  ====
+])
+.controller('MyCtrl25', ['$scope', '$rootScope','initService',
+        function ($scope, $rootScope, initService) {
+
+            // CONTROLLER FOR devise admins/sign-in  
+
+            initService.init(25);
             $scope.viewTwentyFiveMessage  = 'Admins  Sign-in Controller';
         }
         ])
-.controller('MyCtrl26', ['$scope', '$rootScope',
-        function ($scope, $rootScope) {
-            //====CONTROLLER FOR devise admins/new password ====
+.controller('MyCtrl26', ['$scope', '$rootScope','initService',
+        function ($scope, $rootScope, initService) {
+
+            // CONTROLLER FOR devise admins/new password 
+
+            initService.init(26);
             $scope.viewTwentySixMessage  = 'Admins Change Password Controller';
         }
         ])
-.controller('MyCtrl27', ['$scope', '$rootScope',
-        function ($scope, $rootScope) {
-            //====CONTROLLER FOR devise edit users password ====
+.controller('MyCtrl27', ['$scope', '$rootScope','initService',
+        function ($scope, $rootScope, initService) {
+
+            // CONTROLLER FOR devise edit users password 
+
+            initService.init(27);
             $scope.viewTwentySevenMessage  = 'Devise Users Change password';
         }
         ])
-.controller('MyCtrl28', ['$scope', '$rootScope',
-        function ($scope, $rootScope) {
-            //====CONTROLLER FOR devise edit admins  password ====
+.controller('MyCtrl28', ['$scope', '$rootScope','initService',
+        function ($scope, $rootScope, initService) {
+
+            // CONTROLLER FOR devise edit-admins-password 
+
+            initService.init(28);
             $scope.viewTwentyEightMessage  = 'Devise Admins  Change password';
         }
         ]);

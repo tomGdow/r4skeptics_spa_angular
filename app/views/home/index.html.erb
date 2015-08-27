@@ -16,7 +16,7 @@
                     <meta http-equiv='expires' content='0'>
                     <meta http-equiv='pragma' content='no-cache'>
                     <title>Skeptics with Angular</title>
-                    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+                    <%= stylesheet_link_tag    'application', media: 'all' %>
                     <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css"><!--jquery-UI-->
                     <%= javascript_include_tag "vendor/modernizr.js" %>
                     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -165,15 +165,16 @@
                     </div>
                     
                     <div class="row">
-                        <div id = "ngView"  class="small-12" ng-view ></div> <!--ng-view-->
+                        <div id = "ngView" ng-init="beach()"  class="small-12" ng-view ></div> <!--ng-view-->
                     </div>
                     <div class ="cartPartial" id = "cartP" my-draggable>
                         <div class="cart" id="mycart" ></div><!--cart -->
                     </div>
                     <div>
                     </div>
+                    <div>testing git deployment</div>
                     <div  ng-include="'/home/footer.html'" ng-cloak></div><!--footer-->
-                    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+                    <%= javascript_include_tag 'application' %>
                     <script>
                         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

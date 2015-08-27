@@ -1,8 +1,11 @@
+
 (function () {
     window.location.replace('#view1');
 
-    $('#mywidget').html('<%=j render partial:'home/user_widget' %>');
+    $('#mywidget').html('<%=j  render partial:'home/user_widget' %>');
+    $('#mywidget').css("background-color", "yellow");
     widgetFlash("widget_message",  '<%= widget_message(username: username)[:login] %>');
+
 
 })();
 

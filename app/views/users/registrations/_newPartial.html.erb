@@ -7,7 +7,7 @@
         <%= devise_error_messages! %>
 
         <div class="field">
-            <%= f.label :email, class: "form_label"  %>
+            <%= f.label :email,  class: "form_label"  %>
             <span class = "error_item"><%= errors_for @user, :email, "Email" %></span>
             <%= f.email_field :email, autofocus: true %>
         </div><!--field-->

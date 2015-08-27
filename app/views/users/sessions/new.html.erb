@@ -20,7 +20,7 @@
         <% end -%>
 
         <div class="actions">
-            <%= f.submit "Log in", :class => "button tiny skeptics-btn-five ", :id => "login_button"  %>
+            <%= f.submit "Log in", :class => "button tiny skeptics-btn-five ", :id => "login_button" %>
             <a href ="#view23" class="button skeptics-btn-two tiny">Forgot Password?</a>
         </div>
     <% end %>
@@ -33,10 +33,12 @@
 <div><a href ="#view25" class="button skeptics-btn-two tiny">Admin Login</a></div>
 
 <script>
+
     $('#login_button').on('click', function(){
         $('#email_or_password_error').animate({opacity: 1.0}, 500);
     });
     $('input').on('focus', function(){
         $('#email_or_password_error').animate({opacity: 0.0}, 1000);
     });
+
 </script>

@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //
-//= require jquery.turbolinks
 //= require jquery-ui/effect-blind
 //= require jquery-ui
 //= require jquery_ujs
@@ -45,5 +44,4 @@
 //= require ui-utils.js
 //= require ui-utils-ieshiv.js
 //= require angular-youtube-embed.js
-//= require turbolinks
 
