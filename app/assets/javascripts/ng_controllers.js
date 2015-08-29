@@ -1119,8 +1119,8 @@ viewFivePattern = new RegExp("view5");
                     return $scope.showemptycart = true;
                 }();
                 $scope.showAjaxLoader3 = false;
-       nitService.init(1);
- 412                      });
+                nitService.init(1);
+                412                      });
             functionsService.addClassById("displayNone", 'myPartialCart');
         }])
 .controller('MyCtrl13',['$scope', '$rootScope', '$http', 'dribbleService', 'functionsService','initService',

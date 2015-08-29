@@ -10,7 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require foundation_and_overrides.scss
+ *= require vendor/foundation_and_overrides.scss
  *= require_self
 
 
@@ -21,7 +21,7 @@
 @import 'variables/variables';
 @import 'functions/functions';
 @import 'mixins/mixins';
-@import 'main';
+@import 'sceptics';
 @import 'partials/nav_main';
 @import 'partials/navWithTime';
 @import 'partials/chart';
@@ -45,8 +45,8 @@
 @import "partials/forms";
 @import "partials/errorDisplay";
 @import "partials/widget";
-@import 'jquery-ui';
-@import 'flexslider';
-@import 'videogular';
+@import 'vendor/jquery-ui';
+@import 'vendor/flexslider';
+@import 'vendor/videogular';
 @import "http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700";
 @import "//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css";

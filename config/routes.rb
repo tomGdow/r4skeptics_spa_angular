@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do 
 
 	root 'home#index'
 
@@ -11,16 +11,16 @@ Rails.application.routes.draw do
     devise_for :admins, controllers: { sessions: 'admins/sessions',  :registrations  => "admins/registrations", :passwords => "admins/passwords"}
 
 	get 'home/index'
-	get "home/partial1"
-	get "home/partial2"
-	get "home/partial3"
-	get "home/partial4"
-	get "home/partial5"
-	get "home/partial8"
-	get "home/partial9"
-	get "home/partial12"
-	get "home/partial13"
-	get "home/partial14"
+	get "home/ng_template_1"
+	get "home/ng_template_2"
+	get "home/ng_template_3"
+	get "home/ng_template_4"
+	get "home/ng_template_5"
+	get "home/ng_template_8"
+	# get "home/partial9"
+	get "home/ng_template_12"
+	get "home/ng_template_13"
+	get "home/ng_template_14"
 	get "home/partial15"
 	get "home/footer"
 	get "home/timezones"

@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 // Declare app level module which depends on filters, and services
 angular.module('myApp', [
 		'ngRoute',
@@ -8,21 +8,21 @@ angular.module('myApp', [
 		'myApp.controllers'
 		]).
 config(['$routeProvider', function($routeProvider,$rootScope) {
-	$routeProvider.when('/view1',  {templateUrl: 'home/partial1.html',  controller: 'MyCtrl1'}); //home
-	$routeProvider.when('/view2',  {templateUrl: 'home/partial2.html',  controller: 'MyCtrl2'}); //videos
-	$routeProvider.when('/view3',  {templateUrl: 'home/partial3.html',  controller: 'MyCtrl3'}); //Instagram
-	$routeProvider.when('/view4',  {templateUrl: 'home/partial4.html',  controller: 'MyCtrl4'}); //Sixties Dublin
-	$routeProvider.when('/view5',  {templateUrl: 'home/partial5.html',  controller: 'MyCtrl5'}); //Dynamic Searching
+	$routeProvider.when('/view1',  {templateUrl: 'home/ng_template_1.html',  controller: 'MyCtrl1'}); //home
+	$routeProvider.when('/view2',  {templateUrl: 'home/ng_template_2.html',  controller: 'MyCtrl2'}); //videos
+	$routeProvider.when('/view3',  {templateUrl: 'home/ng_template_3.html',  controller: 'MyCtrl3'}); //Instagram
+	$routeProvider.when('/view4',  {templateUrl: 'home/ng_template_4.html',  controller: 'MyCtrl4'}); //Sixties Dublin
+	$routeProvider.when('/view5',  {templateUrl: 'home/ng_template_5.html',  controller: 'MyCtrl5'}); //Dynamic Searching
 	$routeProvider.when('/view6',  {templateUrl: 'commodities',         controller: 'MyCtrl6'}); //(Commodities/index.html)-1
 	$routeProvider.when('/view7',  {templateUrl: 'commodities/new.html', controller: 'MyCtrl7'}); //Commodities/new
-	$routeProvider.when('/view8',  {templateUrl: 'home/partial8.html',  controller: 'MyCtrl8'}); //Blog
+	$routeProvider.when('/view8',  {templateUrl: 'home/ng_template_8.html',  controller: 'MyCtrl8'}); //Blog
 	$routeProvider.when('/view9',  {templateUrl: 'commodities',         controller: 'MyCtrl6'}); //(Commodities/index.html)-2
 	$routeProvider.when('/view10', {templateUrl: 'commodities/edit/',   controller: 'MyCtrl10'}); //Commodities/edit
 	$routeProvider.when('/view11', {templateUrl: 'your_cart',           controller: 'MyCtrl11'}); //Your Cart
-	$routeProvider.when('/view12', {templateUrl: 'home/partial12.html', controller: 'MyCtrl12'});//Detailed Cart
-	$routeProvider.when('/view13', {templateUrl: 'home/partial13.html', controller: 'MyCtrl13'});//Dribbble
-	$routeProvider.when('/view14', {templateUrl: 'home/partial14.html', controller: 'MyCtrl14'});//User Data
-	$routeProvider.when('/view15', {templateUrl: 'home/partial5.html',  controller: 'MyCtrl5'}); //Dynamic Searching
+	$routeProvider.when('/view12', {templateUrl: 'home/ng_template_12.html', controller: 'MyCtrl12'});//Detailed Cart
+	$routeProvider.when('/view13', {templateUrl: 'home/ng_template_13.html', controller: 'MyCtrl13'});//Dribbble
+	$routeProvider.when('/view14', {templateUrl: 'home/ng_template_14.html', controller: 'MyCtrl14'});//User Data
+	$routeProvider.when('/view15', {templateUrl: 'home/ng_template_5.html',  controller: 'MyCtrl5'}); //Dynamic Searching
 	$routeProvider.when('/view16', {templateUrl: 'bibliographies', controller: 'MyCtrl16'});//Bibliographies - index.html
 	$routeProvider.when('/view17', {templateUrl: 'home/partialx.html', controller: 'MyCtrl17'}); //Bibliographies - edit.html
 	$routeProvider.when('/view18', {templateUrl: 'bibliographies/new.html', controller: 'MyCtrl18'}); //Bibliographies/new
