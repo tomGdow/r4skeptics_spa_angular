@@ -23,19 +23,19 @@ gem 'rack-mini-profiler'
 gem 'flamegraph'
 
 group :development, :test do
-	gem 'sqlite3'
-	gem 'byebug'
-	gem 'lol_dba'
-	gem 'bullet'
-	gem 'web-console', '~> 2.0'
-	gem 'rspec-rails'
-	gem 'spring'
-	gem 'meta_request'
+    gem 'sqlite3'
+    gem 'byebug'
+    gem 'lol_dba'
+    gem 'bullet'
+    gem 'web-console', '~> 2.0'
+    gem 'rspec-rails'
+    gem 'spring'
+    gem 'meta_request'
 end
 
 group :production do
-	gem 'pg'
-	gem 'rails_12factor'
+    gem 'pg'
+    gem 'rails_12factor'
 end
 
 
@@ -61,3 +61,4 @@ end
 # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 # Access an IRB console on exception pages or by using <%= console %> in views
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+
