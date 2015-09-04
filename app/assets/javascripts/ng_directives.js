@@ -340,4 +340,57 @@ link: function (scope, element, attrs) {
     }
     }
 
+}).directive('ngYoutube', function() {
+    return {
+        restrict: 'E',
+scope: {},
+template: '<video ><source  /></video>',
+link: function(scope, element, attrs) {
+
+    var GOLDEN_RATIO = 1.618;
+    var tempWidth = attrs.width || 500;
+    var tempHeight = attrs.height || tempWidth / GOLDEN_RATIO;
+    var tempSkin = attrs.skin || undefined; //"mejs-wmp || mejs-ted"
+    var tempId = '#' + attrs.myid;
+    var tempSrc = attrs.src;
+    var tempFeatureVol = attrs.volumectrl || 'volume';
+    var tempFeaturePlayPause = attrs.playpausectrl || 'playpause';
+    var tempFeatureProgress = attrs.progressctrl || 'progress';
+    var tempFeatureCurrent = attrs.currentctrl || 'current';
+    var tempFeatureDuration = attrs.durationctrl || 'duration';
+    var tempFeatureTracks = attrs.tracksctrl || 'tracks';
+    var tempFeatureFullscreen = attrs.fullscreenctrl || 'fullscreen';
+    var tempFeatureBacklight = attrs.backlight || 'backlight';
+    var tempPoster = attrs.poster;
+    var tempType = attrs.type || "video/youtube";
+    var tempPreload = attrs.preload || "auto";
+    var feature_array = [tempFeaturePlayPause, tempFeatureProgress, tempFeatureCurrent, tempFeatureDuration, tempFeatureTracks, tempFeatureVol, tempFeatureFullscreen, tempFeatureBacklight];
+
+    feature_array = feature_array.filter(function(n) {
+        return n !== false;
+    });
+
+    element.find('video').attr({
+        "id": attrs.myid,
+        "class": attrs.skin,
+        "poster": attrs.poster,
+        "preload": attrs.preload
+    });
+
+    element.find('source').attr({
+        "src": tempSrc,
+        "type": tempType
+    });
+
+    element.find(tempId).attr({
+        "width": tempWidth,
+        "height": tempHeight
+    });
+
+    new MediaElementPlayer(tempId, {
+        features: feature_array,
+        pauseOtherPlayers: true
+    });
+}
+};
 });

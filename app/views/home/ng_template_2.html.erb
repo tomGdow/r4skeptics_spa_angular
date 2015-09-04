@@ -1,214 +1,259 @@
 <!-- Controller Two-->
 <!-- Vidoegular Videos-->
 <div class="col-partial2">
-	<h2 id ="viewTwoMessage">{{viewTwoMessage}} </h2>
-	<ipsum></ipsum>
-	<h3 id ="videoOneTitle">Ocean View</h3>
-	<!--Ocean View Video-->
-	<div class =vgOuterContainer ng-mouseleave="vgMouseLeave()">
-		<!--videogular video panel Ocean View-->
-		<div class="vg-container" ng-style="style(1)" id ="videoOne">
-			<videogular
-			ng-class ="setVgClass ? 'vg-video-one ':'{{vgFalse}} '"
-			vg-width="config.width"
-			vg-height="config.height"
-			vg-theme="config.theme"
-			ng-mouseover="vgMouseOver()"
-			id ="videoregularOne">
-			<video class='videoPlayer'
-				vg-src="config.sources"
-				preload='none'>
-			</video>
-			<vg-controls  class = vgControls
-				vg-autohide="config.autoHide"
-				vg-autohide-time="config.autoHideTime"
-				style="height: 50px;">
-				<!-- First element from the left -->
-				<vg-play-pause-button id =playPause_ov></vg-play-pause-button>
-				<vg-timeDisplay>{{ currentTime}}</vg-timeDisplay>
-				<vg-scrubBar>
-					<vg-scrubbarcurrenttime></vg-scrubbarcurrenttime>
-				</vg-scrubBar>
-				<vg-timeDisplay>{{ totalTime }}</vg-timeDisplay>
-				<vg-volume>
-					<vg-mutebutton></vg-mutebutton>
-					<vg-volumebar></vg-volumebar>
-				</vg-volume>
-				<vg-fullscreenButton ng-click="onFullScreen(1)"></vg-fullscreenButton>
-			</vg-controls>
-			<vg-buffering></vg-buffering>
-			<vg-overlay-play></vg-overlay-play>
-			<vg-poster-image
-				vg-url='config.plugins.poster.url'
-				vg-stretch="config.stretch.value">
-			</vg-poster-image>
-			</videogular>
-		</div><!--end videogular video panel Ocean View-->
-		<!--Videogular Bindings Control Panel Ocean View-->
-		<div  ng-class ="setVgControlsTwoClass ? 'vgControlsTwo  vgControlsHidden':'vgControlsTwo '" id="videoOneControls">
-			<div class="row" >
-				<div class="small-12 columns">
-					<dl class="sub-nav">
-						<dd>&nbsp;</dd>
-						<dd>
-							<button class ="button tiny" ng-click ="showLargeSmall(1)"
-								id ="lgeSmall_oceanView">
-								<span ng-show="makeVideoSmall">Smaller View</span>
-								<span ng-show = "makeVideoLarge">Larger View</span>
-							</button>
-						</dd>
-						<dd>
-							<div>
-								<input id="widthInput"
-								class="form-control ng-pristine ng-valid"
-								type="text"
-								ng-model="config.width">
-								<label for="widthInput"  id ="width_label_ocean_view">Width</label>
-							</div>
-						</dd>
-						<dd>
-							<div>
-								<input id="heightInput"
-								class="form-control ng-pristine ng-valid"
-								type="text"
-								ng-model="config.height">
-								<label for="heightInput" id ="height_label_ocean_view">Height</label>
-							</div>
-						</dd>
-						<dd>
-							<div>
-								<label class="checkbox">
-									<input id="autoHideInput"
-									class="ng-valid ng-dirty"
-									type="checkbox"
-									ng-model="config.autoHide">
-									Autohide
-								</label>
-							</div>
-						</dd>
-						<dd></dd>
-						<dd></dd>
-						<dd></dd>
-					</dl>
-				</div>
-			</div>
-		</div>
-	</div><!--end Videogular Outer Container Ocean View-->
-	<ipsum></ipsum>
+    <h2 id ="viewTwoMessage">{{viewTwoMessage}}</h2>
+    <div>
+
+        <ng-youtube width=400 fullscreenctrl="false" backlight="false" volumectrl="false" skin="mejs-wmp" myid="player1" src="https://www.youtube.com/watch?v=UlvCbnKAH3g"></ng-youtube>
+        <div>Helo from two </div>
+        <ng-youtube backlight="false" poster="https://dl.dropboxusercontent.com/s/ny50ry0yynncrwh/oceans-clip.png?dl=0g" width=350 myid="player2" src="http://video-js.zencoder.com/oceans-clip.mp4"></ng-youtube> 
+
+
+        <ng-youtube backlight="false" width=350 myid="player4" src="/assets/moviem.mp4" type="video/mp4" ></ng-youtube
+
+
+
+
+        <div>Helo from three </div>
+        <ng-youtube backlight="false" poster="https://dl.dropboxusercontent.com/s/q97xk0pxart3629/earth.png?dl=0" width=350 myid="player3" src="http://www.videogular.com/assets/videos/videogular.mp4"></ng-youtube>
+    </div>
+    <ipsum></ipsum>
+    <h3 id ="videoOneTitle">Ocean View</h3>
+    <!--Ocean View Video-->
+    <div class =vgOuterContainer ng-mouseleave="vgMouseLeave()">
+        <!--videogular video panel Ocean View-->
+        <div class="vg-container" ng-style="style(1)" id ="videoOne">
+            <videogular
+            ng-class ="setVgClass ? 'vg-video-one ':'{{vgFalse}} '"
+            vg-width="config.width"
+            vg-height="config.height"
+            vg-theme="config.theme"
+            ng-mouseover="vgMouseOver()"
+            id ="videoregularOne">
+            <video class='videoPlayer'
+                vg-src="config.sources"
+                preload='none'>
+            </video>
+            <vg-controls  class = vgControls
+                vg-autohide="config.autoHide"
+                vg-autohide-time="config.autoHideTime"
+                style="height: 50px;">
+                <!-- First element from the left -->
+                <vg-play-pause-button id =playPause_ov></vg-play-pause-button>
+                <vg-timeDisplay>{{ currentTime}}</vg-timeDisplay>
+                <vg-scrubBar>
+                    <vg-scrubbarcurrenttime></vg-scrubbarcurrenttime>
+                </vg-scrubBar>
+                <vg-timeDisplay>{{ totalTime }}</vg-timeDisplay>
+                <vg-volume>
+                    <vg-mutebutton></vg-mutebutton>
+                    <vg-volumebar></vg-volumebar>
+                </vg-volume>
+                <vg-fullscreenButton ng-click="onFullScreen(1)"></vg-fullscreenButton>
+            </vg-controls>
+            <vg-buffering></vg-buffering>
+            <vg-overlay-play></vg-overlay-play>
+            <vg-poster-image
+                vg-url='config.plugins.poster.url'
+                vg-stretch="config.stretch.value">
+            </vg-poster-image>
+            </videogular>
+        </div><!--end videogular video panel Ocean View-->
+        <!--Videogular Bindings Control Panel Ocean View-->
+        <div  ng-class ="setVgControlsTwoClass ? 'vgControlsTwo  vgControlsHidden':'vgControlsTwo '" id="videoOneControls">
+            <div class="row" >
+                <div class="small-12 columns">
+                    <dl class="sub-nav">
+                        <dd>&nbsp;</dd>
+                        <dd>
+                            <button class ="button tiny" ng-click ="showLargeSmall(1)"
+                                id ="lgeSmall_oceanView">
+                                <span ng-show="makeVideoSmall">Smaller View</span>
+                                <span ng-show = "makeVideoLarge">Larger View</span>
+                            </button>
+                        </dd>
+                        <dd>
+                            <div>
+                                <input id="widthInput"
+                                class="form-control ng-pristine ng-valid"
+                                type="text"
+                                ng-model="config.width">
+                                <label for="widthInput"  id ="width_label_ocean_view">Width</label>
+                            </div>
+                        </dd>
+                        <dd>
+                            <div>
+                                <input id="heightInput"
+                                class="form-control ng-pristine ng-valid"
+                                type="text"
+                                ng-model="config.height">
+                                <label for="heightInput" id ="height_label_ocean_view">Height</label>
+                            </div>
+                        </dd>
+                        <dd>
+                            <div>
+                                <label class="checkbox">
+                                    <input id="autoHideInput"
+                                    class="ng-valid ng-dirty"
+                                    type="checkbox"
+                                    ng-model="config.autoHide">
+                                    Autohide
+                                </label>
+                            </div>
+                        </dd>
+                        <dd></dd>
+                        <dd></dd>
+                        <dd></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div><!--end Videogular Outer Container Ocean View-->
+    <ipsum></ipsum>
 </div>
 <div class="col-partial2" >
-	<h3 id ="videoTwoTitle">Earth from Isis Expedition</h3>
-	<ipsum></ipsum>
-	<!-- EarthAsDot video -->
-	<div class =vgOuterContainer2 ng-mouseleave="vgMouseLeave2()" id ="videoTwo">
-		<!--videogular video panel EarthAsDot-->
-		<div class="vg-container" ng-style="style(2)">
-			<videogular
-			ng-class ="setVgClass2 ? 'vg-video-one ':'{{vgFalse2}} '"
-			vg-width="config2.width"
-			vg-height="config2.height"
-			vg-theme="config2.theme"
-			ng-mouseover="vgMouseOver2()"
-			id ="videoregularTwo">
-			<video class='videoPlayer'
-				vg-src="config2.sources"
-				preload='none'>
-			</video>
-			<vg-controls  class = vgControls
-				vg-autohide="config2.autoHide"
-				vg-autohide-time="config2.autoHideTime"
-				style="height: 50px;">
-				<!-- First element from the left -->
-				<vg-play-pause-button></vg-play-pause-button>
-				<vg-timeDisplay>{{ currentTime}}</vg-timeDisplay>
-				<vg-scrubBar>
-					<vg-scrubbarcurrenttime></vg-scrubbarcurrenttime>
-				</vg-scrubBar>
-				<vg-timeDisplay>{{ totalTime}}</vg-timeDisplay>
-				<vg-volume>
-					<vg-mutebutton></vg-mutebutton>
-					<vg-volumebar></vg-volumebar>
-				</vg-volume>
-				<vg-fullscreenButton ng-click="onFullScreen(2)"></vg-fullscreenButton>
-			</vg-controls>
-			<vg-buffering></vg-buffering>
-			<vg-overlay-play></vg-overlay-play>
-			<vg-poster-image
-				vg-url='config2.plugins.poster.url'
-				vg-stretch="config2.stretch.value">
-			</vg-poster-image>
-			</videogular>
-		</div><!--end videogular video panel EarthAsDot-->
-		<!--Videogular Bindings Control Panel EarthAsDot-->
-		<div  ng-class ="setVgControlsTwoClass2 ? 'vgControlsTwo  vgControlsHidden':'vgControlsTwo '" id ="videoTwoControls">
-			<div class="row" >
-				<div class="small-12 columns">
-					<dl class="sub-nav">
-						<dd>&nbsp;</dd>
-						<dd>
-							<button class ="button tiny" ng-click ="showLargeSmall(2)">
-								<span ng-show="makeVideoSmall2">Smaller View</span>
-								<span ng-show = "makeVideoLarge2">Larger View</span>
-							</button>
-						</dd>
-						<dd>
-							<div>
-								<input id="widthInput2"
-								class="form-control ng-pristine ng-valid"
-								type="text"
-								ng-model="config2.width">
-								<label for="widthInput2" id ="width_label_earth_as_dot">Width</label>
-							</div>
-						</dd>
-						<dd>
-							<div>
-								<input id="heightInput2"
-								class="form-control ng-pristine ng-valid"
-								type="text"
-								ng-model="config2.height">
-								<label for="heightInput2" id ="height_label_earth_as_dot">Height</label>
-							</div>
-						</dd>
-						<dd>
-							<div>
-								<label class="checkbox">
-									<input id="autoHideInput2"
-									class="ng-valid ng-dirty"
-									type="checkbox"
-									ng-model="config2.autoHide">
-									Autohide
-								</label>
-							</div>
-						</dd>
-						<dd></dd>
-						<dd></dd>
-						<dd></dd>
-					</dl>
-				</div>
-			</div>
-		</div>
-	</div><!--end Videogular Outer Container EarthAsDot-->
-	<div>
-		<h2 class ='skTitle' data-first ="Rotating Snake Illusion" id = "rotatingSnakesTitle"></h2>
-		<h4>by <a href="http://michaelbach.de/" target ="_blank">Michael Bach</a></h4>
-		<p>
-			The illusion of wheel rotation is caused by eye movement.
-			The effect vanishes on <strong>steady eye fixation at the image</strong>.
-			(For further explanation see <a href="http://www.michaelbach.de/ot/mot_rotsnake/">here</a>)
-		</p>
-		<!--modified from: http://www.michaelbach.de/ot/mot_rotsnake/-->
-		<div class ="rotating_snake">
-			<img  alt="Rotating Snake Illusion" id ="rotating_snake"
-			src="http://media.uniklinik-freiburg.de/aug/homede/mit/bach/mdia/rotsnake2.gif">
-		</div>
-		<div><ipsum></ipsum></div>
-		<ipsumlong></ipsumlong>
-	</div>
-	<div class="pickll_flex">
-		<dancinpicklls></dancinpicklls>
-		<dancinpicklls></dancinpicklls>
-		<dancinpicklls></dancinpicklls>
-	</div>
-</div>
-<!-- Controller Two-->
-<!-- Vidoegular Videos-->
+    <h3 id ="videoTwoTitle">Earth from Isis Expedition</h3>
+    <ipsum></ipsum>
+    <!-- EarthAsDot video -->
+    <div class =vgOuterContainer2 ng-mouseleave="vgMouseLeave2()" id ="videoTwo">
+        <!--videogular video panel EarthAsDot-->
+        <div class="vg-container" ng-style="style(2)">
+            <videogular
+            ng-class ="setVgClass2 ? 'vg-video-one ':'{{vgFalse2}} '"
+            vg-width="config2.width"
+            vg-height="config2.height"
+            vg-theme="config2.theme"
+            ng-mouseover="vgMouseOver2()"
+            id ="videoregularTwo">
+            <video class='videoPlayer'
+                vg-src="config2.sources"
+                preload='none'>
+            </video>
+            <vg-controls  class = vgControls
+                vg-autohide="config2.autoHide"
+                vg-autohide-time="config2.autoHideTime"
+                style="height: 50px;">
+                <!-- First element from the left -->
+                <vg-play-pause-button></vg-play-pause-button>
+                <vg-timeDisplay>{{ currentTime}}</vg-timeDisplay>
+                <vg-scrubBar>
+                    <vg-scrubbarcurrenttime></vg-scrubbarcurrenttime>
+                </vg-scrubBar>
+                <vg-timeDisplay>{{ totalTime}}</vg-timeDisplay>
+                <vg-volume>
+                    <vg-mutebutton></vg-mutebutton>
+                    <vg-volumebar></vg-volumebar>
+                </vg-volume>
+                <vg-fullscreenButton ng-click="onFullScreen(2)"></vg-fullscreenButton>
+            </vg-controls>
+            <vg-buffering></vg-buffering>
+            <vg-overlay-play></vg-overlay-play>
+            <vg-poster-image
+                vg-url='config2.plugins.poster.url'
+                vg-stretch="config2.stretch.value">
+            </vg-poster-image>
+            </videogular>
+        </div><!--end videogular video panel EarthAsDot-->
+        <!--Videogular Bindings Control Panel EarthAsDot-->
+        <div  ng-class ="setVgControlsTwoClass2 ? 'vgControlsTwo  vgControlsHidden':'vgControlsTwo '" id ="videoTwoControls">
+            <div class="row" >
+                <div class="small-12 columns">
+                    <dl class="sub-nav">
+                        <dd>&nbsp;</dd>
+                        <dd>
+                            <button class ="button tiny" ng-click ="showLargeSmall(2)">
+                                <span ng-show="makeVideoSmall2">Smaller View</span>
+                                <span ng-show = "makeVideoLarge2">Larger View</span>
+                            </button>
+                        </dd>
+                        <dd>
+                            <div>
+                                <input id="widthInput2"
+                                class="form-control ng-pristine ng-valid"
+                                type="text"
+                                ng-model="config2.width">
+                                <label for="widthInput2" id ="width_label_earth_as_dot">Width</label>
+                            </div>
+                        </dd>
+                        <dd>
+                            <div>
+                                <input id="heightInput2"
+                                class="form-control ng-pristine ng-valid"
+                                type="text"
+                                ng-model="config2.height">
+                                <label for="heightInput2" id ="height_label_earth_as_dot">Height</label>
+                            </div>
+                        </dd>
+                        <dd>
+                            <div>
+                                <label class="checkbox">
+                                    <input id="autoHideInput2"
+                                    class="ng-valid ng-dirty"
+                                    type="checkbox"
+                                    ng-model="config2.autoHide">
+                                    Autohide
+                                </label>
+                            </div>
+                        </dd>
+                        <dd></dd>
+                        <dd></dd>
+                        <dd></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div><!--end Videogular Outer Container EarthAsDot-->
+    <div>
+        <h2 class ='skTitle' data-first ="Rotating Snake Illusion" id = "rotatingSnakesTitle"></h2>
+        <h4>by <a href="http://michaelbach.de/" target ="_blank">Michael Bach</a></h4>
+        <p>
+            The illusion of wheel rotation is caused by eye movement.
+            The effect vanishes on <strong>steady eye fixation at the image</strong>.
+            (For further explanation see <a href="http://www.michaelbach.de/ot/mot_rotsnake/">here</a>)
+        </p>
+        <!--modified from: http://www.michaelbach.de/ot/mot_rotsnake/-->
+        <div class ="rotating_snake">
+            <img  alt="Rotating Snake Illusion" id ="rotating_snake"
+            src="http://media.uniklinik-freiburg.de/aug/homede/mit/bach/mdia/rotsnake2.gif">
+        </div>
+        <div><ipsum></ipsum></div>
+        <ipsumlong></ipsumlong>
+    </div>
+    <div class="pickll_flex">
+        <dancinpicklls></dancinpicklls>
+        <dancinpicklls></dancinpicklls>
+        <dancinpicklls></dancinpicklls>
+    </div>
+    <div>
+        <hr>
+        <h1>First attempt  video tag from MEDIA</h1>
+        <video width="320" height="240" controls>
+            <source src="/assets/moviem.mp4" type="video/mp4">
+                <source src="movie.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+
+
+
+            </div>
+
+            <hr>
+            <h1>2 attempt  video ocean clip</h1>
+            <div>
+                <video width="320" height="240" controls>
+                    <source src="http://video-js.zencoder.com/oceans-clip.mp4" type="video/mp4">
+                        <source src="movie.ogg" type="video/ogg">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <hr>
+                    <h1>3 rail video public folder  video ocean clip</h1>
+                    <%= video_tag "moviep.mp4", :size => "320x240", :controls => true %>
+                    h1>3 rail video media folder  video ocean clip</h1>
+                <%= video_tag "moviem.mp4", :size => "320x240", :controls => true %>
+                h1>3 rail video images folder  video ocean clip</h1>
+            <%= video_tag "movie.mp4", :size => "320x240", :controls => true %>
+        </div>
+        <!-- Controller Two-->
+        <!-- Vidoegular Videos-->

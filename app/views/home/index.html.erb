@@ -18,6 +18,8 @@
                     <title>Sceptics with Angular</title>
                     <%= stylesheet_link_tag    'application', media: 'all' %>
                     <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css"><!--jquery-UI-->
+                    <link rel="stylesheet" href="http://mediaelementjs.com/js/mejs-2.9.2/mediaelementplayer.min.css" />
+                    <link rel="stylesheet" href="http://mediaelementjs.com/js/mejs-2.9.4/mejs-skins.css" />
                     <%= javascript_include_tag "vendor/modernizr.js" %>
                     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
                     <script src=" https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script> <!--angular-->
@@ -26,6 +28,9 @@
                     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&libraries=places&language=en-US"></script><!--Google Maps-->
                     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>    <!--D3 Charts-->
                     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script><!--Angular Resources-->
+                    
+                    <script src="http://mediaelementjs.com/js/mejs-2.9.2/mediaelement-and-player.min.js"></script>
+                    <script src="http://mediaelementjs.com/js/mep-feature-backlight.js"></script>
                     <%= csrf_meta_tags %>
                 </head>
                 <body ng-controller="MyCtrlIndex">
