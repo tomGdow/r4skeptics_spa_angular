@@ -2,7 +2,7 @@
 <!-- Home Page-->
 <div class="main-partial1">
     <input type ="button" class ="button alert tiny" value ="Go To Bottom"  ng-click="gotoBottom()" />
-	<h1>{{viewOneMessage}}</h1>
+		<h1>{{viewOneMessage}} </h1><h3>hhh{{home.trythis}}</h3> 
 	<div class="col-partial1-c col-partial1">
 		<h2  ng-class= "toggleShowPara ? 'loremParagraph ':'loremParagraph vishidden '">Welcome</h2>
 		<span ng-include = "'/home/banksImage.html'"></span>
@@ -13,6 +13,7 @@
 	<span ng-include="'/home/curieFlexslider.html'" class = "curie-flex-render"></span>
 	<div class="col-partial1-b col-partial1">
 		<h2 class ='skTitle' data-first ="Column B"></h2>
+		<div>AppName {{appname}} {{username}} {{usernamey}}</div>
 		<ipsum></ipsum>
 		<ipsum></ipsum>
 	</div>

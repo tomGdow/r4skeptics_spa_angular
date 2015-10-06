@@ -385,10 +385,9 @@ viewFivePattern = new RegExp("view5");
 .controller('MyCtrl1',['$scope','$rootScope', '$http', 'chartsService', 'imgService',
         'flexsliderService', 'functionsService', 'initService','$location','$anchorScroll','github',
         function ($scope,$rootScope, $http, chartsService, imgService,
-            flexsliderService, functionsService, initService, $location, $anchorScroll, github) {
+            flexsliderService, functionsService, initService, $location, $anchorScroll, github ) {
 
                 // CONTROLLER FOR PARTIAL ONE 
-
                 $scope.gotoBottom = function(x) {
                     var newHash = 'iamthebottom';
                     if ($location.hash() !== newHash) {
@@ -402,7 +401,7 @@ viewFivePattern = new RegExp("view5");
                         $anchorScroll();
                     }
                 };
-                $scope.username= 'tomGdow';
+                $scope.username= 'tomGdoww';
                 $scope.megit = github.getUser($scope.username)
                     .then(function (response) {
                         return console.log(response.login);

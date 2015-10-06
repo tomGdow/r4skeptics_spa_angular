@@ -8,7 +8,7 @@ angular.module('myApp', [
 		'myApp.controllers'
 		]).
 config(['$routeProvider', function($routeProvider,$rootScope) {
-	$routeProvider.when('/view1',  {templateUrl: 'home/ng_template_1.html',  controller: 'MyCtrl1'}); //home
+	$routeProvider.when('/view1',  {templateUrl: 'home/ng_template_1.html',  controller: 'MyCtrl1', controllerAs: 'home'}); //home
 	$routeProvider.when('/view2',  {templateUrl: 'home/ng_template_2.html',  controller: 'MyCtrl2'}); //videos
 	$routeProvider.when('/view3',  {templateUrl: 'home/ng_template_3.html',  controller: 'MyCtrl3'}); //Instagram
 	$routeProvider.when('/view4',  {templateUrl: 'home/ng_template_4.html',  controller: 'MyCtrl4'}); //Sixties Dublin

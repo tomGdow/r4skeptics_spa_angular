@@ -4,524 +4,549 @@
 
 angular.module('myApp.services', []).
 value('version', '0.1').factory('imgService', function () {
-    return {
-        imgBanks: {
-            "imageSource": "001_banks.jpg",
-    "imageAltDesc": "Picture of Gordon Banks",
-    "captionText": "Gordon Banks",
-    "imageId": "gordon-banks"
-        },
+		return {
+			imgBanks: {
+				"imageSource": "001_banks.jpg",
+				"imageAltDesc": "Picture of Gordon Banks",
+				"captionText": "Gordon Banks",
+				"imageId": "gordon-banks"
+			},
 
-    imgPele: {
-        "imageSource": "103_pele.jpg",
-    "imageAltDesc": "Picture of Pele",
-    "captionText": "Pele",
-    "imageId": "pele-image"
-    },
+			imgPele: {
+				"imageSource": "103_pele.jpg",
+				"imageAltDesc": "Picture of Pele",
+				"captionText": "Pele",
+				"imageId": "pele-image"
+			},
 
-    imgSchillachi: {
-        "imageSource": "109_schillaci.jpg",
-"imageAltDesc": "Picture of Salvadore Schillachi",
-"captionText": "Schillachi",
-"imageId": "schillachi-italy"
-    }
-    };
-}).factory('chartsService', function () {
-    return {
-        dataOne: [40, 4, 50, 15, 16, 33, 52, 20],
-    dataTwo: [65, 22, 33, 70, 16, 43, 80, 61],
-    dataThree: [90, 4, 40, 60, 13, 33, 2, 20],
-    dataYears: [2012, 2013, 2014]
+			imgSchillachi: {
+				"imageSource": "109_schillaci.jpg",
+				"imageAltDesc": "Picture of Salvadore Schillachi",
+				"captionText": "Schillachi",
+				"imageId": "schillachi-italy"
+			}
+		};
+	}).factory('chartsService', function () {
+		return {
+			dataOne: [40, 4, 50, 15, 16, 33, 52, 20],
+			dataTwo: [65, 22, 33, 70, 16, 43, 80, 61],
+			dataThree: [90, 4, 40, 60, 13, 33, 2, 20],
+			dataYears: [2012, 2013, 2014]
 
-    };
-}).factory('flexsliderService', function () {
-    return {
-        flexdata: [
+		};
+	}).factory('flexsliderService', function () {
+		return {
+			flexdata: [
 
-    ["assets/marie_curie.jpg", "Marie Curie"],
-    ["assets/watson_golden_ratio.jpg", "James Watson"],
-    ["assets/popper_golden_ratio.jpg", "Karl Popper"],
-    ["assets/rutherford_golden_ratio.jpg", "Ernst Rutherford"],
-    ["assets/lise_meitner_golden_ratio.jpg", "Lise Meitner"],
-    ["assets/dorothy_hodgkin_golden_ratio.jpg", "Dorothy Hodgkin"]
+	["assets/marie_curie.jpg", "Marie Curie"],
+	["assets/watson_golden_ratio.jpg", "James Watson"],
+	["assets/popper_golden_ratio.jpg", "Karl Popper"],
+	["assets/rutherford_golden_ratio.jpg", "Ernst Rutherford"],
+	["assets/lise_meitner_golden_ratio.jpg", "Lise Meitner"],
+	["assets/dorothy_hodgkin_golden_ratio.jpg", "Dorothy Hodgkin"]
 
-    ]
-    };
-}).factory('dublinSliderService', function () {
-    return {
-        dublinSliderData: [
-{
-    "src": "dublinzz.jpg ",
-    "desc": "College Green",
-    "longdesc": "College Green Dublin, around 1961 (Charles Cushman Collection)",
-    "copyright": "86157-942. Copyright Indiana University Archive"
+	]
+		};
+	}).factory('dublinSliderService', function () {
+		return {
+			dublinSliderData: [
+				{
+					"src": "dublinzz.jpg ",
+					"desc": "College Green",
+					"longdesc": "College Green Dublin, around 1961 (Charles Cushman Collection)",
+					"copyright": "86157-942. Copyright Indiana University Archive"
 },
-{
-    "src": "dublinee.jpg ",
-    "desc": "Lord Edward Street",
-    "longdesc": "Lord Edward Street Dublin, around 1961 (Charles Cushman Collection)",
-    "copyright": "0008615e-942. Copyright Indiana University Archive"
+				{
+					"src": "dublinee.jpg ",
+					"desc": "Lord Edward Street",
+					"longdesc": "Lord Edward Street Dublin, around 1961 (Charles Cushman Collection)",
+					"copyright": "0008615e-942. Copyright Indiana University Archive"
 },
-{
-    "src": "dublincc.jpg ",
-    "desc": "Parliment Street",
-    "longdesc": "Parliment Street Dublin, around 1961 (Charles Cushman Collection)",
-    "copyright": "0008615c-942. Copyright Indiana University Archive"
+				{
+					"src": "dublincc.jpg ",
+					"desc": "Parliment Street",
+					"longdesc": "Parliment Street Dublin, around 1961 (Charles Cushman Collection)",
+					"copyright": "0008615c-942. Copyright Indiana University Archive"
 },
-{
-    "src": "dublinaa.jpg ",
-    "desc": "O Connell Bridge",
-    "longdesc": "O Connell Bridge Dublin, around 1961 (Charles Cushman Collection)",
-    "copyright": "0008615a-942. Copyright Indiana University Archive"
+				{
+					"src": "dublinaa.jpg ",
+					"desc": "O Connell Bridge",
+					"longdesc": "O Connell Bridge Dublin, around 1961 (Charles Cushman Collection)",
+					"copyright": "0008615a-942. Copyright Indiana University Archive"
 },
-{
-    "src": "dublinbb.jpg ",
-    "desc": "Dawson Street",
-    "longdesc": "Dawson Street Dublin, around 1963 (Charles Cushman collection)",
-    "copyright": "0008615b-942. Copyright Indiana University Archive"
+				{
+					"src": "dublinbb.jpg ",
+					"desc": "Dawson Street",
+					"longdesc": "Dawson Street Dublin, around 1963 (Charles Cushman collection)",
+					"copyright": "0008615b-942. Copyright Indiana University Archive"
 }
 
 ]
-};
-}).factory('videoService', function () {
-    return {
-        oceanVideo: [
-{
-    "mp4": "http://video-js.zencoder.com/oceans-clip.mp4"
+		};
+	}).factory('videoService', function () {
+		return {
+			oceanVideo: [
+				{
+					"mp4": "http://video-js.zencoder.com/oceans-clip.mp4"
 },
-{
-    "webm": "http://video-js.zencoder.com/oceans-clip.webm"
+				{
+					"webm": "http://video-js.zencoder.com/oceans-clip.webm"
 },
-{
-    "ogg": "http://video-js.zencoder.com/oceans-clip.ogv"
+				{
+					"ogg": "http://video-js.zencoder.com/oceans-clip.ogv"
 }
 ],
 
-earthAsDotVideo: [
-{
-    "mp4": "http://www.videogular.com/assets/videos/videogular.mp4"
+			earthAsDotVideo: [
+				{
+					"mp4": "http://www.videogular.com/assets/videos/videogular.mp4"
 },
-{
-    "webm": "http://www.videogular.com/assets/videos/videogular.webm"
+				{
+					"webm": "http://www.videogular.com/assets/videos/videogular.webm"
 },
-{
-    "ogg": "http://www.videogular.com/assets/videos/videogular.ogg"
+				{
+					"ogg": "http://www.videogular.com/assets/videos/videogular.ogg"
 }
 ]
-};
-}).factory('instagram', function ($resource) {
+		};
+	}).factory('instagram', function ($resource) {
 
-    //Modified from http://tutorialzine.com/2013/08/learn-angularjs-5-examples/
+		//Modified from http://tutorialzine.com/2013/08/learn-angularjs-5-examples/
 
-    return {
-        fetchPopular: function (callback) {
+		return {
+			fetchPopular: function (callback) {
 
-            // The ngResource module gives us the $resource service. It makes working with
-            // AJAX easy. Here I am using the client_id of a test app. Replace it with yours.
+				// The ngResource module gives us the $resource service. It makes working with
+				// AJAX easy. Here I am using the client_id of a test app. Replace it with yours.
 
-            var api = $resource('https://api.instagram.com/v1/media/popular?client_id=:client_id&callback=JSON_CALLBACK', {
-                client_id: '642176ece1e7445e99244cec26f4de1f'
-                }, {
-                    // This creates an action which we've chosen to name "fetch". It issues
-                    // an JSONP request to the URL of the resource. JSONP requires that the
-                    // callback=JSON_CALLBACK part is added to the URL.
+				var api = $resource('https://api.instagram.com/v1/media/popular?client_id=:client_id&callback=JSON_CALLBACK', {
+					client_id: '642176ece1e7445e99244cec26f4de1f'
+				}, {
+					// This creates an action which we've chosen to name "fetch". It issues
+					// an JSONP request to the URL of the resource. JSONP requires that the
+					// callback=JSON_CALLBACK part is added to the URL.
 
-                    fetch: {
-                        method: 'JSONP'
-                    }
-                });
+					fetch: {
+						method: 'JSONP'
+					}
+				});
 
-            api.fetch(function (response) {
+				api.fetch(function (response) {
 
-                // Call the supplied callback function
-                callback(response.data);
+					// Call the supplied callback function
+					callback(response.data);
 
-            });
-        }
-    }
+				});
+			}
+		}
 
-}).factory('theTimeNowService', function () {
-    return {
-        "url": [
-    "https://www.thetimenow.com",
+	}).factory('theTimeNowService', function () {
+		return {
+			"url": [
+	"https://www.thetimenow.com",
 "/clock/gmt/greenwich_mean_time?t=n&amp;embed=1&amp;text=16&amp;{{textdate}}&amp;",
 "format=24&amp;digitalclock=20&amp;analogclock=60&amp;letter_spacing=-2&amp;bordersize=0&amp;",
 "bordercolor=fff&amp;bgcolor=fff&amp;colorloc=fff&amp;colordigital=FFA500&amp;colordate=ffffff&amp;",
 "styleloc=normal&amp;styledigital=normal&amp;styledate=normal&amp;right=0"
-    ].join()
-    }
+	].join()
+		}
 
-}).factory('allIrelandDataService', function () {
-    return {
+	}).factory('allIrelandDataService', function () {
+		return {
 
-        "footballers": [
-{
-    "label": "Kerry",
-"y": 36,
-"name": "Kerry"
+			"footballers": [
+				{
+					"label": "Kerry",
+					"y": 36,
+					"name": "Kerry"
 },
-{
-    "label": "Dublin",
-"y": 24,
-"name": "Dublin"
+				{
+					"label": "Dublin",
+					"y": 24,
+					"name": "Dublin"
 },
-{
-    "label": "Galway",
-"y": 9,
-"name": "Galway"
+				{
+					"label": "Galway",
+					"y": 9,
+					"name": "Galway"
 },
-{
-    "label": "Cork",
-    "y": 7,
-    "name": "Cork"
+				{
+					"label": "Cork",
+					"y": 7,
+					"name": "Cork"
 },
-{
-    "label": "Meath",
-    "y": 7,
-    "name": "Meath"
+				{
+					"label": "Meath",
+					"y": 7,
+					"name": "Meath"
 },
-{
-    "label": "Cavan",
-    "y": 5,
-    "name": "Cavan"
+				{
+					"label": "Cavan",
+					"y": 5,
+					"name": "Cavan"
 },
-{
-    "label": "Wexford",
-    "y": 5,
-    "name": "Wexford"
+				{
+					"label": "Wexford",
+					"y": 5,
+					"name": "Wexford"
 },
-{
-    "label": "Down",
-    "y": 5,
-    "name": "Down"
+				{
+					"label": "Down",
+					"y": 5,
+					"name": "Down"
 },
-{
-    "label": "Kildare",
-    "y": 4,
-    "name": "Kildare"
+				{
+					"label": "Kildare",
+					"y": 4,
+					"name": "Kildare"
 },
-{
-    "label": "Tipperary",
-    "y": 4,
-    "name": "Tipperary"
+				{
+					"label": "Tipperary",
+					"y": 4,
+					"name": "Tipperary"
 },
-{
-    "label": "Mayo",
-    "y": 3,
-    "name": "Mayo"
+				{
+					"label": "Mayo",
+					"y": 3,
+					"name": "Mayo"
 },
-{
-    "label": "Offaly",
-    "y": 3,
-    "name": "Offaly"
+				{
+					"label": "Offaly",
+					"y": 3,
+					"name": "Offaly"
 },
-{
-    "label": "Louth",
-    "y": 3,
-    "name": "Louth"
+				{
+					"label": "Louth",
+					"y": 3,
+					"name": "Louth"
 },
-{
-    "label": "Tyrone",
-    "y": 3,
-    "name": "Tyrone"
+				{
+					"label": "Tyrone",
+					"y": 3,
+					"name": "Tyrone"
 },
-{
-    "label": "Others",
-    "y": 8,
-    "name": "Others"
+				{
+					"label": "Others",
+					"y": 8,
+					"name": "Others"
 }
 ],
 
-    "hurlers": [
-{
+			"hurlers": [
+				{
 
-    "label": "Kilkenny",
-    "y": 34,
-    "name": "Kilkenny"
+					"label": "Kilkenny",
+					"y": 34,
+					"name": "Kilkenny"
 },
-{
-    "label": "Cork",
-    "y": 30,
-    "name": "Cork"
+				{
+					"label": "Cork",
+					"y": 30,
+					"name": "Cork"
 },
-{
-    "label": "Tipperary",
-    "y": 26,
-    "name": "Tipperary"
+				{
+					"label": "Tipperary",
+					"y": 26,
+					"name": "Tipperary"
 },
-{
-    "label": "Limerick",
-    "y": 7,
-    "name": "Limerick"
+				{
+					"label": "Limerick",
+					"y": 7,
+					"name": "Limerick"
 },
-{
-    "label": "Dublin",
-    "y": 6,
-    "name": "Dublin"
+				{
+					"label": "Dublin",
+					"y": 6,
+					"name": "Dublin"
 },
-{
-    "label": "Wexford",
-    "y": 6,
-    "name": "Wexford"
+				{
+					"label": "Wexford",
+					"y": 6,
+					"name": "Wexford"
 },
-{
-    "label": "Galway",
-    "y": 4,
-    "name": "Galway"
+				{
+					"label": "Galway",
+					"y": 4,
+					"name": "Galway"
 },
-{
-    "label": "Offaly",
-    "y": 4,
-    "name": "Offaly"
+				{
+					"label": "Offaly",
+					"y": 4,
+					"name": "Offaly"
 },
-{
-    "label": "Clare",
-    "y": 4,
-    "name": "Clare"
+				{
+					"label": "Clare",
+					"y": 4,
+					"name": "Clare"
 },
-{
-    "label": "Waterford",
-    "y": 2,
-    "name": "Waterford"
+				{
+					"label": "Waterford",
+					"y": 2,
+					"name": "Waterford"
 },
-{
-    "label": "Others",
-    "y": 3,
-    "name": "Others"
+				{
+					"label": "Others",
+					"y": 3,
+					"name": "Others"
 }
 ],
 
-    "countycolours": {
+			"countycolours": {
 
-        "clare": "cyan",
-        "waterford": "orange",
-        "kilkenny": "goldenrod",
-        "limerick": "green",
-        "kerry": "green",
-        "dublin": "MediumSlateBlue ",
-        "galway": "maroon",
-        "cork": "red",
-        "meath": "lightgreen",
-        "cavan": "blue",
-        "wexford": "green",
-        "downUlster": "darkred",
-        "kildare": "aquamarine",
-        "tipperary": "darkblue",
-        "mayo": "orange",
-        "offaly": "green",
-        "louth": "darkkhaki",
-        "tyrone": "cyan",
-        "others": "  brown"
-    }
-};
+				"clare": "cyan",
+				"waterford": "orange",
+				"kilkenny": "goldenrod",
+				"limerick": "green",
+				"kerry": "green",
+				"dublin": "MediumSlateBlue ",
+				"galway": "maroon",
+				"cork": "red",
+				"meath": "lightgreen",
+				"cavan": "blue",
+				"wexford": "green",
+				"downUlster": "darkred",
+				"kildare": "aquamarine",
+				"tipperary": "darkblue",
+				"mayo": "orange",
+				"offaly": "green",
+				"louth": "darkkhaki",
+				"tyrone": "cyan",
+				"others": "  brown"
+			}
+		};
 
-}).factory('dribbleService', function () {
-    return {
-        "url": 'http://api.dribbble.com/shots/popular?callback=JSON_CALLBACK'
-    }
+	}).factory('dribbleService', function () {
+		return {
+			"url": 'http://api.dribbble.com/shots/popular?callback=JSON_CALLBACK'
+		}
 
-}).factory('googleService', function () {
-    return {
+	}).factory('googleService', function () {
+		return {
 
-        "addressOne": "College Green, Dublin, Ireland"
-    };
+			"addressOne": "College Green, Dublin, Ireland"
+		};
 
-}).factory('functionsService', function ($location, $rootScope) {
+	}).factory('functionsService', function ($location, $rootScope) {
 
-    return {
+		return {
 
-        addClassById: function ($class, $id) {
+			addClassById: function ($class, $id) {
 
-            if (document.getElementById($id)) {
-                document.getElementById($id).className = $class;
+				if (document.getElementById($id)) {
+					document.getElementById($id).className = $class;
 
-            }
-        },
+				}
+			},
 
-    addClassOnMouseOver: function ($class, $id, $id2a, $id2b) {
+			addClassOnMouseOver: function ($class, $id, $id2a, $id2b) {
 
-        if (document.getElementById($id)) {
+				if (document.getElementById($id)) {
 
 
-            document.getElementById($id).onmouseover = function () {
-                document.getElementById($id2a).className = $class;
-                document.getElementById($id2b).className = $class;
-            }
-        }
-    },
-    addClassOnMouseOut: function ($class, $id, $id2a, $id2b) {
+					document.getElementById($id).onmouseover = function () {
+						document.getElementById($id2a).className = $class;
+						document.getElementById($id2b).className = $class;
+					}
+				}
+			},
+			addClassOnMouseOut: function ($class, $id, $id2a, $id2b) {
 
-        if (document.getElementById($id)) {
-            document.getElementById($id).onmouseout = function () {
-                document.getElementById($id2a).className = $class;
-                document.getElementById($id2b).className = $class;
-            }
-        }
-    },
+				if (document.getElementById($id)) {
+					document.getElementById($id).onmouseout = function () {
+						document.getElementById($id2a).className = $class;
+						document.getElementById($id2b).className = $class;
+					}
+				}
+			},
 
-    switchMyViews:  function ($args) {
+			switchMyViews: function ($args) {
 
-        var viewpath = $location.path().indexOf('view'+ $args[1]);
-        var viewpath2 = $location.path().indexOf('view'+ $args[0]);
+				var viewpath = $location.path().indexOf('view' + $args[1]);
+				var viewpath2 = $location.path().indexOf('view' + $args[0]);
 
-        if (viewpath === 1) {
-            $rootScope['toggleview' + $args[0]] = true;
-            $rootScope['toggleview' + $args[1]] = false;
-        }
+				if (viewpath === 1) {
+					$rootScope['toggleview' + $args[0]] = true;
+					$rootScope['toggleview' + $args[1]] = false;
+				} else if (viewpath2 === 1) {
+					$rootScope['toggleview' + $args[1]] = true;
+					$rootScope['toggleview' + $args[0]] = false;
+				} else {
+					$rootScope['toggleview' + $args[1]] = true;
+					$rootScope['toggleview' + $args[0]] = false;
+				}
+			},
 
-        else if (viewpath2 === 1) {
-            $rootScope['toggleview' + $args[1]] = true;
-            $rootScope['toggleview' + $args[0]] = false;
-        }
-        else {
-            $rootScope['toggleview' + $args[1]] = true;
-            $rootScope['toggleview' + $args[0]] = false;
-        }
-    },
+			makeLastName: function (string) {
+				var mystring = string.split(' ');
+				if (mystring.length > 1) {
+					return mystring[1];
+				}
+				return string;
+			},
 
-    makeLastName: function (string) {
-        var mystring = string.split(' ');
-        if (mystring.length > 1) {
-            return mystring[1];
-        }
-        return string;
-    },
+			makeFirstName: function (string) {
+				var mystring = string.split(' ');
+				if (mystring.length > 1) {
+					return mystring[0];
+				}
+				return string;
+			}
+		};
+	}).factory('focus', function ($rootScope, $timeout) {
+		//Modified from: http://stackoverflow.com/a/14837021/499167
 
-    makeFirstName: function (string) {
-        var mystring = string.split(' ');
-        if (mystring.length > 1) {
-            return mystring[0];
-        }
-        return string;
-    }
-    };
-}).factory('focus', function ($rootScope, $timeout) {
-    //Modified from: http://stackoverflow.com/a/14837021/499167
+		return function (name) {
+			$timeout(function () {
+				$rootScope.$broadcast('focusOn', name);
+			});
+		}
+	}).factory('User', function () {
+		//newsletter
+		var user = {
+			email: "",
+			format: "Pdf",
+			realname: function () {
+				return this.email.split('@')[0];
+			}
+		};
+		return {
+			get: function () {
+				return user;
+			}
+		}
+	}).factory('mychartsService', function () {
 
-    return function(name) {
-        $timeout(function (){
-            $rootScope.$broadcast('focusOn', name);
-        });
-    }
-}).factory('User', function () {
-    //newsletter
-    var user = {
-        email: "",
-format: "Pdf",
-realname: function () {
-    return  this.email.split('@')[0];
-}
-};
-return {
-    get: function () {
-        return user;
-    }
-}
-}).factory('mychartsService',function (){
+		return {
+			doughnutChart: function ($id, $data, $text, $customColorSet) {
+				var chart = new CanvasJS.Chart($id, {
+					theme: "theme1",
+					colorSet: $customColorSet,
+					title: {
+						text: $text,
+						fontWeight: "bolder",
+						fontColor: "#0D8AAA",
+						fontSize: 20,
+						padding: 0
+					},
+					data: [{
+						type: "doughnut",
+						indexLabelPlacement: "outside",
+						showInLegend: false,
+						dataPoints: $data
+				}]
+				});
+				chart.render();
+			}
+		}
+	})
+	.factory('initService', function ($rootScope) {
 
-    return {
-        doughnutChart: function ($id, $data, $text, $customColorSet) {
-            var chart = new CanvasJS.Chart($id, {
-                theme: "theme1",
-                colorSet: $customColorSet,
-                title: {
-                    text: $text,
-                fontWeight: "bolder",
-                fontColor: "#0D8AAA",
-                fontSize: 20,
-                padding: 0
-                },
-                data: [{
-                    type: "doughnut",
-                indexLabelPlacement: "outside",
-                showInLegend: false,
-                dataPoints: $data
-                }]
-            });
-            chart.render();
-        }
-    }
-})
-.factory('initService', function ($rootScope) {
+		return {
 
-    return {
+			init: function (CtrlNo) {
 
-        init:  function (CtrlNo) {
+				$rootScope.showWidgetLogin = false;
+				$rootScope.showWidgetSignup = false;
+				$rootScope.toggleProductsNav = false;
 
-            $rootScope.showWidgetLogin = false;
-            $rootScope.showWidgetSignup = false;
-            $rootScope.toggleProductsNav = false;
+				switch (CtrlNo) {
+				case 5: //dynamic Searching
+				case 12: // detailed cart
+					$rootScope.toggleProductsNav = true;
 
-            switch (CtrlNo) {
-                case 5: //dynamic Searching
-                case 12: // detailed cart
-                    $rootScope.toggleProductsNav = true;
+					break;
 
-                    break;
+				case 22: // Users Sign-in
+				case 25: // Admins Sign-in
+					$rootScope.showWidgetLogin = true;
 
-                case 22: // Users Sign-in
-                case 25: // Admins Sign-in
-                    $rootScope.showWidgetLogin = true;
+					break;
 
-                    break;
+				case 21: // Users Sign-up
+				case 24: // Admins Sign-up
+					$rootScope.showWidgetSignup = true;
 
-                case 21: // Users Sign-up
-                case 24: // Admins Sign-up
-                    $rootScope.showWidgetSignup = true;
+					break;
+				}
+			}
+		}
+	})
+	.factory('github', function ($http) {
 
-                    break;
-            }
-        }
-    }
-})
-.factory('github', function ($http) {
+		var getUser = function (username) {
+			return $http.get("https://api.github.com/users/" + username)
+				.then(function (response) {
+					return response.data;
+				});
+		};
 
-    var getUser = function(username) {
-      return $http.get("https://api.github.com/users/" + username)
-        .then(function(response) {
-          return response.data;
-        });
-    };
+		var getRepos = function (user) {
+			return $http.get(user.repos_url)
+				.then(function (response) {
+					return response.data;
+				});
+		};
+		var getRepoDetails = function (username, reponame) {
+			var repo;
+			var repoUrl = "https://api.github.com/repos/" + username + "/" + reponame;
 
-    var getRepos = function(user) {
-      return $http.get(user.repos_url)
-        .then(function(response) {
-          return response.data;
-        });
-    };
-    var getRepoDetails = function(username, reponame) {
-      var repo;
-      var repoUrl = "https://api.github.com/repos/" + username + "/" + reponame;
+			return $http.get(repoUrl)
+				.then(function (response) {
+					repo = response.data;
+					return $http.get(repoUrl + "/contributors");
+				})
+				.then(function (response) {
+					repo.contributors = response.data;
+					return repo;
+				})
+		};
 
-      return $http.get(repoUrl)
-        .then(function(response) {
-          repo = response.data;
-          return $http.get(repoUrl + "/contributors");
-        })
-        .then(function(response) {
-          repo.contributors = response.data;
-return repo;
-        })
-    };
-
-    return {
-      getUser: getUser,
-      getRepos: getRepos,
-      getRepoDetails: getRepoDetails
-    };
-});
+		return {
+			getUser: getUser,
+			getRepos: getRepos,
+			getRepoDetails: getRepoDetails
+		};
+	})
+	.constant('constants', {
+		APP_TITLE: 'Sceptics with Angular',
+		TEMPLATE_ONE_TITLE: 'Natural Sceptics',
+		TEMPLATE_TWO_TITLE: 'Videos with Videogular',
+	    TEMPLATE_THREE_TITLE: 'Instagram',
+	    TEMPLATE_FOUR_TITLE: 'Sixties Dublin',
+	    TEMPLATE_FIVE_TITLE: 'Dynamic Searching',
+	    TEMPLATE_SEVEN_TITLE: 'Create New Commodity',
+	    TEMPLATE_EIGHT_TITLE: 'Blog Page',
+	    TEMPLATE_TEN_TITLE: 'Editing commodity',
+	    TEMPLATE_ELEVEN_TITLE: 'yourCart',
+	    TEMPLATE_TWELVE_TITLE: 'Detailed Cart',
+	    TEMPLATE_THIRTEEN_TITLE: 'Dribbble',
+	    TEMPLATE_FOURTEEN_TITLE: 'Subscribe to Our Newsletter',
+	    TEMPLATE_SIXTEEN_TITLE: 'Biblio Manager',
+	    TEMPLATE_SEVENTEEN_TITLE: 'Editing Bibliography',
+	    TEMPLATE_EIGHTEEN_TITLE: 'Create  Bibliography Record',
+	    TEMPLATE_TWENTYONE_TITLE: 'Users Sign-up  Controller',
+	    TEMPLATE_TWENTYTWO_TITLE: 'Users Sign-in Controller',
+	    TEMPLATE_TWENTYTHREE_TITLE: 'Users Change Password Controller',
+	    TEMPLATE_TWENTYFOUR_TITLE: 'Admins  Sign-up  Controller',
+	    TEMPLATE_TWENTYFIVE_TITLE: 'Admins  Sign-in Controller',
+	    TEMPLATE_TWENTYSIX_TITLE: 'Admins Change Password Controller',
+	    TEMPLATE_TWENTYSEVEN_TITLE: 'Devise Users Change password',
+	    TEMPLATE_TWENTYEIGHT_TITLE: 'Devise Admins  Change password',
+		APP_DESCRIPTION: 'A Single Page Application with Ruby on Rails and Angular',
+		APP_VERSION: '2.0'
+	});
 
 /*
-   .factory('mySharedService', function ($rootScope) {
+	.factory('mySharedService', function ($rootScope) {
 
-   var sharedService = {};
-   sharedService.message ='';
+	var sharedService = {};
+	sharedService.message ='';
 
-   sharedService.prepForBroadcast = function (msg) {
-   this.message = msg;
-   $rootScope.$broadcast('handleBroadcast')
-   };
+	sharedService.prepForBroadcast = function (msg) {
+	this.message = msg;
+	$rootScope.$broadcast('handleBroadcast')
+	};
 
-   return sharedService;
+	return sharedService;
 
-   })*/
+	})*/

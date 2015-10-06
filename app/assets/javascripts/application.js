@@ -27,7 +27,7 @@
 //= require scripts/googlemap
 //= require sceptics
 //= require scripts/ng-FitText
-//= require ng_controllers
+//= require ngControllers/ng_controllers
 //= require ng_directives
 //= require ng_filters
 //= require ng_routes
