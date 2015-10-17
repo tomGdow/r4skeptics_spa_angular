@@ -1,6 +1,8 @@
 
 /* ANGULAR CONTROLLERS */
 
+(function () {
+	
 'use strict';
 
 angular.module('myApp.controllers', [
@@ -1426,3 +1428,4 @@ $scope.appname = constants.APP_TITLE;
 			$scope.viewTwentyEightMessage  = constants.TEMPLATE_TWENTYEIGHT_TITLE;
 		}
 		]);
+}());
